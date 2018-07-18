@@ -13,8 +13,7 @@ And many other projects also tend to support static link. The example is nodejs.
 Anyway for the application released as static linked binary like most of the projects based on Golang it quite good to use Arrow. To the application that can supprot static link like nodejs. it is also good, just need to rebuild it staticlly. But to other applications can't support static link well. Arrow technology is not a good solution. But nowdays, it is obviously, static link is more and more popular.
 
 ### plugin based on dlopen()
-It has some problem to use dlopen() related functions in staticly linke application. Normally, plugin is implemented from dlopen(). Let's have a look at why Musl does not want to support dlopen():
-> 
+It has some problem to use dlopen() related functions in staticly linke application. Normally, plugin is implemented from dlopen(). Let's have a look at [why Musl does not want to support dlopen](http://openwall.com/lists/musl/2012/12/08/4)
 
 ## Extra Memory Consumption From Arrow Kernel and Hypervisor
 
