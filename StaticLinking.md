@@ -17,3 +17,5 @@ At cloud/Edge/Fog enviornment, I perfer the latter. Since Simple, Fast, Compatib
 ## Why using staticly linked application
 
 ## Make static linking easier
+reference:
+[staticly building Python](https://stackoverflow.com/questions/1150373/compile-the-python-interpreter-statically)
