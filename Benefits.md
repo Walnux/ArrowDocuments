@@ -21,3 +21,13 @@ The concern is that will increase the memory consumption by reading all the appl
 ## Stable
 
 ## Small
+
+## Platform and Operating System agnostic
+Unlike Containers working load can only run on some specific Operating System, with the help of hypvisor and Arrow framwork like Crossbow and Arrowd, the Arrow image can run on different Operating system and platforms. So it is platform and Operating system agnostic.
+
+In theory with KVM runing X86 based Arrow image on Windows and Linux host have the simiar performance. Runing on ARM platform may expect some performance sacrifice, becuase Hypervisor has to simulate and translate the X86 code to ARM code. 
+
+So suggust to run Arrow image on the same architecture platform. Currently X86-64 is the prefered and suggest architecutre platofrm. 
+
+## Customerized Kernel
+Unlike Containers working load sharing the same kernel. With Arrow, users actually has the free to Arrowize their applications with the customerized kernel. That is quite helpful, if users want to integrate using and release their own developped kernel modules or kernel configure.
