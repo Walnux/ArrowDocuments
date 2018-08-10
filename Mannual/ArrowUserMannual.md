@@ -3,7 +3,7 @@ arrow is the command line client of arrowd service. It can be used to use Arrow
 
 ## arrow run
 ```
-$ crossbow run [OPTIONS] ArrowImage[:TAG] [COMMAND] [ARG...] [--] [ENV1=env1_value ENV2=env2_value...]
+$ arrow run [OPTIONS] ArrowImage[:TAG] [COMMAND] [ARG...] [--] [ENV1=env1_value ENV2=env2_value...]
 ```
 
 ### Detached vs foreground
