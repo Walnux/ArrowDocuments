@@ -1,7 +1,10 @@
-# Arrow Overview
-Other than Virtual Machine and Container technology, Arrow provides another safe, fast, small, easy, agnostic and compatible  way to package, release, deploy, run, manage and orchestate tasks in cloud, edge, native, even embedded environemnt.
+# What is Arrow?
+Arrow is the application - the Arrowized application. Arrow try to make software simple and safe. 
 
-Arrow technology is application centralized. Unlike running an Operating System on Virtual Machine, or running tasks in Container, Arrow itself is the task. With [Arrow infrastructure(Arrow service)](/path/to/Arrow_Infrastructure), user can run Arrowized application as easy as running a normal application.
+# Arrow Overview
+Other than Virtual Machine and Container technology, Arrow provides another safe, fast, small, easy, agnostic and compatible  way to develop, package, release, deploy, run, manage and orchestate tasks in cloud, edge, native, even embedded environemnt.
+
+Arrow technology is application centralized. Unlike running an Operating System on Virtual Machine, or running tasks in Container, Arrow itself is the task the applicaton or the service. With [Arrow service)](/path/to/Arrow_Infrastructure), user can run Arrow as easy as running a normal application.
 
 What different is that all the Arrowized applications are runing in "fully" isolated environemnt. They can be connected with each other through TCP/IP based Arrow Network. Since Arrow infrastructure is desgined from begining to be compatible with Container(like Docker container) and container orchestartion system like Kubernetes. Arrow can be easily integrated into Kubernetes and seamless cooperate with the existing Container infrastructure.
 
