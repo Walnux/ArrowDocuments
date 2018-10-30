@@ -20,3 +20,11 @@ At cloud/Edge/Fog enviornment, I perfer the latter. Since Simple, Fast, Compatib
 ## Make static linking easier
 reference:
 [staticly building Python](https://stackoverflow.com/questions/1150373/compile-the-python-interpreter-statically)
+
+## legal problem of static link
+In some opensource License, there has some legal problem to use static link.
+- Firstly, normally, you should not link your code static link with GPL license code. That will contaminate your code. see
+[GPLStaticVsDynamic](https://www.gnu.org/licenses/gpl-faq.html#GPLStaticVsDynamic)
+
+- Secondly, There is no legal problem to static link the LGPL code. But the application object file must be provided for end uers to link with other version of LGPL library. And the you need not open your source. see
+[LGPLStaticVsDynamic](https://www.gnu.org/licenses/gpl-faq.html#LGPLStaticVsDynamic)
