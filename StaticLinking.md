@@ -26,5 +26,7 @@ To some opensource Licenses, there have some legal problems to use static link.
 - Firstly, normally, you should not staticly link your code static with GPL license code. That will contaminate your code. see
 [GPLStaticVsDynamic](https://www.gnu.org/licenses/gpl-faq.html#GPLStaticVsDynamic)
 
+## Resources
+[How SDL handle static and dynamic link](https://hg.libsdl.org/SDL/file/default/docs/README-dynapi.md)
 - Secondly, There is _no_ legal problem to staticly link the LGPL code. The only requirement is that the application object file must be provided for end uers to link with other version of LGPL library. And the you need _not_ open your source. see
 [LGPLStaticVsDynamic](https://www.gnu.org/licenses/gpl-faq.html#LGPLStaticVsDynamic).
