@@ -8,3 +8,5 @@ So Qemu consumes most of the memory.
 Nemu is suppose to small enough.  
 
 # Memory Consumption using Qemu-lite
+
+# Memroy Consumption using Nemu
