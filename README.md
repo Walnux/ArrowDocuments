@@ -4,7 +4,7 @@ Compared with the traditional OS which can run several tasks processes, which ca
 At same time "Single Task OS" is the application centrailized OS. In theory, the OS only include what needed by the single application running as a single process. 
 
 # Arrow Overview
-Other than Virtual Machine and Container technology, Arrow provides another safe, fast, small, easy, agnostic and compatible  way to develop, package, release, deploy, run, manage and orchestate tasks in cloud, edge, native, even embedded environemnt.
+Other than Virtual Machine and Container technology, Arrow provides another Safe, Simple, Swift, Small Agnostic and Compatible  way to develop, package, release, deploy, run, manage and orchestate tasks in cloud, edge, native, even embedded environemnt.
 
 Arrow technology is application centralized. Unlike running an Operating System on Virtual Machine, or running tasks in Container, Arrow itself is the task the applicaton or the service. With [Arrow service)](/path/to/Arrow_Infrastructure), user can run Arrow as easy as running a normal application.
 
