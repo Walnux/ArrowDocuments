@@ -44,3 +44,7 @@ To some opensource Licenses, there have some legal problems to use static link.
 [How SDL handle static and dynamic link](https://hg.libsdl.org/SDL/file/default/docs/README-dynapi.md)
 - Secondly, There is _no_ legal problem to staticly link the LGPL code. The only requirement is that the application object file must be provided for end uers to link with other version of LGPL library. And the you need _not_ open your source. see
 [LGPLStaticVsDynamic](https://www.gnu.org/licenses/gpl-faq.html#LGPLStaticVsDynamic).
+
+[When to use dynamic linking and static linking](https://www.ibm.com/support/knowledgecenter/en/ssw_aix_71/com.ibm.aix.performance/when_dyn_linking_static_linking.htm)
+
+[Dependency hell](https://en.wikipedia.org/wiki/Dependency_hell)
