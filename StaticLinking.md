@@ -35,10 +35,27 @@ Needs more investigation
 reference:
 [staticly building Python](https://stackoverflow.com/questions/1150373/compile-the-python-interpreter-statically)
 
+
 ## legal problem of static link
+
 To some opensource Licenses, there have some legal problems to use static link.
 - Firstly, normally, you should not staticly link your code static with GPL license code. That will contaminate your code. see
 [GPLStaticVsDynamic](https://www.gnu.org/licenses/gpl-faq.html#GPLStaticVsDynamic)
+
+## Static Linking issues from glibc
+
+* glibc will dlopen(insert) Libnss to help achieve DNS, which blocks static linking. Normally with below warning message 
+
+```
+warning: Using 'getaddrinfo' in statically linked applications requires at runtime the shared libraries from the glibc version use    d for linking
+```
+I strongly against this way to handle DNS. Because dynamically plug in some code really risky. You never know it is what you want.
+That potentially cases a lot of system maintaining efforts. 
+
+Look at how musl does
+
+> The policy for supporting something like nss has always been that musl implements a perfectly reasonable public protocol for providing any back-end you want: the DNS protocol. You can run a local daemon speaking DNS and serving names from any backend you like, and this is the correct way to achieve it (rather than linking random buggy, likely-not-namespace-clean libraries into the application's address space).
+[see How Musl handle getaddrinfo()] (https://www.openwall.com/lists/musl/2014/05/04/25)
 
 ## Resources
 [How SDL handle static and dynamic link](https://hg.libsdl.org/SDL/file/default/docs/README-dynapi.md)
