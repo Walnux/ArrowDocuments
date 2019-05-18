@@ -1,4 +1,4 @@
-# Static Linking is the best choise for Clound and edge computing
+# Static Linking is the best choise for Cloud and edge computing
 ## what are dynamic and what is static linking?
 according to [linker, dynamic and static linking](https://kb.iu.edu/d/akqn)
 
