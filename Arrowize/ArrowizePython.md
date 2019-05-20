@@ -4,9 +4,11 @@ Python is widely used on cloude side. Maybe it can also run on edge side. So we 
 ## Python overview
 
 ## Staticly link Python Runtime
-Reference: [Staticly Link Python](https://stackoverflow.com/questions/1150373/compile-the-python-interpreter-statically)
+[See CPython Building Process](https://github.com/python/cpython/blob/master/Modules/Setup)
 
-### Static linking Python issues
+also Reference: [Staticly Link Python](https://stackoverflow.com/questions/1150373/compile-the-python-interpreter-statically)
+
+### Static linking Python Investigation
 * using GNU Libc to staticly link Python lead to below warnings
 ```Console
 /home/martin/repo/cpython/./Python/dynload_shlib.c:98: warning: Using 'dlopen' in statically linked applications requires at runtime the shared libraries from the glibc version used for linking
