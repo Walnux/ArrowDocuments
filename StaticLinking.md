@@ -1,5 +1,5 @@
 # Static Linking is the best choise for Cloud and edge computing
-## what are dynamic and what is static linking?
+## what is dynamic and what is static linking?
 according to [linker, dynamic and static linking](https://kb.iu.edu/d/akqn)
 
 > Static linking is the result of the linker copying all library routines used in the program into the executable image. This may require more disk space and memory than dynamic linking, but is both faster and more portable, since it does not require the presence of the library on the system where it is run.
