@@ -9,7 +9,23 @@ With Arrow you can run the application on cloud, edge computing and native compu
 
 
 # Arrow Overview
-Arrow is desinged  application central and uses top do
+Arrow is the application so you can [run Arrow](/path/to/example) as simply as run a normal application natively. You also can orchestrate Arrows to fullfill your goal with K8S in cloud environment. Arrow also can be integrated into customer's FaaS solutions.
+
+But the single application is combined with its tailored single task kernel and running on the Virtual Machine. So the application actually runs in the sandbox very safely.
+
+The single task kernel is based on Linux kernel. And the application runs on the stardard Linux environment. So in theory the application running on Linux system can run as Arrow with very [few limitations](/path/to/limitation). So the abundant applications in Linux ecosystem can run as Arrow with [ASDK Arrow System Development Kit](/path/to/ASDK).
+
+Swift means small, fast and flexible.
+
+With [application central top down design phylosophy](/path/to/topdownPhylosophy), [Foundmental innovations](/path/to/innovations) can be worked out to run Arrow [with very little overhead](/path/to/overhead). 
+
+- Arrow can reach < ~1M/app memory overhead
+- Arrow application loading latency can approach native application  
+
+Arrow is the applicaton which is seperated from data and configuration. So the application only needs to contain the necessary binary segments which can be preinstalled or intalled ondemand and shared by different users. Since each Arrow runs in its isloated environemnts, the only thing needs to ship is the configurations used to setup the environemnt and the stateful information for the mirgration of the stateful applications. Arrow Shadow Filesystem is desgined for it.
+So with Arrow you can run your applications swiftly. 
+
+Swift means small and fast. Arrow seperates application from data and configuration from begining. 
 
 Other than Virtual Machine and Container technology, Arrow provides another Safe, Simple, Swift, Small Agnostic and Compatible  way to develop, package, release, deploy, run, manage and orchestate tasks in cloud, edge, native, even embedded environemnt.
 
