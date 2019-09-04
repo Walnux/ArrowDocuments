@@ -1,9 +1,16 @@
 # What is Arrow?
-Arrow is the "Single Task OS(Operating System)", which means the OS only runs single task. Here single task means single Process which can contain several threads.
-Compared with the traditional OS which can run several tasks processes, which can be managed in sessions, process groups, and Process name spaces. "Single Task OS" is quite strait forward and simple since only one process running on the OS. 
-At same time "Single Task OS" is the application centrailized OS. In theory, the OS only include what needed by the single application running as a single process. 
+**Arrow is the application.**
+
+The application is combined with the tailored single task kernel running on the lightweight Virtual Machine.
+
+With Arrow you can run the application on cloud, edge computing and native computer safely, simply and swiftly.
+
+**Arrow services** is a set of tools to run and manage Arrows
+
 
 # Arrow Overview
+Arrow is desinged  application central and uses top do
+
 Other than Virtual Machine and Container technology, Arrow provides another Safe, Simple, Swift, Small Agnostic and Compatible  way to develop, package, release, deploy, run, manage and orchestate tasks in cloud, edge, native, even embedded environemnt.
 
 Arrow technology is application centralized. Unlike running an Operating System on Virtual Machine, or running tasks in Container, Arrow itself is the task the applicaton or the service. With [Arrow service)](/path/to/Arrow_Infrastructure), user can run Arrow as easy as running a normal application.
