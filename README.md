@@ -3,7 +3,9 @@
 
 The application is combined with the tailored single task kernel running on the lightweight Virtual Machine.
 
-With Arrow you can run the application on cloud, edge computing and native computer safely, simply and swiftly.
+Arrow is designed basing on the [**Application Centrialized Top Down**](/path/to/topdown) design philosophy.
+
+Applications can be run as Arrows on cloud, edge computing and native computer safely, simply and swiftly.
 
 **Arrow services** is a set of tools to run and manage Arrows
 
@@ -11,18 +13,27 @@ With Arrow you can run the application on cloud, edge computing and native compu
 # Arrow Overview
 Arrow is the application [which can be run](/path/to/example) as simply as a normal application natively. Arrows are designed to for Microservice. They can be orchestrated to work together to fullfill the specific goal with K8S in cloud environment. Arrow also can be integrated into customer's FaaS solutions.
 
-The single application is combined with the tailored single task kernel running on the Virtual Machine. So the application actually runs isolately in the sandbox. Besides, single application directly combine with kernel and all the uncessary components like Dynamical Libearis, Shell, rootfs, block devices based filesystem components and application loader to run applications and so on are all removed and only single application can run onetime in the single task kernel. So Application can run as Arrow very safely. 
+The single application is combined with the tailored single task kernel running on the Virtual Machine. So the application actually runs isolately in the sandbox. Besides, all the unnecessary components like Dynamical Libearis, Shell, tools within rootfs, even the rootfs itsef and the kernel block devices and specific filesystem components and application loader to run applications and so on are all removed. So only single application can run just onetime in the single task kernel.
 
-The single task kernel is based on Linux kernel. And the application runs in the stardard Linux environment. In theory the all the applications running on Linux can run as Arrow with [very few limitations](/path/to/limitation). So the abundant Linux applications can run as Arrow with [ASDK Arrow System Development Kit](/path/to/ASDK).
+Obviously, Arrow is the secure way to run application.
+- Firstly, Arrow runs single applicaton isloated in sandbox.
+- Secondly, by removing all the unnecessary components, the attack interface in each Arrow is reduced greatly.
+- Third, even Arrow is hacked, it is very difficult to be manipulated to attack or hack others, since Arrow can only run sigle applicaton one time, and the resources can be used are very limited.   
+
+The single task kernel is based on Linux kernel. And the application runs in the stardard Linux environment. So all the applications running on Linux can run as Arrow with [very few limitations](/path/to/limitation). Abundant Linux applications can run as Arrow with help of [ASDK Arrow System Development Kit](/path/to/ASDK).
 
 Swift means small, fast and flexible.
 
-With [application centralized top down design phylosophy](/path/to/topdownPhylosophy) and [moden lightweight Virtual Machine technology](/path/to/lightweithtVirtualMachine), [Foundmental innovations](/path/to/innovations) are worked out for Arrow to [run application with very small overhead](/path/to/overhead). 
+- **Each Arrow only needs < ~1M memory overhead
+With [**Application Centrialized Top Down**](/path/to/topdown) design philosophy, and [lightweight Virtual Machine](/path/to/lightweithtVirtualMachine) technology for moden cloud and edge computing usages, several [foundmental innovations](/path/to/innovations) are worked out for Arrow to [run application with very small overhead](/path/to/overhead). 
 
-- Arrow can reach < ~1M/applicaion memory overhead
-- Arrow application loading latency can approach native application  
+- **Arrow is very small and shared with all the users
+Arrow is the applicaton combined with single task kernel running on lightweight Virtual Machine, as mentioned above, it only contain the necessary binary segments which can be preinstalled or intalled ondemand and shared by all the users. At most situations the single task kernel running on the Virtual Machine can also be shared by all the users.Arrow is desinged seperated from data and configuration and running in its isloated environemnts. the only thing needs to ship is the configurations as well as the stateful data used to setup the environemnt or mirgration of the stateful applications. So Arrow could be very small
 
-Arrow is the applicaton which is seperated from data and configuration. Arrow only needs to contain the necessary binary segments which can be preinstalled or intalled ondemand and shared by different users. Since each Arrow runs in its isloated environemnts, the only thing needs to ship is the configurations as well as the stateful data used to setup the environemnt or mirgration of the stateful applications. So Arrow could be very small fast and flxible. 
+- **Arrow application loading latency approaches native application loading
+Arrow itself is small so the loading latency is small, further more, the [Arrow template and clone technology](/path/to/AtemplateClone) technology and [Arrow application sharing](/path/toAshareing) technology makes Arrow application loading latency approach native application loading
+
+
 
 # Why Arrow is useful?
 All in all, Arrow is the safe, simple and swift way to to run application on cloud, edge computing and native environemnt. 
