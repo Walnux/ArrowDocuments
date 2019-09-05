@@ -10,7 +10,7 @@ Applications can be run as Arrows on cloud, edge computing and native computer s
 **Arrow System** is the end to end solution to run and manage Arrows
 
 
-# Arrow Overview
+# Arrow overview
 Arrow is the application [which can be run](/path/to/example) as simply as a normal application natively. Arrows are designed to for Microservice. They can be orchestrated to work together to fullfill the specific goal with Kubernates in cloud environment. Arrow also can be integrated into users' FaaS solutions.
 
 The single application is combined with the tailored single task kernel running on the Virtual Machine. So the application actually runs isolately in the sandbox. Besides, all the unnecessary components like Dynamical Libearis, Shell, tools within rootfs, even the rootfs itsef and the kernel block devices and specific filesystem components and application loader to run applications and so on are all removed. Only single application can run just onetime in the single task kernel.
@@ -28,17 +28,19 @@ Swift means small, fast and flexible.
 
 With [Application Centrialized Top Down](/path/to/topdown) design philosophy, and [lightweight Virtual Machine](/path/to/lightweithtVirtualMachine) technology for moden cloud and edge computing usages, several [foundmental innovations](/path/to/innovations) are worked out for Arrow to [run application with very small overhead](/path/to/overhead). 
 
-- **Arrow is very small and shared with all the users
+- **Arrow is very small**
 
 Arrow is the applicaton combined with single task kernel running on lightweight Virtual Machine, as mentioned above, it only contain the necessary binary segments which can be preinstalled or intalled ondemand and shared by all the users. At most situations the Virtual Machine with the single task kernel can also be shared by all the users. Besides, Arrow is desinged seperated from data and configuration. the only thing needs to ship is the configurations as well as the stateful data used to setup the environemnt or mirgration of the stateful applications.
 
-- **Arrow application loading latency approaches native application loading
+- **Arrow application loading latency approaches native application loading**
 
 Arrow itself is very small and can be preinstalled so the loading latency is small, further more, the [Arrow template and clone technology](/path/to/AtemplateClone) technology and [Arrow application sharing](/path/toAshareing) technology makes Arrow application loading latency approach native application loading.
 
--- **Arrow is single application and quite flexible and easy to be orchestrated**
+-- **Arrow is single application and quite flexible and easy to be orchestrated and shared**
  
- Compared with the heavy full OS stack Virtual Machine or Container workload, Arrow is quite flexible to be managed and orchestrated and shared. Since it is the small single application. So it is natively suitable for microservice architecture. And most important is that the single application can be shared by all the users flexiblely. So users do not need to include the same applications in their individual workload.  
+ Compared with the heavy full OS stack Virtual Machine or Container workload, Arrow is quite flexible to be managed and orchestrated and shared. Since it is the small single application. So it is natively suitable for microservice architecture. And most important is that the single application can be shared by all the users flexiblely. So users do not need to include the same applications in their individual workload.
+
+So With Arrow, not only the indidual workload on cloud can be much small, fast, flexible and easy to manange. It can also make the overall cloud small and easy to manage.  
 
 # Why Arrow is useful?
 All in all, Arrow is the safe, simple and swift way to to run application on cloud, edge computing and native environemnt. 
