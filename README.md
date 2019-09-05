@@ -9,21 +9,33 @@ With Arrow you can run the application on cloud, edge computing and native compu
 
 
 # Arrow Overview
-Arrow is the application so you can [run Arrow](/path/to/example) as simply as run a normal application natively. You also can orchestrate Arrows to fullfill your goal with K8S in cloud environment. Arrow also can be integrated into customer's FaaS solutions.
+Arrow is the application [which can be run](/path/to/example) as simply as a normal application natively. Arrows are designed to for Microservice. They can be orchestrated to work together to fullfill the specific goal with K8S in cloud environment. Arrow also can be integrated into customer's FaaS solutions.
 
-But the single application is combined with its tailored single task kernel and running on the Virtual Machine. So the application actually runs in the sandbox very safely.
+The single application is combined with the tailored single task kernel running on the Virtual Machine. So the application actually runs isolately in the sandbox. Besides, single application directly combine with kernel and all the uncessary components like Dynamical Libearis, Shell, rootfs, block devices based filesystem components and application loader to run applications and so on are all removed and only single application can run onetime in the single task kernel. So Application can run as Arrow very safely. 
 
-The single task kernel is based on Linux kernel. And the application runs on the stardard Linux environment. So in theory the application running on Linux system can run as Arrow with very [few limitations](/path/to/limitation). So the abundant applications in Linux ecosystem can run as Arrow with [ASDK Arrow System Development Kit](/path/to/ASDK).
+The single task kernel is based on Linux kernel. And the application runs in the stardard Linux environment. In theory the all the applications running on Linux can run as Arrow with [very few limitations](/path/to/limitation). So the abundant Linux applications can run as Arrow with [ASDK Arrow System Development Kit](/path/to/ASDK).
 
 Swift means small, fast and flexible.
 
-With [application central top down design phylosophy](/path/to/topdownPhylosophy), [Foundmental innovations](/path/to/innovations) can be worked out to run Arrow [with very little overhead](/path/to/overhead). 
+With [application centralized top down design phylosophy](/path/to/topdownPhylosophy) and [moden lightweight Virtual Machine technology](/path/to/lightweithtVirtualMachine), [Foundmental innovations](/path/to/innovations) are worked out for Arrow to [run application with very small overhead](/path/to/overhead). 
 
-- Arrow can reach < ~1M/app memory overhead
+- Arrow can reach < ~1M/applicaion memory overhead
 - Arrow application loading latency can approach native application  
 
-Arrow is the applicaton which is seperated from data and configuration. So the application only needs to contain the necessary binary segments which can be preinstalled or intalled ondemand and shared by different users. Since each Arrow runs in its isloated environemnts, the only thing needs to ship is the configurations used to setup the environemnt and the stateful information for the mirgration of the stateful applications. Arrow Shadow Filesystem is desgined for it.
-So with Arrow you can run your applications swiftly. 
+Arrow is the applicaton which is seperated from data and configuration. Arrow only needs to contain the necessary binary segments which can be preinstalled or intalled ondemand and shared by different users. Since each Arrow runs in its isloated environemnts, the only thing needs to ship is the configurations as well as the stateful data used to setup the environemnt or mirgration of the stateful applications. So Arrow could be very small fast and flxible. 
+
+# Why Arrow is useful?
+All in all, Arrow is the safe, simple and swift way to to run application on cloud, edge computing and native environemnt. 
+
+Traditional standard full feature Virtual Machine running the full feature guest OS with middlewares and libraris to run application is basing on [OS centrialized bottom up philosophy](/path/to/bottomUp). It is very redundant and slow.
+
+Container can be used to package and run the software directly on hostOS with CGroup and technoloies to isolate
+
+Arrow share some basicl views with Unikernel like run single application on Virutal Machine. But Arrow is actually differnt solution with Unikernel. Unikernel is the libOS which link application with the specific OS libearis and run on VM. While Arrow makes use of existing mature Linux Kernel. And Application runs on the standarnd Linux environment. So Arrow can make full use of exising Linux resources. And most important most of these resources are well verified and mature and safe enough. So Compared with Unikernel, Arrow is easy to reach production quality. 
+
+However, there already have several avaible workloads. Why Arrow is needed?
+
+
 
 Swift means small and fast. Arrow seperates application from data and configuration from begining. 
 
