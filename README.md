@@ -55,7 +55,7 @@ Arrow 0.1 is released to prove the Arrow concept. And the main features below wo
 
 ## [Arrow 0.2 design & plan](/Path/to/0.2ReleasePlan): Make Arrow useful
 
-Arrow 0.1 design has been worked out to achieve the overhead goal and other key features to make Arrow useful.
+Arrow 0.2 design has been worked out to achieve the overhead goal and other key features to make Arrow useful.
 
 - Run more applications as Arrow
 - Arrow template, Arrow Clone, Arrow Share 
