@@ -14,6 +14,8 @@ Arrow can run application safely, simply and swiftly.
 
 # Arrow overview
 
+[Users are waiting for a safe simple and swift way to run applicaion in cloud.](ArrowIsUseful.md)
+
 Arrow provides a safe way to run application by Combining it with the tailored single task kernel and running it on the Virtual Machinn. All the unnecessary components like Dynamical Link Libearis, Shell, tools, even the rootfs, the kernel block devices, the related filesystem components and even the application loader to run applications and so on are all removed. And the safe lightweight Virtual Machine is used.
 
 Arrow is the safe way to run application because:
@@ -60,11 +62,3 @@ Arrow itself is very small and can be preinstalled so the loading latency is sma
 ## Arrow 0.3: Make it product
 
 
-# Users are waiting for a safe simple and swift way to run applicaion in cloud
-Currently, the main workload in cloud is traditional full feature Virtual Machine with the full feature guest OS, middlewares and libraris to run applications. It is very redundant and slow. And the overall infrastrucure is also quite complicated. 
-
-Recent years, Container like Docker comes to dominate the cloud workload. Containers can be used to package, ship and run the software isolated directly on the hostOS. Containers share the same kernel which greatly increases the code running indensity and efficiency. But container is not sandbox. Security and stability is a problem. Besides Container like docker container implementaion is very complicated . And not easy to be used at some resource limtted edge computing environemnt or some FaaS solution directly like AWS Greengrass. Furthermore, although Docker Container can be used to package single application, most people still tend to use it to package the whole system ever running on the virtual Machine. That is one of the reason why docker container suceed. But it can't help the whole cloud and edge ecosystem small and simple.
-
-Arrow shares some basic views with Unikernel like run single application on Virutal Machine. But Arrow is actually differnt solution with Unikernel. Unikernel is the libOS which link application with the specific OS libearis and run on VM. While Arrow makes use of existing mature Linux Kernel. And Application runs on the standarnd Linux environment. So Arrow can make full use of exising Linux resources. Most importantly most of these resources are well verified and safe enough for Arrow to reach the production quality.
-
-However, Arrow can't do everything. It can't be used to package the whole OS system. Arrow System can be think of part of hostOS or cloud infrastrucre to package and run sigle application. With Arrow System, users do not need to package and ship their own software, instead they only need to ask Arrow System to run some specific applications as Arrows to compose and fullfill their specific goal.     
