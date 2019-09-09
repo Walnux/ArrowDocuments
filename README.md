@@ -43,22 +43,29 @@ Arrow itself is very small and can be preinstalled so the loading latency is sma
  Compared with the heavy full OS stack Virtual Machine or Container workload, Arrow is quite flexible to be managed and orchestrated and shared. Since it focus running single application. It is natively suitable for microservice architecture. And most important is that the single application can be shared and composed by all the users flexiblely. So users do not need to include the same applications in their individual workload.
 
 # Current statues and plan
-## [Arrow 0.1 release](/path/to/0.1Release): prove of Concept
+## [Arrow 0.1 release](/path/to/0.1Release)
+
+Arrow 0.1 is released to prove the Arrow concept. And the main features below works.
+
 - Busybox, Python, Node, Kubernetes(Golang), Redis*, Nginx are proved to be running as Arrow 
 - ASDK(Arrow System Development Kit) whcih is based on Alpine to build Arrow(attached mode) images
 - Linux kernel with Aloader, Ainit, Anotify features added to implement the Single task kernel
 - Qemu-KVM based virtural machine is used
 - Arrow service for running and managing Arrows. Arrow Life-cycle, Network, Anotify, Crossbow, Engine, Qemu-engine, log, I/O, Arrow Spec features are provided from the Service
 
-## [Arrow 0.2 design & plan](/Path/to/0.2ReleasePlan): Make arrow useful
+## [Arrow 0.2 design & plan](/Path/to/0.2ReleasePlan): Make Arrow useful
+
+Arrow 0.1 design has been worked out to achieve the overhead goal and other key features to make Arrow useful.
+
 - Run more applications as Arrow
 - Arrow template, Arrow Clone, Arrow Share 
 - Lightweight VM
 - ShadowFS
 - AutoBalloon
 - Optimization on Singl task kernel
-- Adebug
+- Adebug: Coredump file
 
 ## Arrow 0.3: Make it product
 
+Make Arrow reach the product quality.
 
