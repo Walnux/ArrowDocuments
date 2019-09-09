@@ -42,11 +42,11 @@ Arrow itself is very small and can be preinstalled so the loading latency is sma
 
 # Current statues and plan
 ## [Arrow 0.1 release](/path/to/0.1Release): prove of Concept
--Busybox, Python, Node, Kubernetes(Golang), Redis*, Nginx are proved to be running as Arrow 
--ASDK(Arrow System Development Kit) whcih is based on Alpine to build Arrow(attached mode) images
--Linux kernel with Aloader, Ainit, Anotify features added to implement the Single task kernel
--Qemu-KVM based virtural machine is used
--Arrow service for running and managing Arrows. Arrow Life-cycle, Network, Anotify, Crossbow, Engine, Qemu-engine, log, I/O, Arrow Spec features are provided from the Service
+- Busybox, Python, Node, Kubernetes(Golang), Redis*, Nginx are proved to be running as Arrow 
+- ASDK(Arrow System Development Kit) whcih is based on Alpine to build Arrow(attached mode) images
+- Linux kernel with Aloader, Ainit, Anotify features added to implement the Single task kernel
+- Qemu-KVM based virtural machine is used
+- Arrow service for running and managing Arrows. Arrow Life-cycle, Network, Anotify, Crossbow, Engine, Qemu-engine, log, I/O, Arrow Spec features are provided from the Service
 
 ## [Arrow 0.2 design & plan](/Path/to/0.2ReleasePlan): Make arrow useful
 - Run more applications as Arrow
@@ -57,7 +57,7 @@ Arrow itself is very small and can be preinstalled so the loading latency is sma
 - Optimization on Singl task kernel
 - Adebug
 
-## [Arrow 0.3 Goal]: Make it product
+## Arrow 0.3: Make it product
 
 
 # Users are waiting for a safe simple and swift way to run applicaion in cloud
