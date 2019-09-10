@@ -12,9 +12,9 @@ Application centrialized philosophy starts from the application. Only the compon
 In Arrow, the staticly linked application only includes the libaries the application needs; And directly combined with the tailored kernel. The rootfs which containing the shell, Dynamical libraris, tools, and services are all removed. Logially, the kernel is part of the application. Lightweight Virutal Machine only includes the minimal resources needed to run the application.
 
 Arrow only runs single application, it makes the applicaiton runs very safely.
-
-![Topdown](/images/Topdown.jpg?raw=true "Topdown")
-
+<p align="center">
+  <img src="https://github.com/Walnux/Arrow_Documents/blob/master/images/Topdown.jpg">
+</p>
 Nowadays, with the development of lightweight Virtual Machine technogy, Microservcies archieture, Serverless technology and FaaS technoloy, we actually need cloud more "Application Centrialized".
 
 Application Centrialized cloud is also be called as serverless which means just run the application on cloud safely fast with very little overhead, and don't care about the OS, middleware, libraies, image to run a server anymore.
