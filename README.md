@@ -3,7 +3,7 @@
 
 The application is combined with the tailored single task kernel and run on the lightweight Virtual Machine.
 
-Arrow is based on the [**Application Centrialized Top Down**](/path/to/topdown) design philosophy.
+Arrow is based on the [**Application Centrialized Top Down**](/TopDown.md) design philosophy.
 
 Except for cloud, Application can aslo run as Arrow on edge computing and native computer.
 
