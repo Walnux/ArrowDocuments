@@ -7,9 +7,9 @@ Arrow is based on the [**Application Centrialized Top Down**](/TopDown.md) desig
 
 Except for cloud, Application can aslo run as Arrow on edge computing and native computer.
 
-Arrow can run application safely, simply and swiftly.
+Arrow can run application safely, simply and swiftly with little overhead to support the next generation Application Centrailized serverness cloud infrastractrue. At same time Arrow can also run the traditional LAMP stack well.
 
-**Arrow System** is the end to end solution to run and manage Arrows.
+[**Arrow System**](/ArrowSystemVision.md) is the end to end solution to run Arrows.
 
 
 # Arrow overview
