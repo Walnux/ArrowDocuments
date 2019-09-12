@@ -1,4 +1,6 @@
-# Users are waiting for a safe simple and swift way to run applicaion in cloud
+# Moden cloud users are waiting for a more safe simple and swift way to run sofware on cloud
+
+
 
 Currently, the main workload in cloud is traditional full feature Virtual Machine with the full feature guest OS, middlewares and libraris to run applications. It is very redundant and slow. And the overall infrastrucure is also quite complicated. 
 
