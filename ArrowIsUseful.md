@@ -1,4 +1,15 @@
-# Moden cloud users are waiting for a more safe simple and swift way to run sofware on cloud
+# users are waiting for a safe simple swift and low overhead way to run software on moden cloud
+
+Cloud brought a revolution to the internet, and it is still evolving very quickly, what is the next revolution?
+
+Cloud technology liberates individuals and orgnizations from the heavy burden to maintain their physical servers on premise, instead, people just rent the Virtual Machines to build their servers from The Cloud Service Providors. At the same time, the central manangement and dispatchemnt of server computing, networking and storage resouces greatly promots the efficency to use these resources. This revolution created a huge and still fast growing market. [According to the Stamford, Connecticut-based research firm, the worldwide infrastructure as a service (IaaS) market grew 31.3% in 2018 reaching $32.4 billion, up from $24.7 billion in 2017.](https://www.forbes.com/sites/jeanbaptiste/2019/08/02/amazon-owns-nearly-half-of-the-public-cloud-infrastructure-market-worth-over-32-billion-report/#7eb2280f29e0)
+
+Cloud technology keeps evolving. Then, what is the future of Cloud?
+Let's start from the motivation behind the huge investment on the physical or virtual servers. Obviosly, people want to run applications on these servers to provide some kind of services through Internet like the widely used webserver or to reponse or handle some events instantly like AWS Lambda.
+
+However, In order to run these applications, people still have to install and maintain the full software stack on the full feature server. No matter the server is physical or viturial. It is the big burden for user. and a lot of cloud resources are wasted. Becuase the application only use part of the software and hardware resources on the server.
+
+Could we just run the application and don't have to care about the server anymore? That is call Serverless - the future of Cloud.
 
 
 
