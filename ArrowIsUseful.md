@@ -1,21 +1,21 @@
-## users are waiting for a safe simple agile and low overhead way to run application on moden cloud
+## What is the next revolution in cloud?
 
-Cloud technoloy brought a revolution to the internet. It also created a huge and still fast growing public and Private cloud market.
+Cloud technoloy brought a revolution to the internet. It also created a huge and still fast growing public cloud market.
 
 Public Cloud Services liberate individuals and orgnizations from the heavy burden to maintain their physical servers on premise, instead, people just rent the Virtual Machines to build their scalable servers from the Cloud Service Providors(CSP). At the same time, the central manangement and dispatchemnt of server computing, networking and storage resouces greatly promots the efficency to use these resources. This revolution created a huge and still fast growing market. [According to the Stamford, Connecticut-based research firm, the worldwide infrastructure as a service (IaaS) market grew 31.3% in 2018 reaching $32.4 billion, up from $24.7 billion in 2017.](https://www.forbes.com/sites/jeanbaptiste/2019/08/02/amazon-owns-nearly-half-of-the-public-cloud-infrastructure-market-worth-over-32-billion-report/#7eb2280f29e0)
 
 Cloud technology keeps evolving. Then, what is the next revolution?
 
-Let's start from the reason why People investigate on the servers? Obviously, they want to run applications on these servers to provide some kind of services through Internet. However, these applications have to be run on the full featrue servers which are managed by the cloud infrastructrure. This acturally wastes users a lot of cloud resources. Becuase the applications actually only use part of the software and hardware resources, and they are not always running. Furthmore, users have to afford to maintain the complicated servers as well as the cloud infrastructrue.
+Let's start from the reason why People investigate on the cloud computing? Obviously, they want to run their applications to provide some kind of services through Internet. However, these applications have to be run on the full featrue servers which are managed by the cloud infrastructrure. This acturally wastes users a lot of cloud resources. Becuase the applications actually only use part of the software and hardware resources, and they are not always running. Furthmore, users have to afford to maintain the complicated servers as well as the cloud infrastructrue.
 
 Serverless Computing can liberate cloud users from maintaining the complicated servers and cloud infrastructure. People can focus on their applicatons and just run their applications on the could.
 
-It will be the next revolution in cloud and will bring us another wave of business opportunities.
+Serverless computing the next revolution in cloud. 
+Serverless computing will bring us another wave of business opportunities.
 
 [The global serverless architecture market size is expected to reach USD 19.84 billionby 2025 at a 26.0% CAGR during the forecast period, according to a new study by Grand View Research, Inc.](https://www.grandviewresearch.com/press-release/global-serverless-architecture-market)
 
-
-## Industrial is waiting for a safe simple agile and low overhead workload to drive the moden cloud
+## Industrial is waiting for a safe simple agile and low overhead workload to push cloud forward
 
 
 
