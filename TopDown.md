@@ -1,6 +1,9 @@
 # Arrow Design Philosophy
+> “Simple can be harder than complex: You have to work hard to get your thinking clean to make it simple. But it’s worth it in the end because once you get there, you can move mountains.”
 
-Arrow is based on Application Centrialized design philosophy. Before introduce this philosophy, lets start from the System Centrialized solution
+> ― Steve Jobs
+
+In order to make Arrow simple. The Application Central design philosophy is used. Before introduce this philosophy, lets start from the System Centrial solution.
 
 Cloud was evolved from the physical servers to Virtual Machines. The full software system including Operating System Middleware libraris, tools, services as well as applications ever runs on physical servers are packaged into images and migrated to run on Virtual Machines.
 
