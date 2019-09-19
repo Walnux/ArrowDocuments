@@ -26,7 +26,7 @@ Cloud was involved from the traditional PC and physical server era. A lot of old
 The good example is the Amazon's [Firecrack](https://github.com/firecracker-microvm/firecracker) - the Virutal Machine desinged for the serverless usagea and excluded all the legacy OSes support. 
 
 ## We need an innovation to simply and securly run software with low latency and overhead on moden cloud   
-Nowdays normally in order to deploy and run some software on cloud, we need to package them with the whole Operating System (or base OS) as well as middleware, libaries enven tools into somekind of workload like Virtual Machine Image or Contianer Image. Which is normally reduntanly, big and slowly.      
+Nowdays normally in order to deploy and run some software on cloud, we need to package them with the whole Operating System (or base OS) as well as middleware, libaries enven tools into somekind of workload like Virtual Machine Image or Contianer Image. Which is normally redudant, big and slow.      
 
 While in moden cloud where serverless computing technoloies will widely used by CSP Edge Computing, the applications and software used to construct the user defined serverless framework may flow from Cloud to edge and run instantly to reponse the events or handle the data on variable of usage case with very low latency.  
 
@@ -36,9 +36,9 @@ Becuase of the restricted resources on IoT and Edge side, the software should be
 
 Furthmore the tranditaional cloud usage like [LAMP backed website]() also needs a simle and secure way to run sofware with low overhead, that will make the whole cloud more slim and effienecy.
 
-It is the Virtual Mahine Image workload which makes it possible to deploy and run the cusotmers' server images (which inlcudes the whole operation system an software stack ) on Cloud. This brought us the Cloud revolution.
+Virtual Mahine Image workload technology leads us to the Cloud era. It made it possible to deploy and run the cusotmers' server images (inlcuding the whole operation system an software stack ) on virtual server.
 
-Now We need an innovation to just simply and securly run software with low latency and overhead. That may lead another revlution in moden cloud.
+Now We need an innovation which can just simply and securly run software on cloud with low latency and overhead. And It may lead us to another revlution in moden cloud.
 
 ## Industrial is waiting for a safe simple agile and low overhead workload to push cloud forward
 
