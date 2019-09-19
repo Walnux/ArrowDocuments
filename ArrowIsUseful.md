@@ -1,20 +1,28 @@
 # Moden cloud needs a simple, secure, low latency and overhead way to run software
 
-## What are the next revolution in cloud?
-Cloud era brought revolution of computerization world. It created a huge and still fast growing public cloud market.
+## What are the trends of moden cloud?
+Cloud era brought revolution of computerization world. This revolution created a huge and fast growing market<sup>[1](https://www.statista.com/statistics/510350/worldwide-public-cloud-computing/)</sup>.
 
-Public Cloud liberate individuals and orgnizations from the burden to maintain their physical servers and infrastrucre on premise. Now, People can just rent the scalable virtual servers as well as other resources from the Cloud Service Providors(CSP) like [AWS](https://aws.amazon.com/). The central manangement of cloud infrastrucrue greatly promots the efficency to use the computing, netwroking and storage resources. This revolution created a huge and still fast growing market<sup>[1](https://www.statista.com/statistics/510350/worldwide-public-cloud-computing/)</sup>.
+Traditional [Cloud Infrastuctre as a Service (IaaS)](https://en.wikipedia.org/wiki/Infrastructure_as_a_service) liberates individuals and orgnizations from the burden to maintain their physical servers and infrastrucre on premise. People just rent the scalable virtual servers as well as other resources from the Cloud Service Providors(CSP) like [AWS](https://aws.amazon.com/). The central manangement of cloud infrastrucrue greatly promots the efficency to use the computing, netwroking and storage resources. 
 
-Cloud technology keeps evolving. Then, what are the next revolutions?
+Cloud technologies and market are developing very quickly. what are the trends of moden cloud?
+- [Serverless computing](https://en.wikipedia.org/wiki/Serverless_computing)
 
-Let's start from the reason why People investigate on the cloud computing? Obviously, they want to run their applications to provide some kind of services through Internet. However, these applications have to be run on the full featrue servers which are managed by the cloud infrastructrure. This acturally wastes users a lot of cloud resources. Becuase the applications actually only use part of the software and hardware resources, and they are not always running. Furthmore, users have to afford to maintain the complicated servers as well as the cloud infrastructrue.
+Serverless Computing will liberate cloud users from maintaining the complicated servers and cloud infrastructure. People can focus on their applicatons and just run these applications on the could.
 
-Serverless Computing can liberate cloud users from maintaining the complicated servers and cloud infrastructure. People can focus on their applicatons and just run their applications on the could.
+The global serverless architecture market size is expected to reach USD 19.84 billionby 2025 at a 26.0% CAGR during the forecast period, according to a new study by Grand View Research, Inc.<sup>[4]</sup>
 
-Serverless computing the next revolution in cloud. 
-Serverless computing will bring us another wave of business opportunities.
+- CSP Edge Computing
 
-[The global serverless architecture market size is expected to reach USD 19.84 billionby 2025 at a 26.0% CAGR during the forecast period, according to a new study by Grand View Research, Inc.](https://www.grandviewresearch.com/press-release/global-serverless-architecture-market)
+CSP Edge Computing extends computing resources from cloud to users' premise where the data are created. It closely binds Internet of Things (IoT) with Cloud, and will greatly promote the booming of IoT and Cloud market.
+
+The global edge computing market size is expected to reach USD 28.84 billion by 2025 registering a CAGR of 54.0%, according to a new report by Grand View Research, Inc.[?](https://www.grandviewresearch.com/press-release/global-edge-computing-market)
+
+Serverless computing technoloies are widely used by CSP Edge Computing on moden Cloud. The applications and serverless framework software have to flow and run from Cloud infrastructure to Edge computering resources. The good example is [AWS Lambda]() 
+ 
+Security is the top priority to Cloud computing. User applications even framework software should be run in secure environemnt both on edge and cloud. Serverness computering requires the software be started instantly with very low latency to response the event or handle data from IoT devices. Becuase of the limitted resources on IoT and Edge computing the software should be run with low overhead.  
+
+- Optimization on traditional LAMP stack
 
 ## Industrial is waiting for a safe simple agile and low overhead workload to push cloud forward
 
@@ -27,3 +35,5 @@ Arrow shares some basic views with Unikernel like run single application on Viru
 However, Arrow can't do everything. It can't be used to package the whole OS system. Arrow System can be think of part of hostOS or cloud infrastrucre to package and run sigle application. With Arrow System, users do not need to package and ship their own software, instead they only need to ask Arrow System to run some specific applications as Arrows to compose and fullfill their specific goal.     
 
 [1] [Total size of the public cloud computing market from 2008 to 2020](https://www.statista.com/statistics/510350/worldwide-public-cloud-computing/)
+[2] [Infrastrutur as a Service (IaaS)](https://en.wikipedia.org/wiki/Infrastructure_as_a_service)
+[4] https://www.grandviewresearch.com/press-release/global-serverless-architecture-market
