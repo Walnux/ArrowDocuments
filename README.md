@@ -1,13 +1,7 @@
 # What is Arrow?
-**Arrow is the way to run the application on cloud.**
-
-The application is combined with the tailored single task kernel and run on the lightweight Virtual Machine.
+**Arrow is the simple, secure, low latency & overhead way to run application on cloud and edge.**
 
 Arrow is based on the [**Application Central**](/TopDown.md) design philosophy.
-
-Except for cloud, Application can aslo run as Arrow on edge computing and native computer.
-
-Arrow can run application safely, simply and swiftly with little overhead to support the next generation Application Centrailized serverness cloud infrastractrue. At same time Arrow can also run the traditional LAMP stack well.
 
 [**Arrow System**](/ArrowSystemVision.md) is the end to end solution to run Arrows.
 
