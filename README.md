@@ -1,9 +1,9 @@
 # What is Arrow?
-**Arrow is the simple, secure, low latency & overhead way to run application on cloud and edge.**
+**Arrow is the simple, secure, low latency and low overhead way to run application on cloud and edge.**
 
 Arrow is based on the [**Application Central**](/TopDown.md) design philosophy.
 
-[**Arrow System**](/ArrowSystemVision.md) is the end to end solution to develop, debug, release deploy and run Arrows.
+[**Arrow System**](/ArrowSystemVision.md) is the end to end solution to develop, debug, release, deploy and run Arrows.
 
 
 # Arrow overview
