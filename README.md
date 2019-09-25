@@ -3,7 +3,7 @@
 
 Arrow is based on the [**Application Central**](/TopDown.md) design philosophy.
 
-[**Arrow System**](/ArrowSystemVision.md) is the end to end solution to run Arrows.
+[**Arrow System**](/ArrowSystemVision.md) is the end to end solution to develop, debug, release deploy and run Arrows.
 
 
 # Arrow overview
