@@ -17,6 +17,7 @@ Although the full feature guest system provides the conherent running environemn
 - Not easy to share software among packages - Actually, a lot of same set of sofwares are repeatly included into different systems. That wastes the overall cloud resource.
 - latency - It is not easy to reduce the latency to deploy and run the big packages.
 - Efforts to team cooperation - Quite often, serveral applications run in the same guest system. These applciations may come from diffrernt owners in the same team or orgnization. Any modification of the system like configuration, software version influnces the others. Even worse, the crash of the system from one application may influce all the other applications.
+- Not easy to do security update - The mechanism to do the security update to a system is complicated.
 - Increasing Operation burden - The big and complicated system packages is not easy to be managed and orchestared.  
 
 Obviously, a lot of resources are wasted. Although Container can package a single application, most of workloads in containers are actually ported from the virtual machine System Centrialized image.
