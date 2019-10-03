@@ -17,6 +17,7 @@ Although the full feature guest Operating system provides not only the conherent
 <p align="center">
   <img src="https://github.com/Walnux/Arrow_Documents/blob/master/images/PackageInSysCentral.png">
 </p>
+
 - **Big and compliated package** - Packaging Guest Operating system with the applications you want to run on cloud leads a big package size. Worsely, it makes the software stack in the workload quit complicated to maintain and cause blow issues. 
 - **Security issues** - The extra system components increases the number of attacking interfaces; They also can be easily used to reinforce an attack by a malicous applications, if it acquires the control of the system; The potential system security holes in the extra compoments will all be inherited and inlcuded into the system central workload. These increase the volunrability of cloud.  
 - **Be difficult to do the security updates** - Firstly, it is not easy to locate and fix a security problem from the system . Secondly, the mechanism to do the security updates on a system is very complicated. When the system is running several applications and shared by mulitple developpers, the situation becomes worse.
@@ -42,12 +43,12 @@ The goal of central philosophy is:
 - Different Cloud services reuse the same application binary.
 - Runing the application on cloud infrastrucure should be very simple. 
 
-So the system central mode can be demostrated as below diagram.
+So the system central model can be demostrated as below diagram.
 <p align="center">
   <img src="https://github.com/Walnux/Arrow_Documents/blob/master/images/AppShareAppCentral.png">
 </p>
 
-
+## How to implement Application Central pilosophy
 Could we just run 
 Application centrialized philosophy starts from the application. Only the components that are needed by the specific applicaiton is inlcuded all the other components should be removed.
 
