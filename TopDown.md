@@ -18,13 +18,15 @@ Although the full feature guest Operating system provides not only the conherent
 - **Big and compliated package** - Packaging Guest Operating system with the applications you want to run on cloud leads a big package size. Worsely, it makes the software stack in the workload quit complicated to maintain and cause blow issues. 
 - **Security issues** - The extra system components increases the number of attacking interfaces; They also can be easily used to reinforce an attack by a malicous applications, if it acquires the control of the system; The potential system security holes in the extra compoments will all be inherited and inlcuded into the system central workload. These increase the volunrability of cloud.  
 - **Be difficult to do the security updates** - Firstly, it is not easy to locate and fix a security problem from the system . Secondly, the mechanism to do the security updates on a system is very complicated. When the system is running several applications and shared by mulitple developpers, the situation becomes worse.
-- **Be difficult to share the same software among systems** - Actually, the same set of popular sofwares are repeatly packaged into different workload, shipped, deployed and running on the cloud. Even these workloads are running on the same HostOS, these same softwares can't be easily shared. That wastes the overall cloud resource.
+- **Be difficult to share the same software among workload** - Actually, the same set of popular sofwares are repeatly packaged into different workload, shipped, deployed and running on the cloud. That wastes the overall cloud resource. And make software deployment complicated. Even these workloads are running on the same HostOS, it is not easy for us to break the boundary of the package to share the same set of softwares. See an example in below diagram applicaton G, and B are be packaged into different workload twice.  
+<p align="center">
+  <img src="https://github.com/Walnux/Arrow_Documents/blob/master/images/AppShareSystemCentral.png">
+</p>
 
-![AppShareSysCentral](/images/AppShareSystemCentral.png?raw=true "AppShareSystemCentral")
+- **Long Latency** - It definitly impactes the latency to run an application on cloud by shipping, deploying and starting the big size of full feature Client Operating System.
 
-- **Long Latency** - It impactes the latency to deploy and run the big size of full feature system.
-- Low efficiency of team cooperation - Users tend to package serveral applications and run them in the same guest system. These applciations may come from diffrernt owners in the same team or orgnization. Any modification of the system like configuration, software version from one application may influnce the other applications on the same guest system. Even worse, the crash of the system caused by one application influces all the other applications on the same guest system. That influence the team or orgniztion working efficiency.
-- Increasing Operation burden - The big and complicated system packages is not easy to be managed and orchestared.  
+- **Low efficiency for team cooperating** - Users tend to package serveral applications and run them in the same guest system. These applciations may come from diffrernt owners in the same team or orgnization. System central solution impactes team members cooperating efficiency. Any modification of the system like configuration, software version from one application may influnce the other applications on the same guest system. Furthur more, the crash of the system caused by one application  will influce all the other applications on the same guest system. That influence the team or orgniztion working efficiency.
+- **Increasing Operation burden** - The big and complicated system packages is not easy to be managed and orchestared.  
 
 ## Application central philosophy
 Application centrialized philosophy starts from the application. Only the components that are needed by the specific applicaiton is inlcuded all the other components should be removed.
