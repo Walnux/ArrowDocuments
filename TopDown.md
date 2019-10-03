@@ -3,23 +3,26 @@
 
 > ― Steve Jobs
 
-In order to make cloud simple. The Application Central design philosophy is used by Arrow. Before introduce this philosophy, let us start from the System Centrial solution.
+In order to make cloud simple, the Application Central design philosophy is used by Arrow. Before introduce this philosophy, let us start from the System Central solution.
 
-## System central solution
-Most of the applications running on Cloud evolved from the Personal Computer and Physical Server era when the full feature Operating System(OS) including OS Kernel, Middleware, libraris, tools, OS services has to be installed before the applications can run on it.
+## System Central solution
+In nowadays, most of the applications running on Cloud evolved from the Personal Computer(PC) and Physical Server era when the full feature Operating System(OS) including OS Kernel, Middleware, libraris, tools, OS services has to be installed and started on a PC or Server before the applications can run on it.
 
-In order to provide the conherent running environement for the applications running on cloud. The full feature OS which also be called guest system must be packaged with these applications and then deploy and run on the Cloud infrastructure. People normally call the package running on cloud as cloud workload.  Obviously these workloads are basing on the guest system. it is the system cential solution. From below diagram, we can simply understand a system central workload as a pyramid since each layer only uses part resources of the layer it is based on.  
-![BottomUp](/images/BottomUp.jpg?raw=true "BottomUp")
+We are in cloud era. In order to provide the conherent running environement for the applications running on cloud. The full feature OS which is called guest Operating System must be packaged with users' applications and then be deployed and run on the Cloud infrastructure. This is how cloud works. People normally call the package running on cloud as the workload.  Obviously these workloads must be based on the guest Operating system. We call this system cental solution. 
 
 ## The problems of system central solution
-Although the full feature guest system provides not only the conherent running environemnt for applications but also tools for the developers, it brings a lot of problems.
+Although the full feature guest Operating system provides not only the conherent environemnt for applications to run but also tools and services for the developers to develop applications and for the operators to manage the workloads, it does bring a lot of problems.
 
-- Wasting resources - Since only part of the system resources are really needed by the application.
-- Security issues - The extra system software components increases the number of attacking interfaces; They also can be used to reinforce an attack by malicous applications more easily; The potential security hole in the extra compoments are inherited.
-- Be difficult to do the security update - Firstly, tt is not easy to locate and fix a security problem from the system scope. Secondly, the mechanism to do the security update on a system is complicated.
-- Big package size - obviousely, it leads a big package size.
-- Be difficult to share the same software among systems - Actually, the same set of sofwares are repeatly packaged into different guest systems running on cloud. That wastes the overall cloud resource.
-- Long Latency - It impactes the latency to deploy and run the big size of full feature system.
+- **Wasting resources** - Obviously only part of the system resources are really needed by the application. From below diagram, we can simply understand a system central workload as a pyramid since each layer only uses part of the resources of the layer it is based on. Image how much resources are wasted with so many this kind of pyramids running on cloud.  
+![BottomUp](/images/BottomUp.jpg?raw=true "BottomUp")
+- **Big and compliated package** - Packaging Guest Operating system with the applications you want to run on cloud leads a big package size. Worsely, it makes the software stack in the workload quit complicated to maintain and cause blow issues. 
+- **Security issues** - The extra system components increases the number of attacking interfaces; They also can be easily used to reinforce an attack by a malicous applications, if it acquires the control of the system; The potential system security holes in the extra compoments will all be inherited and inlcuded into the system central workload. These increase the volunrability of cloud.  
+- **Be difficult to do the security updates** - Firstly, it is not easy to locate and fix a security problem from the system . Secondly, the mechanism to do the security updates on a system is very complicated. When the system is running several applications and shared by mulitple developpers, the situation becomes worse.
+- **Be difficult to share the same software among systems** - Actually, the same set of popular sofwares are repeatly packaged into different workload, shipped, deployed and running on the cloud. Even these workloads are running on the same HostOS, these same softwares can't be easily shared. That wastes the overall cloud resource.
+
+![AppShareSysCentral](/images/AppShareSystemCentral.png?raw=true "AppShareSystemCentral")
+
+- **Long Latency** - It impactes the latency to deploy and run the big size of full feature system.
 - Low efficiency of team cooperation - Users tend to package serveral applications and run them in the same guest system. These applciations may come from diffrernt owners in the same team or orgnization. Any modification of the system like configuration, software version from one application may influnce the other applications on the same guest system. Even worse, the crash of the system caused by one application influces all the other applications on the same guest system. That influence the team or orgniztion working efficiency.
 - Increasing Operation burden - The big and complicated system packages is not easy to be managed and orchestared.  
 
