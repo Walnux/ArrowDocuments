@@ -13,8 +13,10 @@ We are in cloud era. In order to provide the conherent running environement for 
 ## The problems of system central solution
 Although the full feature guest Operating system provides not only the conherent environemnt for applications to run but also tools and services for the developers to develop applications and for the operators to manage the workloads, it does bring a lot of problems.
 
-- **Wasting resources** - Obviously only part of the system resources are really needed by the application. From below diagram, we can simply understand a system central workload as a pyramid since each layer only uses part of the resources of the layer it is based on. Image how much resources are wasted with so many this kind of pyramids running on cloud.  
-![BottomUp](/images/BottomUp.jpg?raw=true "BottomUp")
+- **Wasting resources** - Obviously only part of the system resources are really needed by the application. From below diagram, we can simply understand a system central workload as a pyramid since each layer only uses part of the resources of the layer it is based on. Image how much resources are wasted with so many this kind of pyramids running on cloud.
+<p align="center">
+  <img src="https://github.com/Walnux/Arrow_Documents/blob/master/images/PackageInSysCentral.png">
+</p>
 - **Big and compliated package** - Packaging Guest Operating system with the applications you want to run on cloud leads a big package size. Worsely, it makes the software stack in the workload quit complicated to maintain and cause blow issues. 
 - **Security issues** - The extra system components increases the number of attacking interfaces; They also can be easily used to reinforce an attack by a malicous applications, if it acquires the control of the system; The potential system security holes in the extra compoments will all be inherited and inlcuded into the system central workload. These increase the volunrability of cloud.  
 - **Be difficult to do the security updates** - Firstly, it is not easy to locate and fix a security problem from the system . Secondly, the mechanism to do the security updates on a system is very complicated. When the system is running several applications and shared by mulitple developpers, the situation becomes worse.
@@ -26,9 +28,27 @@ Although the full feature guest Operating system provides not only the conherent
 - **Long Latency** - It definitly impactes the latency to run an application on cloud by shipping, deploying and starting the big size of full feature Client Operating System.
 
 - **Low efficiency for team cooperating** - Users tend to package serveral applications and run them in the same guest system. These applciations may come from diffrernt owners in the same team or orgnization. System central solution impactes team members cooperating efficiency. Any modification of the system like configuration, software version from one application may influnce the other applications on the same guest system. Furthur more, the crash of the system caused by one application  will influce all the other applications on the same guest system. That influence the team or orgniztion working efficiency.
-- **Increasing Operation burden** - The big and complicated system packages is not easy to be managed and orchestared.  
+- **Increasing Operation burden** - The big and complicated packages are not easy to be managed and orchestared.  
 
 ## Application central philosophy
+In stead of packaging, shipping, deploying and running applications together with a Guest Operating System on cloud, could we just run the applications without caring about a system. It is the Application central philosophy.
+
+The goal of central philosophy is:
+
+- An application can run on cloud indepdantly without a guestOS.
+- Single application instance runs isolatedly in a sandbox.
+- The applications can cooperate with each other through standard TCP/IP network.
+- Bounch of applicatons instances work together to implement a cloud service.
+- Different Cloud services reuse the same application binary.
+- Runing the application on cloud infrastrucure should be very simple. 
+
+So the system central mode can be demostrated as below diagram.
+<p align="center">
+  <img src="https://github.com/Walnux/Arrow_Documents/blob/master/images/AppShareAppCentral.png">
+</p>
+
+
+Could we just run 
 Application centrialized philosophy starts from the application. Only the components that are needed by the specific applicaiton is inlcuded all the other components should be removed.
 
 In Arrow, the staticly linked application only includes the libaries the application needs; And directly combined with the tailored kernel. The rootfs which containing the shell, Dynamical libraris, tools, and services are all removed. Logially, the kernel is part of the application. Lightweight Virutal Machine only includes the minimal resources needed to run the application.
