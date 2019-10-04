@@ -32,21 +32,33 @@ Although the full feature guest Operating system provides not only the conherent
 - **Increasing Operation burden** - The big and complicated packages are not easy to be managed and orchestared.  
 
 ## Application central philosophy
-In stead of packaging, shipping, deploying and running applications together with a Guest Operating System on cloud, could we just run the applications without caring about a system. It is the Application central philosophy.
+In stead of packaging, shipping, deploying and running applications together with a Guest Operating System on cloud, could we just run the applications without caring about a system? It is the goal of Application central philosophy.
 
-The goal of central philosophy is:
+The central philosophy based solution can be summarized as below:
 
-- An application can run on cloud indepdantly without a guestOS.
+- An application can run on cloud infrastructure indepdantly without a guestOS.
 - Single application instance runs isolatedly in a sandbox.
 - The applications can cooperate with each other through standard TCP/IP network.
 - Bounch of applicatons instances work together to implement a cloud service.
 - Different Cloud services reuse the same application binary.
-- Runing the application on cloud infrastrucure should be very simple. 
+- Runing the application on cloud infrastrucure should be very simple.
+- The mainstream applications on cloud do not need to be ported 
 
-So the system central model can be demostrated as below diagram.
+So the system central solution model can be demostrated as below diagram.
+
 <p align="center">
   <img src="https://github.com/Walnux/Arrow_Documents/blob/master/images/AppShareAppCentral.png">
 </p>
+
+With application central solution, the current problmes caused by system cnetral solutions can be resolved very well.
+- **Using resources effciently** - Only the resources that really need by the Application will be included and assinged.
+- **Small software binary** - Do not need to pakcage software with the full feature GuestOS. The software binary can be very small.
+- **safe** - Sinlge application running in sandabos isolatedly is the most safe way to run application. Besides the removing of the unnecessary components also make it secury.
+- **Be easy to do security update** - it is much easy to locate, fix security whole and update a single application than do it on a system.
+- **Share application binary naturally**
+- **Enhance the team working efficency** - The work from different members does't influnce each other anymore. Every application is developed, debuged and run indepandantly.
+- **latency can be improved more easily** with the small size and the sharing of the application binary.
+- **easy to manage and orchestrate** It is much more easy to manage the individual applications then the system.
 
 ## How to implement Application Central pilosophy
 Could we just run 
