@@ -15,7 +15,7 @@ Although the full feature guest Operating system provides the conherent environe
 
 - **Wasting resources** - Obviously only part of the system resources are really needed by the application. From below diagram, we can simply understand a system central workload as a pyramid since each layer only uses part of the resources of the layer it is based on. You can image how much resources are wasted with so many this kind of pyramids running on cloud.
 <p align="center">
-  <img src="https://github.com/Walnux/Arrow_Documents/blob/master/images/PackageInSysCentral.png">
+  <img src="https://github.com/Walnux/Arrow_Documents/blob/master/images/PackahgeInSysCentral.png">
 </p>
 
 - **Big and compliated package** - Packaging Guest Operating system with the applications you want to run on cloud leads a big package size. Further more,  it makes the software stack in the workload quit complicated to maintain.  This causes a lot of other problems. 
@@ -64,7 +64,7 @@ With application central solution, the current problmes caused by system cnetral
 ## How to implement Application Central Solution?
 Obviously, traditional Virtual Machine technology is not suitable for Application Central Solution.
 
-Dockerized container technology looks like the solution dawn. Using the small size GuestOS like Alpine, it shrinks the package size a lot; By shareing the same Host kernel, it uses system resources more efficienctly; Using unionFS, it shares software binary in some degree. Most important it is designed easily to be used.
+Dockerized container technology looks like the solution dawn. Using the small size GuestOS like Alpine, it shrinks the package size a lot; By shareing the same Host kernel, it uses system resources more efficienctly; Using unionFS, it shares software binary in some degree. Most important it is the end to end solution and designed to easily to be used with end to end 
 
 However, it is not suitable for Application Central Solution.
 - Container is not the sandbox, and can't provide the firm and secure enough isolating environment for applicaiton to run. 
@@ -74,7 +74,17 @@ However, it is not suitable for Application Central Solution.
 - To share the hostOS kernel, the applicaiton can't be run agnosticly cloud infrastructure.
 
 Unikernel is suitable for Application Central Solution but may not be fit for production.
-Could we just run 
+
+[Unikernel](https://en.wikipedia.org/wiki/Unikernel) runs single application on the Hypervisor on cloud. It align with the Application Central philosophy. But Unikernel may not be fit for production.
+- Applications and the Libraries have to be ported, rebuild and link with a libOS and run on the Hypervisor. The problem is that all the mainstream Applications are developped and running on the standard mainstream Operating system like Linux. So it will take big efforts for any Unikernel solution to run all the mainstream cloud Applications properly and reach the production quality.
+- Some people are trying to resolve the problem by [changing the standard Linux kernel into a Unikernel LibOS](https://www.researchgate.net/publication/332329656_Unikernels_The_Next_Stage_of_Linux's_Dominance). This solution may have some Legal risk. Kernel code is released under GPLV2 License. If an application links with these code which are covered by GPLV2 License, there may exist some [legal problem](https://www.gnu.org/licenses/old-licenses/gpl-2.0-faq.en.html#LinkingWithGPL).   
+- Unikernel only supports single process while some Cloud applications are multi-process framwork like Nginx.
+- In order to promote the performance, Unikernel uses the flat applicaiton memory space and removes the Ring transition. While [Userspace](http://www.linfo.org/user_space.html) and [kernel space](http://www.linfo.org/kernel_space.html) split as well as [Protection Ring machanism](https://en.wikipedia.org/wiki/Protection_ring) are the fundamental security mechanism for moden Operating System. Malicous user applications runing with the kernel code in the same memeory space with Ring0 the highest running priviligy can directly attack the Hypervisor as well as the HostOS.
+- Finally, till now, we didn't find a production quality end to end unikernel solution for user to run and manage their applications on cloud.
+
+We need something new. 
+
+## Arrow is desinged and implemented for Applicaiton Central Solutions. 
 Application centrialized philosophy starts from the application. Only the components that are needed by the specific applicaiton is inlcuded all the other components should be removed.
 
 In Arrow, the staticly linked application only includes the libaries the application needs; And directly combined with the tailored kernel. The rootfs which containing the shell, Dynamical libraris, tools, and services are all removed. Logially, the kernel is part of the application. Lightweight Virutal Machine only includes the minimal resources needed to run the application.
