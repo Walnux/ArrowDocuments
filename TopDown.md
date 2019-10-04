@@ -38,6 +38,7 @@ The Application Central Philosophy based solution can be summarized as below:
 
 - An application can directly run on cloud infrastructure indepandantly without a guestOS.
 - Single application instance runs isolatedly in a sandbox.
+- The application should be agnostic to Cloud infrastructure.
 - The applications can cooperate with each other through standard TCP/IP network.
 - Bounch of applicatons instances work together to implement a cloud service.
 - Different Cloud services reuse the same application binary.
@@ -60,7 +61,19 @@ With application central solution, the current problmes caused by system cnetral
 - **Improving latency** - With the small and simple application binary and the sharing of the application binary, the application startup latency can be improved easily.
 - **Be easy to manage and orchestrate** Obviously, It is much more easy to manage the individual single application than managing a system.
 
-## How to implement Application Central pilosophy
+## How to implement Application Central Solution?
+Obviously, traditional Virtual Machine technology is not suitable for Application Central Solution.
+
+Dockerized container technology looks like the solution dawn. Using the small size GuestOS like Alpine, it shrinks the package size a lot; By shareing the same Host kernel, it uses system resources more efficienctly; Using unionFS, it shares software binary in some degree. Most important it is designed easily to be used.
+
+However, it is not suitable for Application Central Solution.
+- Container is not the sandbox, and can't provide the firm and secure enough isolating environment for applicaiton to run. 
+- Docker Container system is too heavy to pakcage a single application. Since it is desinged mostly to support the system central solution.
+- The Unionfs used by Docker container can be used to share the software, but it impacts the performance. And the software sharing can't be proved. We know the unionFS layers mechanism is quite heavy and complicated. The same software can be shared only when they are exactly based on the same layer.
+- Any intention to enahce the security may brake the simplicity and efficiency of original design.
+- To share the hostOS kernel, the applicaiton can't be run agnosticly cloud infrastructure.
+
+Unikernel is suitable for Application Central Solution but may not be fit for production.
 Could we just run 
 Application centrialized philosophy starts from the application. Only the components that are needed by the specific applicaiton is inlcuded all the other components should be removed.
 
