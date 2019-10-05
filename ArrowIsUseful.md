@@ -4,18 +4,18 @@
 
 Cloud Computing can be simply understood as packages of users' software running on the [Cloud Infrastructure](https://en.wikipedia.org/wiki/Infrastructure_as_a_service).
 
-We know most of the software running on the cloud evolved from Personal Computer(PC) and Physical Server era. They run in the full feature Operating System (OS) like Ubuntu which includes OS Kernel, libraries, tools, OS system services, middleware and so on. So in order to run the software on cloud, they have to be packaged with the full feature OS and deployed onto cloud. We call this [System Central Solution](/TopDown.md)
+We know most of the software running on the cloud evolved from Personal Computer(PC) and Physical Server era. They run in the full feature Operating System (OS) like Ubuntu which includes OS Kernel, libraries, tools, OS system services, middleware and so on. So in order to run the software on cloud, they have to be packaged with the full feature OS and deployed onto cloud. We call this [System Central Solution](/TopDown.md#system-central-solution)
 
 In order to deploy, run, manage and orchestrate these heavy packages, big amount of cloud resources are needed. However, In most situation, software only use part of the resources. A lot of resources are actually wasted.
 
 The big size of software package is the main reason why cloud is slow. 
 
-Besides, the redundant components in the package expose a lot of attack interfaces which can be exploited by the malicious software. The complicated full feature OS inherited from old era may also inherit the old security holes. The extra resources can also be used by the malicious software to enforce the attacking easily. The obesity increases the cloud security risk.
+Besides, the redundant components in the package expose a lot of attack interfaces which can be exploited by the malicious software. The complicated full feature OS inherited from old era may also inherit the old security holes. The extra resources can also be used by the malicious software to enforce the attacking easily. The obesity increases the cloud security risk. The [System Central Solution brings a lot of troubles](/TopDown.md#problems-caused-by-system-central-solution)
 
 This expensive, slow and unsafe way to run software on cloud can't meet the development of the modern cloud. 
 
 ## The trends of modern cloud
-Cloud era brought revolution of computerization world. This revolution created a huge and fast growing market<sup>[1](https://www.statista.com/statistics/510350/worldwide-public-cloud-computing/)</sup>.
+Cloud era brought revolution of computerization world. This revolution created [a huge and fast growing market](https://www.statista.com/statistics/510350/worldwide-public-cloud-computing/).
 
 Traditional Cloud [Infrastuctre as a Service (IaaS)](https://en.wikipedia.org/wiki/Infrastructure_as_a_service) liberates individuals and orgnizations from the burden to maintain their physical servers and infrastrucre on premise.
 
