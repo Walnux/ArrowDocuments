@@ -1,5 +1,5 @@
 # What is Arrow?
-**Arrow is the simple, secure, low latency and low overhead way to run application on cloud and edge.**
+**Arrow is the simple, secure, low latency and low overhead way to run an application on cloud, edge Computing and native computer.**
 
 Arrow is based on the [**Application Central**](/TopDown.md) design philosophy.
 
@@ -7,20 +7,19 @@ Arrow is based on the [**Application Central**](/TopDown.md) design philosophy.
 
 
 # Arrow overview
+[Users are waiting for a simple, secure, low latency and low overhead way to run applicaion in cloud.](ArrowIsUseful.md)
 
-[Users are waiting for a safe simple and swift way to run applicaion in cloud.](ArrowIsUseful.md)
+In oder to achieve the goal, Arrow is desgined and implemented using Application Central philosophy.
 
-Arrow provides a safe way to run application by Combining it with the tailored single task kernel and running it on the Virtual Machinn. All the unnecessary components like Dynamical Link Libearis, Shell, tools, even the rootfs, the kernel block devices, the related filesystem components and even the application loader to run applications and so on are all removed. And the safe lightweight Virtual Machine is used.
+[Application centrialized philosophy](TopDown.md#application-central-philosophy) starts from the application. Only the components that are needed by the specific applicaiton is inlcuded all the other components should be removed. So Arrow only runs the single staticly linked application which only includes the libaries binaries the application really needs. NO Dynamical Linked Libraries(DLL) are packaged with the application. This application is directly combined with the tailored single task kernel. The rootfs which normally contains shell, tools, and system services is removed. Logially, the kernel is part of the application. The single task kernel is based on the standard Linux Kernel, which provides the standard Linux running environment for an application to run. The applicaiton still runs in userspace and call Kernel through standard system call machanism. The ring transition is kept. An Application does not need any porting work. Since the Kernel is refined for the purpose of single task for cloud usage. Except for the legacy devices drivers and uncesssary features, the block devices, the all the filesystems components and even the application loader to run applications and so on are all removed from kernel. So the single task kernel can be very slim and fast. Lightweight Virutal Machine which is based on Kernel Virtural Machine(KVM) is refined to be tailored for the single task cloud usage. It can also be very small and fast. Virtual Machine is used as the sandbox to run the single applicaiton. See below diagram demostrating Arrow framework. Arrow Service configures the network environment for bounch of Arrow applictions connecting with each other through standard TCP/IP network. So Arrow is the typical Application Central solution which can avoid [the problems caused by System Central solution](TopDown.md#problems-caused-by-system-central-solution).   
 
-Arrow is the safe way to run application because:
-- Arrow runs single applicaton isloated in the sandbox.
-- By removing all the unnecessary components, the attack interface is reduced greatly.
-- Even an Arrow is hacked, it is very difficult to be manipulated to attack or hack others, since Arrow can only run sigle applicaton one time, and the resources can be used to hack are very limited.
-- the save lightweigh VirtualMachine can also protect the security
+<p align="center">
+  <img src="https://github.com/Walnux/Arrow_Documents/blob/master/images/Topdown.jpg">
+</p>
 
-Arrow is quite easy and intuitive to use. Unlike packaging, shipping software in some workload and run the workload on cloud. With Arrow you just run the applicaton. Arrows are designed to for Microservice. They can be orchestrated to work together to fullfill the specific goal with Kubernates in cloud environment. Arrow also can be integrated into users' FaaS solutions.
+[Arrow System](/ArrowSystemVision.md) - the end to end solution to run an Arrow on cloud is designed for users to run an Arrow as easily intuitively as run an normal application on PC and don't have to care about packing, shipping software in some workload and deply and run the workload on cloud infrastrucure. Arrows are naturally suitable for Microservice. They can be orchestrated to work together to fullfill the specific goal with Kubernates in cloud environment. Arrow also can be integrated into users' FaaS solutions.
 
-The single task kernel is based on Linux kernel. And the application runs in the standard Linux environment. So all the applications running on Linux can run as Arrow with [very few limitations](/path/to/limitation). Abundant Linux applications can run as Arrow with help of [ASDK Arrow System Development Kit](/path/to/ASDK).
+As mentioned above the Arrow application runs in the standard Linux environment. So all the applications running on Linux can run as Arrow. So abundant of mature applications can run as Arrow without any modification and porting work.
 
 Swift means small, fast and flexible.
 
