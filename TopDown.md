@@ -3,6 +3,14 @@
 
 > ― Steve Jobs
 
+[System Central Solution](#system-central-solution)
+
+[Problems Caused by System Central Solution](#problems-caused-by-system-central-solution)
+
+[Application Central Philosophy](#application-central-philosophy)
+
+[The way to implement Application Central Solution](#the-way-to-implement-application-central-solution)
+
 In order to make cloud simple, the Application Central design philosophy is used by Arrow. Before introduce this philosophy, let us start from the System Central solution.
 
 ## System Central Solution
@@ -10,7 +18,7 @@ In nowadays, most of the applications running on Cloud evolved from the Personal
 
 We are in cloud era. In order to provide the conherent running environement for the applications running on cloud. The full feature OS which is called guest Operating System must be packaged with users' applications and then be deployed and run on the Cloud infrastructure. This is how cloud works. People normally call the package running on cloud as the workload.  Obviously these workloads must be based on the guest Operating system. This solution is called system central solution. 
 
-## The Problems of System Central Solution
+## Problems Caused by System Central Solution
 Although the full feature guest Operating System provides the conherent environemnt for applications to run, tools and services for the developers to develop applications and for the operators to manage the workloads, it does bring a lot of problems.
 
 - **Wasting resources** - Obviously only part of the system resources are really needed by the application. From below diagram, we can simply understand a system central workload as a pyramid since each layer only uses part of the resources of the layer it is based on. You can image how much resources are wasted with so many this kind of pyramids running on cloud.
@@ -31,7 +39,7 @@ Although the full feature guest Operating System provides the conherent environe
 - **Low efficiency for team cooperating** - Users tend to package serveral applications and run them in the same guest system. These applciations may come from diffrernt owners in the same team or orgnization. System central solution impactes team members cooperating efficiency. Any modification of the system like configuration, software version required from one application may influnce the other applications on the same guest system. Furthur more, the crash of the system caused by one application  will influce all the other applications on the same guest system. That influences the team or orgniztion working efficiency.
 - **Increasing Operation burden** - The big and complicated packages are not easy to be managed and orchestared.  
 
-## Application central philosophy
+## Application Central Philosophy
 In stead of packaging, shipping, deploying and running applications together with a Guest Operating System on cloud, could we just directly run the applications without caring about the system and package? It is the goal of Application central philosophy.
 
 The Application Central Philosophy based solution can be summarized as below:
@@ -61,7 +69,7 @@ With application central solution, the current problmes caused by system cnetral
 - **Improving latency** - With the small and simple application binary and the sharing of the application binary, the application startup latency can be improved easily.
 - **Be easy to manage and orchestrate** Obviously, It is much more easy to manage the individual single application than managing a system.
 
-## How to implement Application Central Solution?
+## The way to implement Application Central Solution
 Obviously, traditional Virtual Machine technology is not suitable for Application Central Solution.
 
 Dockerized container technology looks like the solution dawn. Using the small size GuestOS like Alpine, it shrinks the package size a lot; By shareing the same Host kernel, it uses system resources more efficienctly; Using unionFS, it shares software binary in some degree. Most importantly, it is the end to end solution and designed to be easy to use. 
@@ -83,19 +91,3 @@ Unikernel is suitable for Application Central Solution but may not be fit for pr
 - Finally, till now, we didn't find a production quality end to end unikernel solution for user to run and manage their applications on cloud.
 
 [**Arrow is desinged and implemented for Applicaiton Central Solutions**](/README.md). 
-Application centrialized philosophy starts from the application. Only the components that are needed by the specific applicaiton is inlcuded all the other components should be removed.
-
-In Arrow, the staticly linked application only includes the libaries the application needs; And directly combined with the tailored kernel. The rootfs which containing the shell, Dynamical libraris, tools, and services are all removed. Logially, the kernel is part of the application. Lightweight Virutal Machine only includes the minimal resources needed to run the application.
-
-Arrow only runs single application, it makes the applicaiton runs very safely.
-<p align="center">
-  <img src="https://github.com/Walnux/Arrow_Documents/blob/master/images/Topdown.jpg">
-</p>
-Nowadays, with the development of lightweight Virtual Machine technogy, Microservcies archieture, Serverless technology and FaaS technoloy, we actually need cloud more "Application Centrialized".
-
-Application Centrialized cloud is also be called as serverless which means just run the application on cloud safely fast with very little overhead, and don't care about the OS, middleware, libraies, image to run a server anymore.
-
-Obviouly, changing the pyrimids to arrows makes cloud small, safe and swift. Arrow is designed to support the next generation Application Centrailized serverness cloud infrastractrue. At same time Arrow can also run the traditional LAMP stack well. 
-
-With the Applicaiton Centralized design phynosophy, the Arrow System - the end to end solution to run Arrows on cloud is designed.
-[See Arrow System Vision](/ArrowSystemVision.md)
