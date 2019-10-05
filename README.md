@@ -7,33 +7,40 @@ Arrow is based on the [**Application Central**](/TopDown.md) design philosophy.
 
 
 # Arrow overview
-[Users are waiting for a simple, secure, low latency and low overhead way to run applicaion in cloud.](ArrowIsUseful.md)
+[People are waiting for a simple, secure, low latency and low overhead way to run applicaion in cloud.](ArrowIsUseful.md)
 
 In oder to achieve the goal, Arrow is desgined and implemented using Application Central philosophy.
 
-[Application centrialized philosophy](TopDown.md#application-central-philosophy) starts from the application. Only the components that are needed by the specific applicaiton is inlcuded all the other components should be removed. So Arrow only runs the single staticly linked application which only includes the libaries binaries the application really needs. NO Dynamical Linked Libraries(DLL) are packaged with the application. This application is directly combined with the tailored single task kernel. The rootfs which normally contains shell, tools, and system services is removed. Logially, the kernel is part of the application. The single task kernel is based on the standard Linux Kernel, which provides the standard Linux running environment for an application to run. The applicaiton still runs in userspace and call Kernel through standard system call machanism. The ring transition is kept. An Application does not need any porting work. Since the Kernel is refined for the purpose of single task for cloud usage. Except for the legacy devices drivers and uncesssary features, the block devices, the all the filesystems components and even the application loader to run applications and so on are all removed from kernel. So the single task kernel can be very slim and fast. Lightweight Virutal Machine which is based on Kernel Virtural Machine(KVM) is refined to be tailored for the single task cloud usage. It can also be very small and fast. Virtual Machine is used as the sandbox to run the single applicaiton. See below diagram demostrating Arrow framework. Arrow Service configures the network environment for bounch of Arrow applictions connecting with each other through standard TCP/IP network. So Arrow is the typical Application Central solution which can avoid [the problems caused by System Central solution](TopDown.md#problems-caused-by-system-central-solution).   
+## Arrow is Application Central Solution
+[Application centrialized philosophy](TopDown.md#application-central-philosophy) starts from the application. Only the components that are needed by the specific applicaiton is inlcuded all the other components should be removed.
+
+- Arrow only runs the single staticly linked application which only includes the libaries binaries the application really needs. NO Dynamical Linked Libraries(DLL) are packaged with the application.
+- This application is directly combined with the tailored single task kernel. The rootfs which normally contains shell, tools, and system services is removed. Logially, the kernel is part of the application.
+- The single task kernel is based on the standard Linux Kernel, which provides the standard Linux running environment for an application to run. The applicaiton still runs in userspace and call Kernel through standard system call machanism. The ring transition is kept. The Application does not need any porting work. So abundant of mature applications can run as Arrow without any modification and porting work.
+- Since the Kernel is refined for the purpose of single task for cloud usage. Except for the legacy devices drivers and uncesssary features, the block devices, the all the filesystems components and even the application loader to run applications and so on are all removed from kernel. So the single task kernel can be very slim and fast.
+- Lightweight Virutal Machine which is based on Kernel Virtural Machine(KVM) is refined to be tailored for the single task cloud usage. It can also be very small and fast. Virtual Machine is used as the sandbox to run the single applicaiton.
+- Arrow Service configures the network environment for bounch of Arrow applictions connecting with each other through standard TCP/IP network. So Arrow is the typical Application Central solution which can avoid [the problems caused by System Central solution](TopDown.md#problems-caused-by-system-central-solution).   
+- Arrow is simple to use. [Arrow System](/ArrowSystemVision.md) - the end to end solution to run an Arrow on cloud is designed for users to run an Arrow easily and intuitively.
+- Arrows are naturally suitable for Microservice. They can be orchestrated to work together to fullfill the specific goal with Kubernates in cloud environment. Arrow also can be integrated into users' FaaS solutions.
+
+See below diagram demostrating Arrow framework.
 
 <p align="center">
   <img src="https://github.com/Walnux/Arrow_Documents/blob/master/images/Topdown.jpg">
 </p>
 
-[Arrow System](/ArrowSystemVision.md) - the end to end solution to run an Arrow on cloud is designed for users to run an Arrow as easily intuitively as run an normal application on PC and don't have to care about packing, shipping software in some workload and deply and run the workload on cloud infrastrucure. Arrows are naturally suitable for Microservice. They can be orchestrated to work together to fullfill the specific goal with Kubernates in cloud environment. Arrow also can be integrated into users' FaaS solutions.
-
-As mentioned above the Arrow application runs in the standard Linux environment. So all the applications running on Linux can run as Arrow. So abundant of mature applications can run as Arrow without any modification and porting work.
-
-Swift means small, fast and flexible.
-
-- **Memory overhead goal for each Arrow:  < ~(1-2)M**
+## Arrow
+- **Memory overhead goal for each Arrow Instance:  < ~(1-2)M**
 With [Application Centrialized Top Down](/path/to/topdown) design philosophy, and [lightweight Virtual Machine](/path/to/lightweithtVirtualMachine) technology for moden cloud and edge computing usages, several [foundmental innovations](/path/to/innovations) are worked out for Arrow to [run application with very small overhead](/path/to/overhead). 
-
-- **Arrow is very small**
-Arrow is the applicaton combined with single task kernel running on lightweight Virtual Machine, as mentioned above, it only contain the necessary binary segments which can be preinstalled or intalled ondemand and shared by all the users. At most situations the Virtual Machine with the single task kernel can also be shared by all the users. Besides, Arrow is desinged seperated from data and configuration. the only thing needs to ship is the configurations as well as the stateful data used to setup the environemnt or mirgration of the stateful applications.
 
 - **Arrow application loading latency goal: approaching native application loading**
 Arrow itself is very small and can be preinstalled so the loading latency is small, further more, the [Arrow template and clone technology](/path/to/AtemplateClone) technology and [Arrow application sharing](/path/toAshareing) technology makes Arrow application loading latency approach native application loading.
 
-- **Arrow is single application and quite flexible and easy to be orchestrated and shared** 
- Compared with the heavy full OS stack Virtual Machine or Container workload, Arrow is quite flexible to be managed and orchestrated and shared. Since it focus running single application. It is natively suitable for microservice architecture. And most important is that the single application can be shared and composed by all the users flexiblely. So users do not need to include the same applications in their individual workload.
+
+- **Arrow is very small**
+Arrow is the applicaton combined with single task kernel running on lightweight Virtual Machine, as mentioned above, it only contain the necessary binary segments which can be preinstalled or intalled ondemand and shared by all the users. At most situations the Virtual Machine with the single task kernel can also be shared by all the users. Besides, Arrow is desinged seperated from data and configuration. the only thing needs to ship is the configurations as well as the stateful data used to setup the environemnt or mirgration of the stateful applications.
+
+
 
 # Current statues and plan
 ## [Arrow 0.1 release](/path/to/0.1Release)
