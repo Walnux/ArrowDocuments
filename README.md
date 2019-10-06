@@ -12,7 +12,7 @@ Arrow is based on the [**Application Central**](/TopDown.md) design philosophy.
 In oder to achieve the goal, Arrow is desgined and implemented using Application Central philosophy.
 
 ## Arrow is Application Central Solution
-[Application centrialized philosophy](TopDown.md#application-central-philosophy) starts from the application. Only the components that are needed by the specific applicaiton is inlcuded all the other components should be removed.
+[Application centrialized philosophy](TopDown.md#application-central-philosophy) starts from the application. Only the components that are needed by the specific applicaiton is inlcuded. All the other components which is not used by the application should be removed.
 
 - Arrow only runs the single staticly linked application which only includes the libaries binaries the application really needs. NO Dynamical Linked Libraries(DLL) are packaged with the application.
 - This application is directly combined with the tailored single task kernel. The rootfs which normally contains shell, tools, and system services is removed. Logially, the kernel is part of the application.
@@ -29,7 +29,7 @@ See below diagram demostrating Arrow framework.
   <img src="https://github.com/Walnux/Arrow_Documents/blob/master/images/Topdown.jpg">
 </p>
 
-## Arrow
+## Arrow Perfomance Goal
 - **Memory overhead goal for each Arrow Instance:  < ~(1-2)M**
 With [Application Centrialized Top Down](/path/to/topdown) design philosophy, and [lightweight Virtual Machine](/path/to/lightweithtVirtualMachine) technology for moden cloud and edge computing usages, several [foundmental innovations](/path/to/innovations) are worked out for Arrow to [run application with very small overhead](/path/to/overhead). 
 
@@ -37,15 +37,11 @@ With [Application Centrialized Top Down](/path/to/topdown) design philosophy, an
 Arrow itself is very small and can be preinstalled so the loading latency is small, further more, the [Arrow template and clone technology](/path/to/AtemplateClone) technology and [Arrow application sharing](/path/toAshareing) technology makes Arrow application loading latency approach native application loading.
 
 
-- **Arrow is very small**
-Arrow is the applicaton combined with single task kernel running on lightweight Virtual Machine, as mentioned above, it only contain the necessary binary segments which can be preinstalled or intalled ondemand and shared by all the users. At most situations the Virtual Machine with the single task kernel can also be shared by all the users. Besides, Arrow is desinged seperated from data and configuration. the only thing needs to ship is the configurations as well as the stateful data used to setup the environemnt or mirgration of the stateful applications.
-
-
 
 # Current statues and plan
 ## [Arrow 0.1 release](/path/to/0.1Release)
 
-Arrow 0.1 is released to prove the Arrow concept. And the main features below works.
+Arrow 0.1 is released to prove the Arrow concept. Blow features works.
 
 - Busybox, Python, Node, Kubernetes(Golang), Redis*, Nginx are proved to be running as Arrow 
 - ASDK(Arrow System Development Kit) whcih is based on Alpine to build Arrow(attached mode) images
@@ -53,9 +49,9 @@ Arrow 0.1 is released to prove the Arrow concept. And the main features below wo
 - Qemu-KVM based virtural machine is used
 - Arrow service for running and managing Arrows. Arrow Life-cycle, Network, Anotify, Crossbow, Engine, Qemu-engine, log, I/O, Arrow Spec features are provided from the Service
 
-## [Arrow 0.2 design & plan](/Path/to/0.2ReleasePlan): Make Arrow useful
+## [Arrow 0.2 design & plan](/Path/to/0.2ReleasePlan): Focu on Arrow Performance
 
-Arrow 0.2 design has been worked out to achieve the overhead goal and other key features to make Arrow useful.
+Arrow 0.2 design has been worked out to achieve the performance goal.
 
 - Run more applications as Arrow
 - Arrow template, Arrow Clone, Arrow Share 
@@ -65,7 +61,6 @@ Arrow 0.2 design has been worked out to achieve the overhead goal and other key 
 - Optimization on Singl task kernel
 - Adebug: Coredump file
 
-## Arrow 0.3: Make it product
+## Arrow 0.3 - 1.0: Make it product
 
 Make Arrow reach the product quality.
-
