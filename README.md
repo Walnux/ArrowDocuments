@@ -19,15 +19,14 @@ In oder to achieve the goal, Arrow is desgined and implemented using Application
 - The single task kernel is based on the standard Linux Kernel, which provides the standard Linux running environment for an application to run. The applicaiton still runs in userspace and call Kernel through standard system call machanism. The ring transition is kept. The Application does not need any porting work. So abundant of mature applications can run as Arrow without any modification.
 - Since the Kernel is refined for the purpose of single task for cloud usage. Except for the legacy devices drivers and uncesssary features, the block devices, all the filesystems components and even the application loader to run applications are all removed from the kernel. So the single task kernel can be very slim and fast. [See Arrow Application Loader](/Benefits.md)
 - Lightweight Virutal Machine which is based on Kernel Virtural Machine(KVM) is refined to be tailored for the single task cloud usage. It can also be very small and fast. Virtual Machine is used as the sandbox to run the single applicaiton.
-- Arrow Service configures the network environment for bounch of Arrow applictions connecting with each other through standard TCP/IP network. So Arrow is the typical Application Central solution which can avoid [the problems caused by System Central solution](TopDown.md#problems-caused-by-system-central-solution).   
-- Arrow is simple to use. [Arrow System](/ArrowSystemVision.md) - the end to end solution to run an Arrow on cloud is designed for users to run an Arrow easily and intuitively.
-- Arrows are naturally suitable for Microservice. They can be orchestrated to work together to fullfill the specific goal with Kubernates in cloud environment. Arrow also can be integrated into users' FaaS solutions.
-
-See below diagram demostrating Arrow framework.
 
 <p align="center">
   <img src="https://github.com/Walnux/Arrow_Documents/blob/master/images/ArrowFramework.png">
 </p>
+
+- Arrow Service configures the network environment for bounch of Arrow applictions connecting with each other through standard TCP/IP network. So Arrow is the typical Application Central solution which can avoid [the problems caused by System Central solution](TopDown.md#problems-caused-by-system-central-solution).   
+- Arrow is simple to use. [Arrow System](/ArrowSystemVision.md) - the end to end solution to run an Arrow on cloud is designed for users to run an Arrow easily and intuitively.
+- Arrows are naturally suitable for Microservice. They can be orchestrated to work together to fullfill the specific goal with Kubernates in cloud environment. Arrow also can be integrated into users' FaaS solutions.
 
 <p align="center">
   <img src="https://github.com/Walnux/Arrow_Documents/blob/master/images/ArrowSystem.png">
