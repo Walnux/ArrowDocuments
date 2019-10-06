@@ -49,7 +49,7 @@ Arrow 0.1 is released to prove the Arrow concept. Blow features works.
 - Qemu-KVM based virtural machine is used
 - Arrow service for running and managing Arrows. Arrow Life-cycle, Network, Anotify, Crossbow, Engine, Qemu-engine, log, I/O, Arrow Spec features are provided from the Service
 
-## [Arrow 0.2 design & plan](/Path/to/0.2ReleasePlan): Focu on Arrow Performance
+## [Arrow 0.2 design & plan](/Path/to/0.2ReleasePlan): Focus on Arrow Performance
 
 Arrow 0.2 design has been worked out to achieve the performance goal.
 
@@ -61,6 +61,6 @@ Arrow 0.2 design has been worked out to achieve the performance goal.
 - Optimization on Singl task kernel
 - Adebug: Coredump file
 
-## Arrow 0.3 - 1.0: Make it product
+## Arrow 0.3 - 1.0: Make it a product
 
 Make Arrow reach the product quality.
