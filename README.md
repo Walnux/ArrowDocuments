@@ -1,5 +1,5 @@
 # What is Arrow?
-**Arrow is the simple, secure, low latency and low overhead way to run an application on cloud, edge Computing and native computer.**
+**Arrow is a simple, secure, low latency and low overhead way to run applications on cloud, edge Computing and native computer environment.**
 
 Arrow is based on the [**Application Central**](/TopDown.md) design philosophy.
 
@@ -44,26 +44,27 @@ Arrow itself is very small and can be preinstalled so the loading latency is sma
 # Current statues and plan
 ## [Arrow 0.1 release](/path/to/0.1Release)
 
-Arrow 0.1 is released to prove the Arrow concept. Blow features works.
+Arrow 0.1 is released to prove the Arrow concept. Some mainstream applications are proved to work properly as Arrow.
 
-- Busybox, Python, Node, Kubernetes(Golang), Redis*, Nginx are proved to be running as Arrow 
-- ASDK(Arrow System Development Kit) whcih is based on Alpine to build Arrow(attached mode) images
+- Busybox, Python, NodeJs, Kubernetes(Golang), Redis*, Nginx can run as Arrow. 
+- ASDK(Arrow System Development Kit) which is based on Alpine to build Arrow(attached mode) images
 - Linux kernel with Aloader, Ainit, Anotify features added to implement the Single task kernel
 - Qemu-KVM based virtural machine is used
 - Arrow service for running and managing Arrows. Arrow Life-cycle, Network, Anotify, Crossbow, Engine, Qemu-engine, log, I/O, Arrow Spec features are provided from the Service
 
-## [Arrow 0.2 design & plan](/Path/to/0.2ReleasePlan): Focus on Arrow Performance
+## [post 0.1 design & plan](/Path/to/0.2ReleasePlan): Focus on Virtualization Technology
+Arrow is based on lightweigh virtualizaion technology. After 0.1 release,  Arrow work will focus on rust-vmm based lightweight vmm.   
 
-Arrow 0.2 design has been worked out to achieve the performance goal.
-
-- Run more applications as Arrow
-- Arrow template, Arrow Clone, Arrow Share 
-- Lightweight VM
+- Rust-VMM based Lightweight VMM technolgy
+- Virtro-App
+- memory plugin
+- vmm clone & template
 - ShadowFS
-- AutoBalloon
-- Optimization on Singl task kernel
+- Vsock based Network
 - Adebug: Coredump file
+- Run more applications as Arrow
 
-## Arrow 0.3 - 1.0: Make it a product
+## The goal of the Arrow Project: Ready for Open Source
 
-Make Arrow reach the product quality.
+# How to run Arrow project
+Firstly, you can start from ASDK.
