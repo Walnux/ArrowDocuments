@@ -1,5 +1,5 @@
-# What is Arrow?
-**Arrow is a simple, secure, low latency and low overhead way to run applications on cloud, edge Computing and native computer environment.**
+# What is Arrow project?
+**Arrow project intends to explore a simple, secure, low latency and low overhead way to run applications on cloud, edge or native computing environment.**
 
 Arrow is based on the [**Application Central**](/TopDown.md) design philosophy.
 
