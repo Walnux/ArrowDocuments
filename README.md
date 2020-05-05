@@ -11,13 +11,13 @@ This method brings the most compatiblity to users but also inherits all the prob
 
 Users have to spend quit a few efforts to manage and maintain the OS which is much more complicated than the application itself in most situations. Furthermore they have to endure the potential system vulnerability caused by the complication. Besides, the System itself normally is much bigger than the applicaitons users want to run. That make system bigger and slower. Obviously, these problems are becoming more severe in current cloud epic.
 
-Ironically, people are trying to use more complicated technologies to resolve the problems which is caused by complicaiton itself. More and more new technolgies are beening developed and added into OS and cloud or edge infrastructures. 
+Ironically, people are trying to use more complicated technologies to resolve the problems which is caused by the complicaiton itself. More and more new technolgies are beening developed and added into OS and cloud or edge infrastructures. 
 
 Could we find a simple way to run applications safely and fast on modern computing system whether on Cloud, Edge or client side?
 
 It is the motivation to work on Arrrow.
 
-## Just run the applicaiton with Arrow
+## Just run the applicaiton
 Could we just run the application and don't have to care about the OS and infrastructure detail? To achieve it, Arrow uses [Application Central Solution](TopDown.md#application-central-philosophy). This solution focuses on the Applicaiton itself not system.
 
 - Arrow only runs the single staticly linked application which only includes the libaries binaries the application really needs. NO Dynamical Linked Libraries(DLL) are packaged with the application.
