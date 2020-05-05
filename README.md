@@ -1,15 +1,17 @@
 # What is Arrow project?
-**Arrow project intends to explore a simple, secure, low latency and low overhead way to run applications on cloud, edge or native computing environment.**
+## The goal of Arrow Project
+**Arrow project intends to explore a simple, secure, low latency and low overhead way to run applications on cloud, edge or client computing environment.**
 
 Arrow is based on the [**Application Central**](/TopDown.md) design philosophy.
 
-[**Arrow System**](/ArrowSystemVision.md) is the end to end solution to develop, debug, release, deploy and run Arrows.
-
-
 # Arrow overview
-[People are waiting for a simple, secure, low latency and low overhead way to run applicaion in cloud.](ArrowIsUseful.md)
+Currently, if you want to run applications on a specific computing environemnt, you have to install (or package) them into some kind of Operating System(OS), and then run the OS in local computing environemnt or deploy the OS on cloud or edge infrastrucure through Virtual Machine Image or Contianer Image.
 
-In oder to achieve the goal, Arrow is desgined and implemented using Application Central philosophy.
+Users have to spend quit a few efforts to manage and maintain the OS which is much more complicated than the application itself in most situations. Furthermore they have to endure the potential system vulnerability caused by the complication. Besides, the OS itself normally is much bigger than the applicaitons you want to run. That is the reason why morden computing system, cloud and Edge infrastructre are becoming big and slow.
+
+ironically, people are trying to use more complicated technology to resolve the complicaiton itself. More and more new technolgies are beening developed and added into OS and infrstructures. Are we resoving the problem or severeing the problem? 
+
+To resolve the problem, we need to find a simple way to run application safely and fast on modern computing system
 
 ## Arrow is Application Central Solution
 [Application centrialized philosophy](TopDown.md#application-central-philosophy) starts from the application. Only the components that are needed by the specific applicaiton is inlcuded. All the other components which is not used by the application should be removed.
