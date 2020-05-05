@@ -20,11 +20,11 @@ It is the motivation to work on Arrrow.
 ## Just run the applicaiton
 Could we just run the application and don't have to care about the OS and infrastructure detail? To achieve it, Arrow uses [Application Central Solution](TopDown.md#application-central-philosophy). This solution focuses on the Applicaiton itself not system.
 
-- Arrow only runs the single staticly linked application which only includes the libaries binaries the application really needs. NO Dynamical Linked Libraries(DLL) are packaged with the application.
-- This application is directly combined with the tailored single task kernel. The rootfs which normally contains shell, tools, and system services is removed. Logially, the kernel is part of the application.
-- The single task kernel is based on the standard Linux Kernel, which provides the standard Linux running environment for an application to run. The applicaiton still runs in userspace and call Kernel through standard system call machanism. The ring transition is kept. The Application does not need any porting work. So abundant of mature applications can run as Arrow without any modification.
-- Since the Kernel is refined for the purpose of single task for cloud usage. Except for the legacy devices drivers and uncesssary features, the block devices, all the filesystems components and even the application loader to run applications are all removed from the kernel. So the single task kernel can be very slim and fast. [See Arrow Application Loader](/Benefits.md)
-- Lightweight Virutal Machine which is based on Kernel Virtural Machine(KVM) is refined to be tailored for the single task cloud usage. It can also be very small and fast. Virtual Machine is used as the sandbox to run the single applicaiton.
+- Runs a single staticly linked application. NO Dynamical Linked Libraries(DLL) are packaged with the application.
+- Runs the application directly on the single task kernel. The Rootfs Image containing shell, tools, and system services is eleminated.
+- Runs the application in the standard Linux environment provided by the single task kernel based on upstream Linux kernel. That means the applicaiton still runs in userspace and call Kernel through standard system call machanism. The ring transition is kept.
+- Runs the Application without any porting work. So abundant of mature applications can run without any modification.
+- Runs the application as well as Single Task Kernel on Kernel Virtural Machine(KVM) based Lightweight Virutal Machine. 
 
 <p align="center">
   <img src="https://github.com/Walnux/Arrow_Documents/blob/master/images/ArrowFramework.png">
