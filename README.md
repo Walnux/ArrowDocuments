@@ -24,15 +24,16 @@ Could we just run the application and don't have to care about the OS and infras
 - Runs the application directly on the single task kernel. The Rootfs Image containing shell, tools, and system services is eleminated.
 - Runs the application in the standard Linux environment provided by the single task kernel based on upstream Linux kernel. That means the applicaiton still runs in userspace and call Kernel through standard system call machanism. The ring transition is kept.
 - Runs the Application without any porting work. So abundant of mature applications can run without any modification.
-- Runs the application as well as Single Task Kernel on Kernel Virtural Machine(KVM) based Lightweight Virutal Machine. 
+- Runs the application as well as Single Task Kernel on Kernel Virtural Machine(KVM) based lightweight Virutal Machine(VM). 
 
 <p align="center">
   <img src="https://github.com/Walnux/Arrow_Documents/blob/master/images/ArrowFramework.png">
 </p>
 
-- Arrow Service configures the network environment for bounch of Arrow applictions connecting with each other through standard TCP/IP network. So Arrow is the typical Application Central solution which can avoid [the problems caused by System Central solution](TopDown.md#problems-caused-by-system-central-solution).   
-- Arrow is simple to use. [Arrow System](/ArrowSystemVision.md) - the end to end solution to run an Arrow on cloud is designed for users to run an Arrow easily and intuitively.
-- Arrows are naturally suitable for Microservice. They can be orchestrated to work together to fullfill the specific goal with Kubernates in cloud environment. Arrow also can be integrated into users' FaaS solutions.
+An application runing with the single task kernel on the lightweight VM can be called as an **Arrow Instance**.  
+
+- Connecting several Arrow Instances with standard TCP/IP based network, thses Instances can be combined and scaled up to any type of  Cloud services.
+- Arrow Instances can also be easily integrated and managed by mainstream orchstration system like K8S.
 
 <p align="center">
   <img src="https://github.com/Walnux/Arrow_Documents/blob/master/images/ArrowSystem.png">
