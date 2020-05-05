@@ -4,17 +4,23 @@
 
 Arrow is based on the [**Application Central**](/TopDown.md) design philosophy.
 
-# Arrow overview
+## The motivation to work on Arrow project
 Currently, if you want to run applications on a specific computing environemnt, you have to install (or package) them into some kind of Operating System(OS), and then run the OS in local computing environemnt or deploy the OS on cloud or edge infrastrucure through Virtual Machine Image or Contianer Image.
 
-Users have to spend quit a few efforts to manage and maintain the OS which is much more complicated than the application itself in most situations. Furthermore they have to endure the potential system vulnerability caused by the complication. Besides, the OS itself normally is much bigger than the applicaitons you want to run. That is the reason why morden computing system, cloud and Edge infrastructre are becoming big and slow.
+This method brings the most compatiblity to users but also inherits the problems from beofore.
 
-ironically, people are trying to use more complicated technology to resolve the complicaiton itself. More and more new technolgies are beening developed and added into OS and infrstructures. Are we resoving the problem or severeing the problem? 
+Users have to spend quit a few efforts to manage and maintain the OS which is much more complicated than the application itself in most situations. Furthermore they have to endure the potential system vulnerability caused by the complication. Besides, the System itself normally is much bigger than the applicaitons users want to run. That is the reason why morden computing system, cloud and Edge infrastructre are big and slow. See [Application Central Solution](TopDown.md#application-central-philosophy) for more detail.
 
-To resolve the problem, we need to find a simple way to run application safely and fast on modern computing system
+Ironically, people are trying to use more complicated technologies to resolve the problems caused by complicaiton itself. More and more new technolgies are beening developed and added into OS and infrastructures. 
 
-## Arrow is Application Central Solution
-[Application centrialized philosophy](TopDown.md#application-central-philosophy) starts from the application. Only the components that are needed by the specific applicaiton is inlcuded. All the other components which is not used by the application should be removed.
+Could we find a simple way to run applications safely and fast on modern computing system whether on Cloud,  Edge or client side?
+
+## Just run the applicaiton
+Could we just run the application and don't have to care about the OS and infrastructure detail?
+
+Arrow uses [Application Central Solution](TopDown.md#application-central-philosophy)
+
+This solution focuses on the Applicaiton itself not system.
 
 - Arrow only runs the single staticly linked application which only includes the libaries binaries the application really needs. NO Dynamical Linked Libraries(DLL) are packaged with the application.
 - This application is directly combined with the tailored single task kernel. The rootfs which normally contains shell, tools, and system services is removed. Logially, the kernel is part of the application.
