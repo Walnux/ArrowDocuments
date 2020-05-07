@@ -13,7 +13,7 @@ In order to run the specific applications, users have to spend quit a few effort
 
 Ironically, people are trying to use more complicated technologies to resolve the problems which are caused by the complicaiton itself. More and more new technolgies are introduced into computing system and try to make it faster and safer. 
 
-so we are working on finding a simple way to run applications safely and fast whether on Cloud, Edge or client side. It is the motivation to work on Arrrow.
+We are working on finding a fundamentaly simple way to run applications and make computing system safe and fast whether on Cloud, Edge or client side. It is the motivation to work on Arrrow project.
 
 ## Just run the applicaiton
 Could we just run the application and don't have to care about the OS and infrastructure detail? To achieve it, Arrow uses [Application Central Solution](TopDown.md#application-central-philosophy). This solution focuses on the Applicaiton itself not system.
