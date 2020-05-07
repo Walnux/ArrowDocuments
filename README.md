@@ -35,7 +35,7 @@ An application runing with the single task kernel on the lightweight VM can be c
 
 
 <p align="center">
-  <img src="https://github.com/Walnux/Arrow_Documents/blob/master/images/ArrowSystem.jpg">
+  <img src="https://github.com/Walnux/Arrow_Documents/blob/master/images/ArrowInstances.jpg">
 </p>
 
 
