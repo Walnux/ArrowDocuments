@@ -7,23 +7,21 @@ Arrow is based on the [**Application Central**](/TopDown.md) design philosophy.
 ## The motivation to work on Arrow project
 Currently, if you want to run applications on a specific computing system, you have to install (or package) them into some kind of Operating System(OS), and then run the OS in the client computing environemnt or deploy the OS together with your applications on cloud or edge infrastrucure through Virtual Machine Images or Contianer Images.
 
-This method brings the most compatiblity to users but also inherits all the problems.
+This method brings the compatiblity but also inherits all the problems at the same time.
 
-Users have to spend quit a few efforts to manage and maintain the OS which is much more complicated than the application itself in most situations. Furthermore they have to endure the potential system vulnerability caused by the complication. Besides, the System itself normally is much bigger than the applicaitons users want to run. That make system bigger and slower. Obviously, these problems are becoming more severe in current cloud epic.
+In order to run the specific applications, users have to spend quit a few efforts to manage and maintain the OS which is much more complicated than the application itself in most situations. Furthermore they have to endure the potential system vulnerability caused by the complication. Besides, the System itself normally is much bigger than the applicaitons users want to run. That is one of the main reason why computing system becoming bigger and slower. And in cloud and edge computing epic, with huge number of applicaitons are moved to cloud and edge computing, the problem becomes severe.
 
-Ironically, people are trying to use more complicated technologies to resolve the problems which is caused by the complicaiton itself. More and more new technolgies are beening developed and added into OS and cloud or edge infrastructures. 
+Ironically, people are trying to use more complicated technologies to resolve the problems which are caused by the complicaiton itself. More and more new technolgies are introduced into computing system and try to make it faster and safer. 
 
-Could we find a simple way to run applications safely and fast on modern computing system whether on Cloud, Edge or client side?
-
-It is the motivation to work on Arrrow.
+so we are working on finding a simple way to run applications safely and fast whether on Cloud, Edge or client side. It is the motivation to work on Arrrow.
 
 ## Just run the applicaiton
 Could we just run the application and don't have to care about the OS and infrastructure detail? To achieve it, Arrow uses [Application Central Solution](TopDown.md#application-central-philosophy). This solution focuses on the Applicaiton itself not system.
-
+Arrow 
 - Runs a single staticly linked application. NO Dynamical Linked Libraries(DLL) are packaged with the application.
-- Runs the application directly on the single task kernel. The Rootfs Image containing shell, tools, and system services is eleminated.
-- Runs the application in the standard Linux environment provided by the single task kernel based on upstream Linux kernel. That means the applicaiton still runs in userspace and call Kernel through standard system call machanism. The ring transition is kept.
-- Runs the Application without any porting work. So abundant of mature applications can run without any modification.
+- Runs the application directly on the single task kernel. Rootfs Image containing shell, tools, and system services and libraries is eleminated.
+- Runs the application in the standard Linux environment provided by the single task kernel based on upstream Linux kernel. That means the applicaiton still runs in userspace and call Kernel through standard system call machanism and the ring transition is kept.
+- Runs the application without any porting work. So abundant of mature applications can run without any modification.
 - Runs the application as well as Single Task Kernel on Kernel Virtural Machine(KVM) based lightweight Virutal Machine(VM). 
 
 <p align="center">
@@ -32,7 +30,7 @@ Could we just run the application and don't have to care about the OS and infras
 
 An application runing with the single task kernel on the lightweight VM can be called as an **Arrow Instance**.  
 
-- Connecting several Arrow Instances with standard TCP/IP based network, thses Instances can be combined and scaled up to any type of  Cloud services.
+- Connecting several Arrow Instances with standard TCP/IP based network, thses Instances can be combined and scaled up to any type of Cloud services.
 - Arrow Instances can also be easily integrated and managed by mainstream orchstration system like K8S.
 
 <p align="center">
