@@ -59,13 +59,13 @@ Arrow itself is very small and can be preinstalled so the loading latency is sma
 You can start from [Arrow Service Development Kid](https://github.com/Walnux/Atools/tree/master/ASDK).
 
 
-# Current statues and plan
+## Current statues
 ## [Arrow 0.1 release](/path/to/0.1Release)
 
-Arrow 0.1 is released to prove the Arrow concept. Some mainstream applications are proved to work properly as Arrow.
+Arrow 0.1 was released to prove the Arrow concept. Some mainstream applications are proved to work properly as Arrow Instances.
 
-- Busybox, Python, NodeJs, Kubernetes(Golang), Redis*, Nginx can run as Arrow. 
-- ASDK(Arrow System Development Kit) which is based on Alpine to build Arrow(attached mode) images
+- Busybox, Python, NodeJs, Kubernetes(Golang), Redis*, Nginx can run as Arrow Instances. 
+- ASDK(Arrow System Development Kit) which is based on Alpine to build Arrow attached mode images.
 - Linux kernel with Aloader, Ainit, Anotify features added to implement the Single task kernel
 - Qemu-KVM based virtural machine is used
 - Arrow service for running and managing Arrows. Arrow Life-cycle, Network, Anotify, Crossbow, Engine, Qemu-engine, log, I/O, Arrow Spec features are provided from the Service
