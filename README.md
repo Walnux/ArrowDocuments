@@ -45,7 +45,7 @@ With Arrow system, users don't have to package everything(OS, third party servic
 Arrow might change cloud and edge computing.
 
 ## Make Arrow small and fast
-at first glance, running single application with single task kernel on VM might cause a lot overhead and latency. However, We believe with moden lightweight Hypervisor technologies and other innvations in Single Task kernel as well as Arrow system we can make Arrow Instance very small and fast.
+at first glance, running single application with single task kernel on VM might cause a lot overhead and latency. However, We believe with moden lightweight Hypervisor technologies and other innvations in Single Task kernel as well as Arrow Services we can make Arrow Instance very small and fast.
 
 The performance goal for Arrow Instance is set as below: 
 
@@ -56,19 +56,18 @@ With [Application Centrialized Top Down](/path/to/topdown) design philosophy, an
 Arrow itself is very small and can be preinstalled so the loading latency is small, further more, the [Arrow template and clone technology](/path/to/AtemplateClone) technology and [Arrow application sharing](/path/toAshareing) technology makes Arrow application loading latency approach native application loading.
 
 ##  Getting Started
-You can start from [Arrow Service Development Kid](https://github.com/Walnux/Atools/tree/master/ASDK).
-
+You can start from [ASDK: Arrow Service Development Kid](https://github.com/Walnux/Atools/tree/master/ASDK).
 
 ## Current statues
 ## [Arrow 0.1 release](/path/to/0.1Release)
 
-Arrow 0.1 was released to prove the Arrow concept. Some mainstream applications are proved to work properly as Arrow Instances.
+Arrow 0.1 was released to prove the basic Arrow concept by running some popular mainstream applications as Arrow Instances.
 
-- Busybox, Python, NodeJs, Kubernetes(Golang), Redis*, Nginx can run as Arrow Instances. 
-- ASDK(Arrow System Development Kit) which is based on Alpine to build Arrow attached mode images.
-- Linux kernel with Aloader, Ainit, Anotify features added to implement the Single task kernel
-- Qemu-KVM based virtural machine is used
-- Arrow service for running and managing Arrows. Arrow Life-cycle, Network, Anotify, Crossbow, Engine, Qemu-engine, log, I/O, Arrow Spec features are provided from the Service
+- Busybox, Python, NodeJs, Kubernetes Master services(Golang), Redis, Nginx can run as Arrow Instances. 
+- ASDK can be used to build the Attached Mode Arrow images.
+- Aloader, Ainit, Anotify components are added into Linux kernel to implement the Single Task Kernel.
+- Qemu-KVM based virtural machine is used.
+- Arrow service prototype was worked out to manage Arrow Instances Life-cycle, Network, logging and I/O etc.
 
 ## [post 0.1 design & plan](/Path/to/0.2ReleasePlan): Focus on Virtualization Technology
 Arrow is based on lightweigh virtualizaion technology. After 0.1 release,  Arrow work will focus on rust-vmm based lightweight vmm.   
@@ -81,6 +80,3 @@ Arrow is based on lightweigh virtualizaion technology. After 0.1 release,  Arrow
 - Vsock based Network
 - Adebug: Coredump file
 - Run more applications as Arrow
-
-## The goal of the Arrow Project: Ready for Open Source
-
