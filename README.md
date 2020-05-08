@@ -9,21 +9,23 @@ Currently, if you want to run applications on a specific computing system, you h
 
 This method brings users the compatiblity with the existing system but also inherits all the problems from it.
 
-In order to run the specific applications, users have to spend quit a few efforts to manage and maintain the OS which is much more complicated than the application itself in most situations. Furthermore they have to endure the potential system vulnerability caused by the complication. Besides, the System itself normally is much bigger than the applicaitons users want to run. That is one of the main reason why computing system becoming bigger and slower. And in cloud and edge computing epic, with huge number of applicaitons are moved to cloud and edge computing, the problem becomes severe.
+In order to run the specific applications, users have to spend quit a few efforts to manage and maintain the OS which is much more complicated than the application itself in most situations. Furthermore they have to endure the potential system vulnerability caused by the complication. Besides, the System itself normally is much bigger than the applicaitons users want to run. That is one of the main reasons why computing system becoming bigger and slower. And in cloud and edge computing epic, with huge number of applicaitons are moved to cloud and edge computing, the problem becomes severe.
 
 Ironically, people are trying to use more complicated technologies to resolve the problems which are caused by the complicaiton itself. More and more new technolgies are introduced into computing system and try to make it faster and safer. 
 
-We are working on finding a fundamentaly simple way to run applications and make computing system safe and fast whether on Cloud, Edge or client side. It is the motivation to work on Arrrow project.
+We are trying to find a fundamentaly simple way to run applications and make computing system safe and fast whether on Cloud, Edge or client side. It is our motivation to work on Arrrow project.
+
+Then what is the fundamentaly simple way to run an applicaiton?
 
 ## Just run the applicaiton
 Could we just run the application and don't have to care about the OS and infrastructure detail? To achieve it, Arrow uses [Application Central Solution](TopDown.md#application-central-philosophy). This solution focuses on the Applicaiton itself not system.
-Arrow 
+
+**Arrow** 
 - Runs a single staticly linked application. NO Dynamical Linked Libraries(DLL) are packaged with the application.
 - Runs the application directly on the single task kernel. Rootfs Image containing shell, tools, and system services and libraries is eleminated.
 - Runs the application in the standard Linux environment provided by the single task kernel based on upstream Linux kernel. That means the applicaiton still runs in userspace and call Kernel through standard system call machanism and the ring transition is kept.
 - Runs the application without any porting work. So abundant of mature applications can run without any modification.
 - Runs the application as well as Single Task Kernel on Kernel Virtural Machine(KVM) based lightweight Virutal Machine(VM). 
-
 <p align="center">
   <img src="https://github.com/Walnux/Arrow_Documents/blob/master/images/ArrowFramework.png">
 </p>
@@ -33,19 +35,28 @@ An application runing with the single task kernel on the lightweight VM can be c
 - Connecting several Arrow Instances with standard TCP/IP based network, thses Instances can be combined and scaled up to any type of Cloud services.
 - Arrow Instances can also be easily integrated and managed by mainstream orchstration system like K8S.
 
-
 <p align="center">
   <img src="https://github.com/Walnux/Arrow_Documents/blob/master/images/ArrowInstances.jpg">
-</p>
+</p> 
 
+## Arrow system might change cloud and edge
+With Arrow system, users don't have to package everything(OS, third party services and middleware) into their owner Container or VM images which then be deployed on to specific cloud infrastructrue to run. Instead, The standard mainstream third party services can be standardized as Arrow Instances and invoked by user to connect with the user applications and serve as the service from cloud and edge computing. This method can greatly simplify and unify the whole cloud and edge infrastructure. Please refer [Arrow System project](TopDown.md#application-central-philosophy) for detail  
 
-## Arrow Perfomance Goal
+Arrow might change cloud and edge computing.
+
+## Make Arrow small and fast
+at first glance, running single application with single task kernel on VM might cause a lot overhead and latency. However, We believe with moden lightweight Hypervisor technologies and other innvations in Single Task kernel as well as Arrow system we can make Arrow Instance very small and fast.
+
+The performance goal for Arrow Instance is set as below: 
+
 - **Memory overhead goal for each Arrow Instance:  < ~(1-2)M**
 With [Application Centrialized Top Down](/path/to/topdown) design philosophy, and [lightweight Virtual Machine](/path/to/lightweithtVirtualMachine) technology for moden cloud and edge computing usages, several [foundmental innovations](/path/to/innovations) are worked out for Arrow to [run application with very small overhead](/path/to/overhead). 
 
 - **Arrow application loading latency goal: approaching native application loading**
 Arrow itself is very small and can be preinstalled so the loading latency is small, further more, the [Arrow template and clone technology](/path/to/AtemplateClone) technology and [Arrow application sharing](/path/toAshareing) technology makes Arrow application loading latency approach native application loading.
 
+##  Getting Started
+You can start from [Arrow Service Development Kid](https://github.com/Walnux/Atools/tree/master/ASDK).
 
 
 # Current statues and plan
@@ -73,6 +84,3 @@ Arrow is based on lightweigh virtualizaion technology. After 0.1 release,  Arrow
 
 ## The goal of the Arrow Project: Ready for Open Source
 
-# Getting Started
-## How to run Arrow project
-Firstly, you can start from [ASDK](https://github.com/Walnux/Atools/tree/master/ASDK).
