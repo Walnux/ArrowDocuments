@@ -56,7 +56,17 @@ With [Application Centrialized Top Down](/path/to/topdown) design philosophy, an
 Arrow itself is very small and can be preinstalled so the loading latency is small, further more, the [Arrow template and clone technology](/path/to/AtemplateClone) technology and [Arrow application sharing](/path/toAshareing) technology makes Arrow application loading latency approach native application loading.
 
 ##  Getting Started
-You can start from [ASDK: Arrow Service Development Kid](https://github.com/Walnux/Atools/tree/master/ASDK).
+You can start from building some mainstream projects with [ASDK: Arrow Service Development Kid](https://github.com/Walnux/Atools/tree/master/ASDK).
+
+Then, the Attached Mode Arrow Images can be used to run as Arrow instance through [Arrow Service](https://github.com/Walnux/arrowd)
+
+## Related Projects
+
+Arrow project is consist of several sub projects.
+- Single Task Kernel
+- Arrow Service
+- ASDK
+- Lightweight-Hypervisor
 
 ## Current statues
 ## [Arrow 0.1 release](/path/to/0.1Release)
