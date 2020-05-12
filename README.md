@@ -30,7 +30,7 @@ Could we just run the application and don't have to care about the OS and infras
   <img src="https://github.com/Walnux/Arrow_Documents/blob/master/images/ArrowFramework.png">
 </p>
 
-An application runing with the single task kernel on the lightweight VM can be called as an **Arrow Instance**.  
+An application running with the single task kernel on the lightweight VM can be called as an **Arrow Instance**.  
 
 - Connecting several Arrow Instances with standard TCP/IP based network, thses Instances can be combined and scaled up to any type of Cloud services.
 - Arrow Instances can also be easily integrated and managed by mainstream orchstration system like K8S.
