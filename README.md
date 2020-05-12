@@ -7,7 +7,7 @@ Arrow is based on the [**Application Central**](/TopDown.md) design philosophy.
 ## The motivation to work on Arrow project
 Currently, if you want to run applications on a specific computing system, you have to install (or package) them into some kind of Operating System(OS), and then run the OS in the client computing environemnt or deploy the OS together with your applications on cloud or edge infrastrucure through Virtual Machine Images or Contianer Images.
 
-This method brings users the compatiblity with the existing system but also inherits all the problems from it.
+This method brings users the compatiblity with the old systems but It also inherits all the problems from them.
 
 In order to run the specific applications, users have to spend quit a few efforts to manage and maintain the OS which is much more complicated than the application itself in most situations. Furthermore they have to endure the potential system vulnerability caused by the complication. Besides, the System itself normally is much bigger than the applicaitons users want to run. That is one of the main reasons why computing system becoming bigger and slower. And in cloud and edge computing epic, with huge number of applicaitons are moved to cloud and edge computing, the problem becomes severe.
 
