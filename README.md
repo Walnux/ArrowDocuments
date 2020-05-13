@@ -40,9 +40,9 @@ An application running with the single task kernel on the lightweight VM can be 
 </p> 
 
 ## Arrow system might change cloud and edge
-With Arrow system, users don't have to package everything(OS, third party services and middleware) into their owner Container or VM images which then be deployed on to specific cloud infrastructrue to run. Instead, The standard mainstream third party services can be standardized as Arrow Instances and invoked by user to connect with the user applications and serve as the service from cloud and edge computing. This method can greatly simplify and unify the whole cloud and edge infrastructure. Please refer [Arrow System project](TopDown.md#application-central-philosophy) for detail  
+With Arrow system, users don't have to package everything (OS, third party services and middleware) into their owner Container or VM images which will be deployed onto a specific cloud infrastructrue to run. Instead, the standard mainstream third party applications can be standardized as Arrow Instances and invoked by user to connect with the user applications and serve as the service from cloud and edge computing. Obviously, Arrow is designed to support Microservice architecutre. This method also can greatly simplify and unify the cloud, edge infrastructure and client computing. Please refer [Arrow System project](TopDown.md#application-central-philosophy) for detail
 
-Arrow might change cloud and edge computing.
+We believe Arrow will change cloud edge and client computing.
 
 ## Make Arrow small and fast
 at first glance, running single application with single task kernel on VM might cause a lot overhead and latency. However, We believe with moden lightweight Hypervisor technologies and other innvations in Single Task kernel as well as Arrow Services we can make Arrow Instance very small and fast.
