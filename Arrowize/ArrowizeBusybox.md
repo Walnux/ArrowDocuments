@@ -1,7 +1,7 @@
 # Running Busybox as Arrow Instance
 
 ## Arrow and Busybox
-Busybox is the true Swiss Army Knife of Embedded Linux. It integrates nearly all the gerneal linux features/tools into one binary, and identify the feature user want to use through link name. the link name will be saved at argv[0] as the command name. Arrow populate the argv[0] with command name. That is compatible with Busybox design.
+Busybox is the true Swiss Army Knife of Embedded Linux. It integrates nearly all the general linux features/tools into one binary, and identify the feature user want to use through link name. the link name will be saved at argv[0] as the command name. Arrow populate the argv[0] with command name. That is compatible with Busybox design.
 
 Busybox is the ideal tools to debug Arrow Single Task Kernel. Running Busybox as Arrow Instance, actually, you might be using the smallest Linux in the word.
 
