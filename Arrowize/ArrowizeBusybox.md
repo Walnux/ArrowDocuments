@@ -55,8 +55,10 @@ PING 172.16.0.1 (172.16.0.1): 56 data bytes
 --- 172.16.0.1 ping statistics ---
 1 packets transmitted, 1 packets received, 0% packet loss
 round-trip min/avg/max = 1.609/1.609/1.609 ms
+```
 
-- Starting another Arrow Busybox Instance in another terminal
+- Starting one more Busybox Instance in another terminal
+
 ``` shell
 $ sudo ./bin/actrl shoot -t busybox sh
 ```
