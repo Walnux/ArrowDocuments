@@ -10,6 +10,8 @@ In Arrow 0.1 Release. Busybox has been integrated into [ASDK](Walnux/Atools/tree
 ## How to Run Busybox as Arrow Instance
 - After setting up [ASDK](Walnux/Atools/tree/master/ASDK) and [Arrow Service](arrowd/edit/master/README.md). And Arrowd has been started. You can run Busybox as Arrow Instance in Arrowd source directory:
 
+Notes: In Arrow 0.1 Prove of Concept release, please make sure you are in Arrow Service source directory to run below command. Normally Arrow Service source directory is $HOME/go/src/github.com/Walnux/arrowd. 
+
 ```shell
 $ sudo ./bin/actrl shoot -t busybox sh
 ```
