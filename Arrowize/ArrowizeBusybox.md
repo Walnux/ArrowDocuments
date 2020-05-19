@@ -11,7 +11,7 @@ In Arrow 0.1 Release. Busybox has been integrated into [ASDK](Walnux/Atools/tree
 - After setting up [ASDK](Walnux/Atools/tree/master/ASDK) and [Arrow Service](arrowd/edit/master/README.md). And Arrowd has been started. You can run Busybox as Arrow Instance in Arrowd source directory:
 
 ```shell
-$ sudo ./bin/actrl shoot -t busybox
+$ sudo ./bin/actrl shoot -t busybox sh
 ```
 
 - Using below command to check the Arrow applications running statues
@@ -56,7 +56,7 @@ round-trip min/avg/max = 1.609/1.609/1.609 ms
 
 - Starting another Arrow Busybox Instance in another terminal
 ``` shell
-$ sudo ./bin/actrl shoot -t busybox
+$ sudo ./bin/actrl shoot -t busybox sh
 ```
 
 - Using below commands to attach the Busybox Instance's STDIO with your terminal's
