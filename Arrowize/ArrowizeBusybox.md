@@ -77,6 +77,37 @@ eth0      Link encap:Ethernet  HWaddr 02:00:00:00:00:01
           inet addr:172.16.0.3  Bcast:172.16.255.255  Mask:255.255.0.0
 ```
 
+- Using below command to exit the Busybox
+
+``` shell
+/ # exit
+```
+
+- You can also ping through busybox
+
+``` shell
+$ sudo ./bin/actrl shoot busybox ping 172.16.0.1
+```
+
+- Using logs command to show the result
+
+```
+$ sudo ./bin/actrl logs
+
+PING 172.16.0.1 (172.16.0.1): 56 data bytes
+64 bytes from 172.16.0.1: seq=0 ttl=64 time=0.293 ms
+clocksource: tsc: mask: 0xffffffffffffffff max_cycles: 0x2717868ea45, max_idle_ns: 440795316085 ns
+64 bytes from 172.16.0.1: seq=1 ttl=64 time=0.466 ms
+64 bytes from 172.16.0.1: seq=2 ttl=64 time=0.491 ms
+random: fast init done
+64 bytes from 172.16.0.1: seq=3 ttl=64 time=0.557 ms
+64 bytes from 172.16.0.1: seq=4 ttl=64 time=0.533 ms
+
+--- 172.16.0.1 ping statistics ---
+5 packets transmitted, 5 packets received, 0% packet loss
+round-trip min/avg/max = 0.293/0.468/0.557 ms
+```
+
 - Ping the first Arrow Busybox Instance we started whose IP address should be 172.16.0.2
 ```
 /# ping 172.16.0.2
