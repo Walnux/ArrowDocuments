@@ -64,6 +64,8 @@ Arrow itself is very small and can be preinstalled so the loading latency is sma
 
 - [Run Nginx as Arrow Instance](https://github.com/Walnux/Arrow_Documents/blob/master/Arrowize/Nginx.md)
 
+- [Run Nodejs Apps as Arrow Instance](https://github.com/Walnux/Arrow_Documents/blob/master/Arrowize/Nodejs.md)
+
 ## Related Projects
 
 Arrow project is consist of several sub projects.
