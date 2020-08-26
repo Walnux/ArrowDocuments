@@ -39,3 +39,15 @@ So suggust to run Arrow image on the same architecture platform. Currently X86-6
 
 ## Customerized Kernel
 Unlike Containers working load sharing the same kernel. With Arrow, users actually has the free to Arrowize their applications with the customerized kernel. That is quite helpful, if users want to integrate using and release their own developped kernel modules or kernel configure.
+
+
+## Edge Computing
+ cloud-related challenges, including:
+ - An increasing need for low latency and high reliability
+ - The rapid expansion of IoT
+ - An increasingly mobile and distributed workforce
+ - Bandwidth and connectivity limitations
+ - The high cost of data transit and storage
+ - Evolving data privacy requirements
+ 
+ https://enterprise.verizon.com/content/dam/resources/whitepapers/5g-and-edge-computing.pdf
