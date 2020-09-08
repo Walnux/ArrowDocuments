@@ -1,6 +1,6 @@
 # What is Arrow project?
 ## The goal of Arrow Project
-**Arrow project intends to explore a simple, secure, low latency and low overhead way to run mordern software-as-a-service(SaaS) applications on cloud, edge or client computing environment.**
+**Arrow project intends to explore a simple, secure, low latency and low overhead way to run mordern Micoservice based software-as-a-service(SaaS) applications on cloud, edge or client computing environment.**
 
 Arrow is based on the [**Application Central**](/TopDown.md) design philosophy and [Twelve-Factor App methodology](https://12factor.net/).
 
