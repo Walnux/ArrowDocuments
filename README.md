@@ -64,7 +64,7 @@ Arrow is the exploration and innovation project. Welcome to join this amazing ad
 ## Getting Started
 - Start from [Arrow Service Development Kit (ASDK)](https://github.com/Walnux/Atools/tree/master/ASDK).
 
-- Then run Arrow below Instances through [Arrow Service](https://github.com/Walnux/arrowd)
+- Then run below Arrow Instances through [Arrow Service](https://github.com/Walnux/arrowd)
 
 - [Run Busybox Arrow Instance](https://github.com/Walnux/Arrow_Documents/blob/master/Arrowize/ArrowizeBusybox.md)
 
