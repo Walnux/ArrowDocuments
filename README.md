@@ -1,81 +1,91 @@
-# What is Arrow project?
-## The goal of Arrow Project
-**Arrow project intends to explore a simple, secure, low latency and low overhead way to run [micoservices](https://martinfowler.com/articles/microservices.html) based applications on cloud, edge or client computing platform.**
 
-Arrow is based on the [**Application Central**](/TopDown.md) design philosophy and [Twelve-Factor App methodology](https://12factor.net/).
+## The goal of Arrow Project
+**Arrow project targets to explore a simple, secure, low latency and low overhead way to run [micoservices](https://martinfowler.com/articles/microservices.html) based applications on cloud, edge, client even IoT computing platform and obey [Twelve-Factor App methodology](https://12factor.net/).**
 
 ## The motivation to work on Arrow project
-Currently, if you want to run applications on a specific computing system, you have to install (or package) them into some kind of Operating System(OS), and then run the OS in the client computing environemnt or deploy the OS together with your applications on cloud or edge infrastrucure through Virtual Machine Images or Contianer Images.
+It is well-known, how to run applications decided nearly every aspect of cloud and edge computing including infrastructure, applications development, operation, security and so on. 
 
-This method brings users the compatiblity with the old systems but It also inherits all the problems from them.
+Traditional Virtual Machine Image-based way to run application trigged the booming of one of the main cloud service ECS (Elastic Computing Service). It provides the similar user experience and compatible application running environment with the physical server. Multi-tent user applications running on the virtual server are well isolated and protected. However, although users don’t have to manage the physical server anymore, maintaining and operating the full feature virtual machine-based virtual server is still a heavy burden. 
 
-In order to run the specific applications, users have to spend quit a few efforts to manage and maintain the OS which is much more complicated than the application itself in most situations. Furthermore they have to endure the potential system vulnerability caused by the complication. Besides, the System itself normally is much bigger than the applicaitons users want to run. That is one of the main reasons why computing system becoming bigger and slower. And in cloud and edge computing epic, with huge number of applicaitons are moved to cloud and edge computing, the problem becomes severe.
+Kubernetes and Container technology-based Cloud Native is the trending of modern cloud computing. The applications are packaged into Container image which is orchestrated by Kubernetes. User doesn’t have to touch the server anymore, which is called serverless. It is a revolution in cloud computing technology. Running applications in container is being widely adopted by people as the standard cloud native way to run applications. But container technology still comes with some issues. 
 
-Ironically, people are trying to use more complicated technologies to resolve the problems which are caused by the complicaiton itself. More and more new technolgies are introduced into computing system and try to make it faster and safer. 
+First, applications running in containers share the same host kernel. So multi-tent applications are not well isolated. The stability and security might be a potential risk especial in commercial public cloud computing and multi-tend edge computing environment. In order to resolve the stability and security issue, normally the extra sandbox technology like Virtual Machine or [gvisor](https://gvisor.dev/) technology have to be used to isolate each tenant’s containers running environment from the host system. Obviously, this increases system complication, sacrifices the performance, impacts the high-density, flexibility and many other benefits from Container technology. 
 
-We are trying to find a fundamentaly simple way to run applications and make computing system safe and fast whether on Cloud, Edge or client side. It is our motivation to work on Arrrow project.
+Second, although not necessary, in order to acquire the full compatible running environment, most of the traditional applications are still packeted with the base operation system as well as the DDL(Dynamical Link Library), runtime and other OS components to run, which increases the image size, impacts the application startup latency, wastes the system storage resource and network bandwidth. The base OS, DDL, and other OS components might also incur some potential security risks and increases the operating and maintaining burden. Ironically, many of the components of the OS actually never be used by the application. The problem might become worse in edge computing and IoT area where system resources are limited while security, and latency is critical, operation difficulty is higher than that in cloud environment.   
 
-Then what is the fundamentaly simple way to run an applicaiton?
+Third, The Container runtime framework is not simple, packaging, configure and run the container image is not always very easy. The union-FS system is useful for sharing the contents among Container images, but this filesystem is heavy and slow. And the sharing of the contents is not efficient. In order to share the contents, the layers containing the same content among different images must obey exact the same layer order.  
 
-## Just run the applicaiton
-Could we just run the application and don't have to care about the OS and infrastructure detail? To achieve it, Arrow uses [Application Central Solution](TopDown.md#application-central-philosophy). This solution focuses on the Applicaiton itself not system.
+Forth, although running single process in container is encouraged, the compatibility with the native OS environment is one of the most favorite features the Container technology provides. It allows (or indulges) people to package the heavy full feature OS with bunch of applications. The expense is that the infrastructure has to take the burden to handle these heavy working-loads. that increases the system complication and can’t make full use of the benefits from the modern innovations of Cloud Native technology where the microservice based applications are adopted as the main cloud service framework. 
 
-**Arrow** 
-- Runs a single staticly linked application. NO Dynamical Linked Libraries(DLL) are packaged with the application.
-- Runs the application directly on the single task kernel. Rootfs Image containing shell, tools, and system services and libraries is eleminated.
-- Runs the application in the standard Linux environment provided by the single task kernel based on upstream Linux kernel. That means the applicaiton still runs in userspace and call Kernel through standard system call machanism and the ring transition is kept.
-- Runs the application without any porting work. So abundant of mature applications can run without any modification.
-- Runs the application as well as Single Task Kernel on Kernel Virtural Machine(KVM) based lightweight Virutal Machine(VM). 
+So, all in all, Cloud Native needs a new way to run applications where Container technology and traditional Virtual Machine technology can’t handle very well. 
+
+It is the motivation to kick off the Arrow project. 
+
+## Arrow philosophy
+
+It is not necessary for Arrow to support all the applications and cover all the usage cases. Arrow project targets to run microservices architecture applications on cloud, edge even client and IoT environment which obey [Twelve-Factor App methodology](https://12factor.net/).   
+
+In order to achieve the goal, below questions have to be asked: 
+
+- Can users just run an application (or microservice) on cloud (or edge) as simply as possible and don’t have to care about packaging their own software with OS, runtime, middleware or other applications into some kind of image? 
+
+- Can each application (or microservice) run in an isolated, secured, relatively compatible environment and don’t need to be ported and big change? 
+
+- Can applications (or microservices) easily be deployed, run and operated on the distributed cloud, edge infrastructure or even on the client or IoT environment? 
+
+- Most importantly, can the applications (or microservices) running latency be kept as low as possible, running overhead be kept as small as possible? 
+
+## Single Task Concept 
+
+Compared with the monolithic application, microservices architecture application is composed of the independent microservices cooperated with each other with TCP/IP based communication method and service APIs. 
+
+Each independent microservice is a single application which is called task in Arrow project. In order to answer above questions. Arrow combines the single task with the single task kernel and runs them on the light weight virtual machine. 
+
 <p align="center">
   <img src="https://github.com/Walnux/Arrow_Documents/blob/master/images/ArrowFramework.png">
 </p>
 
-An application running with the single task kernel on the lightweight VM can be called as an **Arrow Instance**.  
+Only running the single application, the DDL is not necessary any more, the application is statically linked, and doesn’t have to be packaged with the base OS and other components. So, the microservice working-load can be very small and simple. 
 
-- Connecting several Arrow Instances with standard TCP/IP based network, thses Instances can be combined and scaled up to any type of Cloud services.
-- Arrow Instances can also be easily integrated and managed by mainstream orchstration system like K8S.
+Running the single task, the standard Linux kernel is simplified and redefined to run the single application, and the standard Linux application running environment like Kernel user space ABI and FHS compatibility are protected. So, application don’t have to be modified to run. 
+
+Obviously, it is the best isolated and security way to run each microservice. 
+
+In order to make sure the microservices can run seamlessly on Cloud Native environment, and easily be deployed and run on the distributed cloud or edge infrastructure. Arrow project must keep compatible with Kubernetes. 
+
+The challenge task for Arrow project is to decrease the latency and overhead. With the single task concept in mind, a lot of innovations can be done in the single task kernel and Pod Hypervisor which creates and manages the single task virtual machine in the pod and talk with Kublet/Kubernetes). The microservice running latency and overhead can be greatly decreased. See detailed in single task kernel project and Pod hypervisor project.  
 
 <p align="center">
   <img src="https://github.com/Walnux/Arrow_Documents/blob/master/images/ArrowInstances.jpg">
 </p> 
 
-## Arrow system might change cloud and edge
-With Arrow system, users don't have to package everything (OS, third party services and middleware) into their owner Container or VM images which will be deployed onto a specific cloud infrastructrue to run. Instead, the standard mainstream third party applications can be standardized as Arrow Instances and invoked by user to connect with the user applications and serve as the service from cloud and edge computing. Obviously, Arrow is designed to support Microservice architecutre. This method also can greatly simplify and unify the cloud, edge infrastructure and client computing. Please refer [Arrow System project](TopDown.md#application-central-philosophy) for detail
+Arrow is the exploration and innovation project. Welcome to join this amazing adventure!  
 
-We believe Arrow will change cloud edge and client computing.
+## Getting Started
+- You can start from [Arrow Service Development Kit (ASDK)](https://github.com/Walnux/Atools/tree/master/ASDK).
 
-## Make Arrow small and fast
-at first glance, running single application with single task kernel on VM might cause a lot overhead and latency. However, We believe with moden lightweight Hypervisor technologies and other innvations in Single Task kernel as well as Arrow Services we can make Arrow Instance very small and fast.
+- Then run Arrow Instances below through [Arrow Service](https://github.com/Walnux/arrowd)
 
-The performance goal for Arrow Instance is set as below: 
+- [Run Busybox Arrow Instance](https://github.com/Walnux/Arrow_Documents/blob/master/Arrowize/ArrowizeBusybox.md)
 
-- **Memory overhead goal for each Arrow Instance:  < ~(1-2)M**
-With [Application Centrialized Top Down](/path/to/topdown) design philosophy, and [lightweight Virtual Machine](/path/to/lightweithtVirtualMachine) technology for moden cloud and edge computing usages, several [foundmental innovations](/path/to/innovations) are worked out for Arrow to [run application with very small overhead](/path/to/overhead). 
+- [Run Nginx Arrow Instance](https://github.com/Walnux/Arrow_Documents/blob/master/Arrowize/Nginx.md)
 
-- **Arrow application loading latency goal: approaching native application loading**
-Arrow itself is very small and can be preinstalled so the loading latency is small, further more, the [Arrow template and clone technology](/path/to/AtemplateClone) technology and [Arrow application sharing](/path/toAshareing) technology makes Arrow application loading latency approach native application loading.
+- [Run Nodejs Applications Arrow Instances](https://github.com/Walnux/Arrow_Documents/blob/master/Arrowize/Nodejs.md)
 
-##  Getting Started
-- You can start from building some mainstream projects with [Arrow Service Development Kit (ASDK)](https://github.com/Walnux/Atools/tree/master/ASDK).
+- [Run Python Applications Arrow Instances](https://github.com/Walnux/Arrow_Documents/blob/master/Arrowize/python.md)
 
-- Then, the Attached Mode Arrow Images can be used to run as Arrow instance through [Arrow Service](https://github.com/Walnux/arrowd)
+- [Run Golang Applications Arrow Instances](https://github.com/Walnux/Arrow_Documents/blob/master/Arrowize/golang.md)
 
-- [Run Busybox as Arrow Instance](https://github.com/Walnux/Arrow_Documents/blob/master/Arrowize/ArrowizeBusybox.md)
-
-- [Run Nginx as Arrow Instance](https://github.com/Walnux/Arrow_Documents/blob/master/Arrowize/Nginx.md)
-
-- [Run Nodejs Apps as Arrow Instance](https://github.com/Walnux/Arrow_Documents/blob/master/Arrowize/Nodejs.md)
-
-## Related Projects
-
-Arrow project is consist of several sub projects.
+## Arrow sub-projects
 - Single Task Kernel
 - Arrow Service
-- ASDK
-- Lightweight-Hypervisor
+- Pod Hypervisor
+- [Arrow Service Development Kit (ASDK)](https://github.com/Walnux/Atools/tree/master/ASDK)
 
-## Current statues
-## [Arrow 0.1 release](/path/to/0.1Release)
+
+## Arrow 0.1 Release
+
+[Arrow 0.1 release](/path/to/0.1Release)
 
 Arrow 0.1 was released to prove the basic Arrow concept by running some popular mainstream applications as Arrow Instances.
 
@@ -85,7 +95,9 @@ Arrow 0.1 was released to prove the basic Arrow concept by running some popular 
 - Qemu-KVM based virtural machine is used.
 - Arrow service prototype was worked out to manage Arrow Instances Life-cycle, Network, logging and I/O etc.
 
-## [post 0.1 design & plan](/Path/to/0.2ReleasePlan): Focus on Virtualization Technology
+## Arrow 0.2 Release
+
+[Arrow 0.2 release plan](/Path/to/0.2ReleasePlan): Focus on Virtualization Technology
 Arrow is based on lightweigh virtualizaion technology. After 0.1 release,  Arrow work will focus on rust-vmm based lightweight vmm.   
 
 - Rust-VMM based Lightweight VMM technolgy
