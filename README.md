@@ -62,9 +62,9 @@ The challenge task for Arrow project is to decrease the latency and overhead. Wi
 Arrow is the exploration and innovation project. Welcome to join this amazing adventure!  
 
 ## Getting Started
-- You can start from [Arrow Service Development Kit (ASDK)](https://github.com/Walnux/Atools/tree/master/ASDK).
+- Start from [Arrow Service Development Kit (ASDK)](https://github.com/Walnux/Atools/tree/master/ASDK).
 
-- Then run Arrow Instances below through [Arrow Service](https://github.com/Walnux/arrowd)
+- Then run Arrow below Instances through [Arrow Service](https://github.com/Walnux/arrowd)
 
 - [Run Busybox Arrow Instance](https://github.com/Walnux/Arrow_Documents/blob/master/Arrowize/ArrowizeBusybox.md)
 
