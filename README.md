@@ -1,6 +1,6 @@
 
 ## The goal of Arrow Project
-**Arrow project targets to explore a simple, secure, low latency and low overhead way to run [micoservices](https://martinfowler.com/articles/microservices.html) based applications on cloud, edge, client even IoT computing platform and obey [Twelve-Factor App methodology](https://12factor.net/).**
+Arrow project targets to explore a simple, secure, low latency and low overhead way to run [micoservices](https://martinfowler.com/articles/microservices.html) based applications on cloud, edge, client even IoT computing platform and obey [Twelve-Factor App methodology](https://12factor.net/).
 
 ## The motivation to work on Arrow project
 It is well-known, how to run applications decided nearly every aspect of cloud and edge computing including infrastructure, applications development, operation, security and so on. 
