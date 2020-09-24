@@ -49,7 +49,9 @@ Only running the single application, the DDL is not necessary any more, the appl
 
 Running the single task, the standard Linux kernel is simplified and redefined to run the single application, and the standard Linux application running environment like Kernel user space ABI and FHS compatibility are protected. So, application don’t have to be modified to run. 
 
-Obviously, it is the best isolated and security way to run each microservice. 
+Obviously, it is the best isolated and security way to run each microservice.
+
+It is much more simple to orchestrate, operate, maintain the single task working-load. 
 
 In order to make sure the microservices can run seamlessly on Cloud Native environment, and easily be deployed and run on the distributed cloud or edge infrastructure. Arrow project must keep compatible with Kubernetes. 
 
