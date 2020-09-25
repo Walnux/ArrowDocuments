@@ -60,7 +60,7 @@ In order to make sure the microservices can run seamlessly on Cloud Native envir
 The challenge task for Arrow project is to decrease the latency and overhead. With the single task concept in mind, a lot of innovations can be done in the single task kernel and Pod Hypervisor which creates and manages the single task virtual machine in the pod and talk with Kublet/Kubernetes). The microservice running latency and overhead can be greatly decreased. See detailed in single task kernel project and Pod hypervisor project.  
 
 <p align="center">
-  <img src="https://github.com/Walnux/Arrow_Documents/blob/master/images/ArrowInstances.jpg">
+  <img src="https://github.com/Walnux/Arrow_Documents/blob/master/images/ArrowSystem.jpg">
 </p> 
 
 Arrow is the exploration and innovation project. Welcome to join this amazing adventure!  
