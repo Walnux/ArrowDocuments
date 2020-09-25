@@ -17,7 +17,7 @@ Third, The Container runtime framework is not simple, packaging, configure and r
 
 Forth, although [running single service in container is encouraged](https://docs.docker.com/config/containers/multi-service_container/), the compatibility with the native OS environment is one of the most favorite features the Container technology provides. It allows (or indulges) people to package the heavy full feature OS with bunch of applications services. The expense is that the infrastructure has to take the burden to handle these heavy working-loads. that increases the system complication and can’t make full use of the benefits from the modern innovations of Cloud Native technology where the microservice based applications are adopted as the main cloud service framework. 
 
-Fifth, according to docker's suggestion to [use one service per container](https://docs.docker.com/config/containers/multi-service_container/), and Kubernetes recommended [common single container per pod usage case](https://kubernetes.io/docs/concepts/workloads/pods/), to protect the security and reach the multi-tendent isolation requirement, normally, Runing the single service per container per pod which runs in the safe sandbox environment is the most common usagecase in cloud native and microservice. It is obviously, Cotainer working load plus tradional sandbox is way too heavy.   
+Fifth, according to docker's suggestion to [use one service per container](https://docs.docker.com/config/containers/multi-service_container/), and Kubernetes recommended [common single container per pod usage case](https://kubernetes.io/docs/concepts/workloads/pods/), to protect the security and reach the multi-tendent isolation requirement, normally, Runing the single service per container per pod which runs in the safe sandbox environment is the most common usagecase in cloud native and microservice. It is obviously, Cotainer working load plus tradional sandbox is way too heavy in above most common usagecase.   
 
 So, all in all, Cloud Native needs a new way to run applications where Container technology and traditional Virtual Machine technology can’t handle very well. 
 
@@ -83,7 +83,7 @@ Arrow is the exploration and innovation project. Welcome to join this amazing ad
 ## Arrow sub-projects
 - Single Task Kernel
 - [Arrow Service](https://github.com/Walnux/arrowd)
-- [Pod Hypervisor](https://github.com/Walnux/podh)
+- [Arrow Hypervisor](https://github.com/Walnux/podh)
 - [Arrow Service Development Kit (ASDK)](https://github.com/Walnux/Atools/tree/master/ASDK)
 
 
