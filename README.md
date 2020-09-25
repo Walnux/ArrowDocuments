@@ -15,7 +15,9 @@ Second, although not necessary, in order to acquire the full compatible running 
 
 Third, The Container runtime framework is not simple, packaging, configure and run the container image is not always very easy. The union-FS system is useful for sharing the contents among Container images, but this filesystem is heavy and slow. And the sharing of the contents is not efficient. In order to share the contents, the layers containing the same content among different images must obey exact the same layer order.  
 
-Forth, although running single process in container is encouraged, the compatibility with the native OS environment is one of the most favorite features the Container technology provides. It allows (or indulges) people to package the heavy full feature OS with bunch of applications. The expense is that the infrastructure has to take the burden to handle these heavy working-loads. that increases the system complication and can’t make full use of the benefits from the modern innovations of Cloud Native technology where the microservice based applications are adopted as the main cloud service framework. 
+Forth, although [running single service in container is encouraged](https://docs.docker.com/config/containers/multi-service_container/), the compatibility with the native OS environment is one of the most favorite features the Container technology provides. It allows (or indulges) people to package the heavy full feature OS with bunch of applications services. The expense is that the infrastructure has to take the burden to handle these heavy working-loads. that increases the system complication and can’t make full use of the benefits from the modern innovations of Cloud Native technology where the microservice based applications are adopted as the main cloud service framework. 
+
+Fifth, according to docker's suggestion to [use one service per container](https://docs.docker.com/config/containers/multi-service_container/), and Kubernetes recommended [common single container per pod usage case](https://kubernetes.io/docs/concepts/workloads/pods/), to protect the security and reach the multi-tendent isolation requirement, normally, Runing the single service per container per pod which runs in the safe sandbox environment is the most common usagecase in cloud native and microservice. It is obviously, Cotainer working load plus tradional sandbox is way too heavy.   
 
 So, all in all, Cloud Native needs a new way to run applications where Container technology and traditional Virtual Machine technology can’t handle very well. 
 
@@ -27,7 +29,7 @@ It is not necessary for Arrow to support all the applications and cover all the 
 
 In order to achieve the goal, below questions have to be asked: 
 
-- Can users just run an application (or microservice) on cloud (or edge) as simply as possible and don’t have to care about packaging their own software with OS, runtime, middleware or other applications into some kind of image? 
+- Can users just run an application (or microservice) on cloud (or edge) as simply as possible and don’t have to care about packaging their own software with OS, runtime, middleware or other applications? 
 
 - Can each application (or microservice) run in an isolated, secured, relatively compatible environment and don’t need to be ported and big change? 
 
