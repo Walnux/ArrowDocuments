@@ -44,7 +44,7 @@ Compared with the monolithic application, microservices architecture application
 Each independent microservice is a single application which is called task in Arrow project. In order to answer above questions. Arrow combines the single task with the single task kernel and runs them on the light weight virtual machine. 
 
 <p align="center">
-  <img src="https://github.com/Walnux/Arrow_Documents/blob/master/images/ArrowFramework.png">
+  <img src="https://github.com/Walnux/Arrow_Documents/blob/master/images/Arrow.jpg">
 </p>
 
 Only running the single application, the DDL is not necessary any more, the application is statically linked, and doesn’t have to be packaged with the base OS and other components. So, the microservice working-load can be very small and simple. 
