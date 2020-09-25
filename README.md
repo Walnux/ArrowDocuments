@@ -24,7 +24,6 @@ So, all in all, Cloud Native needs a new way to run applications where Container
 It is the motivation to kick off the Arrow project. 
 
 ## Arrow philosophy
-
 It is not necessary for Arrow to support all the applications and cover all the usage cases. Arrow project targets to run microservices architecture applications on cloud, edge even client and IoT environment which obey [Twelve-Factor App methodology](https://12factor.net/).   
 
 In order to achieve the goal, below questions have to be asked: 
@@ -38,6 +37,7 @@ In order to achieve the goal, below questions have to be asked:
 - Most importantly, can the applications (or microservices) running latency be kept as low as possible, running overhead be kept as small as possible? 
 
 ## Single Task Concept 
+Arrow philosophy is "Only do one thing - run one single micro-service". It is Like shooting an Arrow only focusing on the single target. 
 
 Compared with the monolithic application, microservices architecture application is composed of the independent microservices cooperated with each other with TCP/IP based communication method and service APIs. 
 
