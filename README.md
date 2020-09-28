@@ -57,11 +57,17 @@ In order to make sure the microservices can run seamlessly on Cloud Native envir
 
 The challenge task for Arrow project is to decrease the latency and overhead. With the single task concept in mind, a lot of innovations can be done in the single task kernel and Arrow Hypervisor which creates and manages the Single Task virtual machine and talk with Kublet/Kubernetes. The microservice running latency and overhead can be greatly decreased. See detail in Single Task Kernel project and Arrow Hypervisor project.  
 
+Arrow is the exploration and innovation project. Welcome to join this amazing adventure!  
+
+## Arrow System
+Arrow project is composed of several sub-projects. All of these projects works together to form the Arrow System and run the microserivces. See below Arrow System architecure. See detail in each sub-projects:
+- [Single Task Kernel](https://github.com/Walnux/ALinux)
+- [Arrow Service](https://github.com/Walnux/arrowd)
+- [Arrow Hypervisor](https://github.com/Walnux/ArrowH)
+- [Arrow Service Development Kit (ASDK)](https://github.com/Walnux/Atools/tree/master/ASDK)
 <p align="center">
   <img src="https://github.com/Walnux/Arrow_Documents/blob/master/images/ArrowSystem.jpg">
 </p> 
-
-Arrow is the exploration and innovation project. Welcome to join this amazing adventure!  
 
 ## Getting Started
 - Start from [Arrow Service Development Kit (ASDK)](https://github.com/Walnux/Atools/tree/master/ASDK).
@@ -78,11 +84,6 @@ Arrow is the exploration and innovation project. Welcome to join this amazing ad
 
 - [Run Golang Applications Arrow Instances](https://github.com/Walnux/Arrow_Documents/blob/master/Arrowize/golang.md)
 
-## Arrow sub-projects
-- [Single Task Kernel](https://github.com/Walnux/ALinux)
-- [Arrow Service](https://github.com/Walnux/arrowd)
-- [Arrow Hypervisor](https://github.com/Walnux/ArrowH)
-- [Arrow Service Development Kit (ASDK)](https://github.com/Walnux/Atools/tree/master/ASDK)
 
 
 ## Arrow 0.1 Release
