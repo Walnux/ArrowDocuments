@@ -65,6 +65,8 @@ Arrow project is composed of several sub-projects. All of these projects works t
 - [Arrow Service](https://github.com/Walnux/arrowd)
 - [Arrow Hypervisor](https://github.com/Walnux/ArrowH)
 - [Arrow Service Development Kit (ASDK)](https://github.com/Walnux/Atools/tree/master/ASDK)
+- [Arrow System Working Mode](https://github.com/Walnux/Arrow_Documents/WorkingMode.md)
+
 <p align="center">
   <img src="https://github.com/Walnux/Arrow_Documents/blob/master/images/ArrowSystem.jpg">
 </p> 
