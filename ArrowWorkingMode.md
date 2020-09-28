@@ -6,7 +6,7 @@ Before introducing Arrow System Working Mode, several key concepts have to expla
 
 **ISV (Independent Software Vendor)**: provides the software that may be used by the users to build his/her microservice. NGINX, Python runtime, Nodejs runtime, Redis and many other popular software are provided by ISV. Nowadays, most software provided by ISV are open sourced and developed in open source community. 
 
-**Users**: The developers who use the software provided by ISVs to develop his/her own microservices 
+**User**: The developers who use the software provided by ISVs to develop his/her own microservices 
 
 **Arrow Binary**: The statically linked application binary, normally it is the ELF style.  
 
@@ -20,7 +20,7 @@ Notes: Arrow Image doesn’t include any complied Application binary, it only sp
 
 **ASDK (Arrow System Development Kit)** helps users to develop, debug, create and upload Arrow Binary, Arrow Meta or Arrow Image.  
 
-See the Arrow System working mode below: 
+See the Arrow System Working Mode diagram below: 
 
 <p align="center"> 
 
