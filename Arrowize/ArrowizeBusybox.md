@@ -115,5 +115,5 @@ round-trip min/avg/max = 0.293/0.468/0.557 ms
 
 According to above result, Arrow Instances are properly configured and connected through Standard TCP/IP Network. 
 
-Arrow Single Task kernel is based on the standard Linux Kernel, you can use Busybox Instance to explore this Single Task Kernel through /Proc, /Sys, check kernel message using dmesg.
+Arrow Single Task Kernel is based on the standard Linux Kernel, you can use Busybox Instance to explore this Single Task Kernel through /Proc and /Sys filesystem, check Kernel message using dmesg.
 
