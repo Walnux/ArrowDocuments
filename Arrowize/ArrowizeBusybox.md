@@ -117,3 +117,5 @@ According to above result, Arrow Instances are properly configured and connected
 
 Arrow Single Task Kernel is based on the standard Linux Kernel, you can use Busybox Instance to explore this Single Task Kernel through /Proc and /Sys filesystem, check Kernel message using dmesg.
 
+## Next Step
+[Run Nginx Arrow Instance](https://github.com/Walnux/Arrow_Documents/blob/master/Arrowize/Nginx.md)
