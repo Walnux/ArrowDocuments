@@ -22,7 +22,8 @@ $ sudo ./bin/actrl list
 busybox bpfaeddd5h2u8e3q7svg    sh      sh      io.arrowd.arrow.status.running.v1
 ```
 
-- Using below command to enter the Single Task Kernel Environment. It is an compact 
+- Using below command to enter the Single Task Kernel Shell Environment. It is actually a compact Linux Shell environment
+
 notes: it actuallly attach Busybox Arrow Instance STDIO with current terminal
 ``` shell
 sudo ./bin/actrl attach
@@ -107,12 +108,12 @@ random: fast init done
 round-trip min/avg/max = 0.293/0.468/0.557 ms
 ```
 
-- Ping the first Arrow Busybox Instance we started whose IP address should be 172.16.0.2
+- Ping the first Arrow Busybox Instance whose IP address is 172.16.0.2
 ```
 /# ping 172.16.0.2
 ```
 
-According to above result, it is clear Arrow Instances are properly configured and connected through Standard TCP/IP Network. 
+According to above result, Arrow Instances are properly configured and connected through Standard TCP/IP Network. 
 
 Arrow Single Task kernel is based on the standard Linux Kernel, you can use Busybox Instance to explore this Single Task Kernel through /Proc, /Sys, check kernel message using dmesg.
 
