@@ -3,12 +3,12 @@
 ## Arrow and Nginx
 [Nginx](https://www.nginx.com/) is a web server which can also be used as a reverse proxy, load balancer, mail proxy and HTTP cache.
 
-In Arrow 0.1 Release. Nginx has been integrated into [ASDK](https://github.com/Walnux/Atools/tree/master/ASDK). You can use ASDK to build "Combined Mode" Nginx Arrow Image and run it as Arrow Instance through [Arrow Service](https://github.com/Walnux/arrowd/blob/master/README.md). 
+In Arrow 0.1 Release. Nginx has been integrated into [ASDK](https://github.com/Walnux/Atools/tree/master/ASDK). You can use ASDK to build "Combined Mode" Nginx Arrow Binary Arrow Meta and run it as Arrow Instance through [Arrow Service](https://github.com/Walnux/arrowd/blob/master/README.md). 
 
 ## How to Run Nginx as Arrow Instance
 - After setting up [ASDK](https://github.com/Walnux/Atools/tree/master/ASDK) and [Arrow Service](https://github.com/Walnux/arrowd/blob/master/README.md). And Arrowd has been started. You can run Nginx as Arrow Instance in Arrowd source directory:
 
-Notes: In Arrow 0.1 Prove of Concept release, please make sure you are in Arrow Service source directory to run below command. Normally Arrow Service source directory is $HOME/go/src/github.com/Walnux/arrowd. 
+Notes: In Arrow 0.1 release, please make sure you are in Arrow Service source directory to run below command. Normally Arrow Service source directory is $HOME/go/src/github.com/Walnux/arrowd. 
 
 ```shell
 $ sudo ./bin/actrl shoot nginx nginx
