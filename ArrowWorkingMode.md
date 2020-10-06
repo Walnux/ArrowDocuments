@@ -50,4 +50,5 @@ Notes: Arrow Market is still in plan. This example uses local Arrow System envir
 ## Exploration
 
 Arrow System Working Mode is still in exploration stage and under change.
-The planned change is [Use Arrow Base to replace Arrow Binary ](https://github.com/Walnux/ArrowDocuments/issues/2)
+The planned change is
+- [Use Arrow Base to replace Arrow Binary ](https://github.com/Walnux/ArrowDocuments/issues/2)
