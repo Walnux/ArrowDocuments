@@ -60,22 +60,21 @@ The challenge task for Arrow project is to decrease the latency and overhead. Wi
 Arrow is the exploration and innovation project. Welcome to join this amazing adventure!  
 
 ## Getting Started
-- Understand the basic concept of - [Arrow System](https://github.com/Walnux/Arrow_Documents/blob/master/ArrowSystem.md) and [Arrow System Working Mode](https://github.com/Walnux/Arrow_Documents/blob/master/ArrowWorkingMode.md)
-- Then start from [Arrow Service Development Kit (ASDK)](https://github.com/Walnux/Atools/tree/master/ASDK).
+- Understand the basic concepts of - [Arrow System](https://github.com/Walnux/Arrow_Documents/blob/master/ArrowSystem.md) and [Arrow System Working Mode](https://github.com/Walnux/Arrow_Documents/blob/master/ArrowWorkingMode.md)
 
-- Then run below Arrow Instances through [Arrow Service](https://github.com/Walnux/arrowd)
+- Start from [Arrow Service Development Kit (ASDK)](https://github.com/Walnux/Atools/tree/master/ASDK).
 
-- [Run Busybox Arrow Instance](https://github.com/Walnux/Arrow_Documents/blob/master/Arrowize/ArrowizeBusybox.md)
+- Then run Applications on Arrow through [Arrow Service](https://github.com/Walnux/arrowd)
 
-- [Run Nginx Arrow Instance](https://github.com/Walnux/Arrow_Documents/blob/master/Arrowize/Nginx.md)
+- [Run Busybox On Arrow](https://github.com/Walnux/Arrow_Documents/blob/master/Arrowize/ArrowizeBusybox.md)
 
-- [Run Nodejs Applications Arrow Instances](https://github.com/Walnux/Arrow_Documents/blob/master/Arrowize/Nodejs.md)
+- [Run Nginx On Arrow](https://github.com/Walnux/Arrow_Documents/blob/master/Arrowize/Nginx.md)
 
-- [Run Python Applications Arrow Instances](https://github.com/Walnux/Arrow_Documents/blob/master/Arrowize/python.md)
+- [Run Golang Applications On Arrow](https://github.com/Walnux/Arrow_Documents/blob/master/Arrowize/golang.md)
 
-- [Run Golang Applications Arrow Instances](https://github.com/Walnux/Arrow_Documents/blob/master/Arrowize/golang.md)
+- [Run Node.js Applications On Arrow](https://github.com/Walnux/Arrow_Documents/blob/master/Arrowize/Nodejs.md)
 
-
+- [Run Python Applications On Arrow](https://github.com/Walnux/Arrow_Documents/blob/master/Arrowize/python.md)
 
 ## Arrow 0.1 Release
 
