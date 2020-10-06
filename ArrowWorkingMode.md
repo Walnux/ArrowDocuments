@@ -46,3 +46,8 @@ Notes: Arrow Market is still in plan. This example uses local Arrow System envir
   <img src="https://github.com/Walnux/Arrow_Documents/blob/master/images/ArrowWorkingModeExample.png"> 
 
 </p> 
+
+## Exploration
+
+Arrow System Working Mode is still in exploration stage and under change.
+The planned change is [Use Arrow Base to replace Arrow Binary ] https://github.com/Walnux/ArrowDocuments/issues/2
