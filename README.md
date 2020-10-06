@@ -74,7 +74,7 @@ Arrow is the exploration and innovation project. Welcome to join this amazing ad
 
 - [Run Node.js Applications On Arrow](https://github.com/Walnux/Arrow_Documents/blob/master/Arrowize/Nodejs.md)
 
-- [Run Python Applications On Arrow](https://github.com/Walnux/Arrow_Documents/blob/master/Arrowize/python.md)
+- [Run Python Applications On Arrow](https://github.com/Walnux/ArrowDocuments/blob/master/Arrowize/ArrowizePython.md)
 
 ## Arrow 0.1 Release
 
