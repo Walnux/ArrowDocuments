@@ -1,14 +1,227 @@
-# Arrowize Python
-Python is widely used on cloude side. Maybe it can also run on edge side. So we need to arrowize the Python Runtime and the extentions as well as the python applications. Firtly, we need to staticly link the Python Runtime 
+## Python overview 
 
-## Python overview
+Python is an interpreted, high-level and general-purpose programming language. Given its accessible and versatile nature, it is among the top popular languages in the world. So, Python is one of the main program Languages Arrow should support. 
 
-## Staticly link Python Runtime
+ 
+
+## Python and Arrow 
+
+In current Arrow 0.1 release, the basic support for Arrow has been added. Python Application can run on Arrow as Below steps 
+
+## Run Python Applications on Arrow 
+
+After [ASDK] and [Arrow Service] is installed. Python Arrow Binary, [Python Arrow Meta](https://github.com/Walnux/ameta/tree/master/python) and Python sample application [python-web](https://github.com/Walnux/ameta/tree/master/python-web) has been preinstalled in the developing machine. 
+
+- Run below command in Arrow Service source directory 
+
+``` shell 
+
+$ sudo ./bin/actrl shoot python 
+
+$ sudo ./bin/actrl logs 
+
+... 
+
+ Python 3.8.0a4 
+
+``` 
+
+Python Arrow Meta is located at: /path/to/arrowd/.work/var/arrowd/pieces/meta/python  
+
+Have a look at file arrow_spec.json in the directory 
+
+``` json 
+
+{ 
+
+    "binary": { 
+
+        "name": "python", 
+
+        "version": "v3.8", 
+
+        "project": "https://github.com/python/cpython" 
+
+    }, 
+
+  
+
+    "process": { 
+
+        "terminal": false, 
+
+        "cmd": "python", 
+
+        "args": [ 
+
+            "python", 
+
+            "--version" 
+
+        ] 
+
+    } 
+
+} 
+
+``` 
+
+Python 3.8 is used and command: "python –version" is run when shooting Arrow python  
+
+- run python-web application 
+
+``` shell 
+
+$ sudo ./bin/actrl shoot python-web 
+
+$ sudo ./bin/actrl logs 
+
+... 
+
+serving at port 8080 
+
+... 
+
+``` 
+
+Have look at file arrow_spec.json 
+
+``` json 
+
+{ 
+
+    "binary": { 
+
+        "name": "python", 
+
+        "version": "v3.8", 
+
+        "project": "https://github.com/python/cpython" 
+
+    }, 
+
+  
+
+    "process": { 
+
+        "terminal": false, 
+
+        "cmd": "python", 
+
+        "args": [ 
+
+            "python", 
+
+            "server.py" 
+
+        ] 
+
+    }, 
+
+  
+
+    "port": 8080, 
+
+    "export": 3008, 
+
+    "proto": "tcp" 
+
+} 
+
+``` 
+
+Python-3.8 Arrow Binary is used; When shooting python-web, command: python server.py is run; the web server is serving in port 8080, and the service is exported through port 3008. 
+
+The web server can be accessed through http://localhost:3008. 
+
+``` shell 
+
+martin@nuc8:~/go/src/github.com/Walnux/arrowd$ wget http://localhost:3008 
+
+--2020-10-06 20:14:43--  http://localhost:3008/ 
+
+Resolving localhost (localhost)... 127.0.0.1 
+
+Connecting to localhost (localhost)|127.0.0.1|:3008... connected. 
+
+HTTP request sent, awaiting response... 200 OK 
+
+Length: 247 [text/html] 
+
+Saving to: ‘index.html.22’ 
+
+  
+
+index.html.22                                      100%[================================================================================================================>]     247  --.-KB/s    in 0.002s   
+
+  
+
+2020-10-06 20:14:43 (155 KB/s) - ‘index.html.22’ saved [247/247] 
+
+ 
+
+``` 
+
+Using web browser to access the web server. 
+
+<p align="center"> 
+
+  <img src="https://github.com/Walnux/ArrowDocuments/blob/master/images/python-web.jpg"> 
+
+</p> 
+
+Have a look at the server.py application 
+
+``` python  
+
+import http.server 
+
+import socketserver 
+
+  
+
+PORT = 8080 
+
+Handler = http.server.SimpleHTTPRequestHandler 
+
+  
+
+with socketserver.TCPServer(("", PORT), Handler) as httpd: 
+
+    print("serving at port", PORT) 
+
+    httpd.serve_forever() 
+
+``` 
+
+http.server and socketserver module in Python Standard Library is imported to implement this simple webserver. 
+
+Notes: in the future, the Python Standard Library will be moved to Python Arrow Binary from Python Arrow Meta, so user application doesn’t have to package with Python Standard Library. 
+
+User can use Python Arrow Meta and Python-web Arrow Image as example to develop his/her own application. 
+
+- Run user python-hello Application on Arrow 
+
+``` shell 
+
+martin@nuc8:~/go/src/github.com/Walnux/arrowd$ sudo make asdk 
+
+#Enter ASDK 
+
+docker start -i adasdk 
+
+/ #cd admeta 
+
+/admeta # cp python python-hello -r 
+
+``` 
+
+## Supporting Python on Arrow
+### Staticly link Python Runtime
 [See CPython Building Process](https://github.com/python/cpython/blob/master/Modules/Setup)
 
 also Reference: [Staticly Link Python](https://stackoverflow.com/questions/1150373/compile-the-python-interpreter-statically)
 
-### Static linking Python Investigation
 * using GNU Libc to staticly link Python lead to below warnings
 ```Console
 /home/martin/repo/cpython/./Python/dynload_shlib.c:98: warning: Using 'dlopen' in statically linked applications requires at runtime the shared libraries from the glibc version used for linking
@@ -55,7 +268,12 @@ nss/nsswitch.h:# define nss_interface_function(name) static_link_warning (name)
 
 We prefer to start from the latter
 
-## Binary Extension Module support
+### Packaging & Distribution for Python Application on Arrow 
+The current Arrow 0.1 release only supports the basic Python Standard Library based application for Prove of Concept. 
+
+It is very important to explore a proper way to package python applications for the Single Task Arrow System which is compatible with existing Python packaging and distribution mechanisms. 
+
+[see An Overview of Packaging for Python ](https://packaging.python.org/overview/#thinking-about-deployment)
 [see Python Binary Extention ](https://packaging.python.org/guides/packaging-binary-extensions/)
 
 User can make use of ASDK to staticly link their needed Binary Extension Modules into Python runtime.
