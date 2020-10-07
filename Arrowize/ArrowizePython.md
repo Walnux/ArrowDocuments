@@ -1,16 +1,18 @@
 ## Python overview 
 
-Python is an interpreted, high-level and general-purpose programming language. Given its accessible and versatile nature, it is among the top popular languages in the world. So, Python is one of the main program Languages Arrow should support. 
-
- 
+Python is an interpreted, high-level and general-purpose programming language. Given its accessible and versatile nature, it is among the top popular languages in the world. Python is one of the main program Languages Arrow supports. 
 
 ## Python and Arrow 
 
-In current Arrow 0.1 release, the basic support for Arrow has been added. Python Application can run on Arrow as Below steps 
+In current Arrow 0.1 release, the basic support for Arrow has been added. Python-3.8 runtime binary is compiled and statically linked by ASDK, and be put into Python Arrow Binary for Python applications to use.
+
+Notes: in the future, the Python Standard Library will be moved to Python Arrow Binary from Python Arrow Meta, so user application doesn’t have to be packaged with Python Standard Library. 
+
+Python Applications can run on Arrow according to steps below. 
 
 ## Run Python Applications on Arrow 
 
-After [ASDK] and [Arrow Service] is installed. Python Arrow Binary, [Python Arrow Meta](https://github.com/Walnux/ameta/tree/master/python) and Python sample application [python-web](https://github.com/Walnux/ameta/tree/master/python-web) has been preinstalled in the developing machine. 
+After [ASDK](https://github.com/Walnux/Atools/tree/master/ASDK) and [Arrow Service](https://github.com/Walnux/arrowd) is installed. Python Arrow Binary, [Python Arrow Meta](https://github.com/Walnux/ameta/tree/master/python) and Python sample application [python-web](https://github.com/Walnux/ameta/tree/master/python-web) has been preinstalled in the developing machine. 
 
 - Run below command in Arrow Service source directory 
 
@@ -23,120 +25,103 @@ $ sudo ./bin/actrl logs
 ... 
 
  Python 3.8.0a4 
-
+...
 ``` 
 
-Python Arrow Meta is located at: /path/to/arrowd/.work/var/arrowd/pieces/meta/python  
+Notes: Python Arrow Meta is located at: /path/to/arrowd/.work/var/arrowd/pieces/meta/python  
 
-Have a look at file arrow_spec.json in the directory 
+Have a look at file python/arrow_spec.json in the directory 
 
 ``` json 
-
 { 
-
     "binary": { 
-
         "name": "python", 
-
         "version": "v3.8", 
-
         "project": "https://github.com/python/cpython" 
-
     }, 
 
-  
-
     "process": { 
-
         "terminal": false, 
-
         "cmd": "python", 
-
         "args": [ 
-
             "python", 
-
             "--version" 
-
         ] 
-
     } 
-
 } 
-
 ``` 
 
-Python 3.8 is used and command: "python –version" is run when shooting Arrow python  
+Arrow Binary Python-v3.8 is used and command: "python –version" is run when shooting python. 
 
-- run python-web application 
+User can use Python Arrow Meta as template to develop his/her own application very easily. 
+
+- create and run python-http-server application on Arrow 
 
 ``` shell 
+$ sudo make asdk
+#Enter ASDK
+docker start -i adasdk 
+#cd /admeta 
 
-$ sudo ./bin/actrl shoot python-web 
+#cp python python-http-server -r
+#cd python-http-server
+```
+create file server.py in ASDK directory /admeta/python-http-server
+``` python
+import http.server 
+import socketserver 
 
-$ sudo ./bin/actrl logs 
+PORT = 8080 
 
-... 
+Handler = http.server.SimpleHTTPRequestHandler 
 
-serving at port 8080 
-
-... 
-
+with socketserver.TCPServer(("", PORT), Handler) as httpd: 
+    print("serving at port", PORT) 
+    httpd.serve_forever() 
 ``` 
+server.py uses Python Standard Library Module http.server and socketserver to creat a simple http web server and serve on 8080 port.
 
-Have look at file arrow_spec.json 
-
-``` json 
-
+modify /admeta/python-http-server/arrow-spec.json as
+``` json
 { 
-
     "binary": { 
-
         "name": "python", 
-
         "version": "v3.8", 
-
         "project": "https://github.com/python/cpython" 
-
     }, 
-
-  
 
     "process": { 
-
         "terminal": false, 
-
         "cmd": "python", 
-
         "args": [ 
-
             "python", 
-
             "server.py" 
-
         ] 
-
     }, 
-
-  
 
     "port": 8080, 
-
     "export": 3008, 
-
     "proto": "tcp" 
-
 } 
-
 ``` 
+Notes: ASDK directory /admeta is bound with Host machice Arrow Meta which is located at: /path/to/arrowd/.work/var/arrowd/pieces/meta
 
-Python-3.8 Arrow Binary is used; When shooting python-web, command: python server.py is run; the web server is serving in port 8080, and the service is exported through port 3008. 
+Now python-http-server is ready to run.
+```shell
 
-The web server can be accessed through http://localhost:3008. 
+#exit
+
+$ sudo ./bin/actrl shoot python-http-server 
+$ sudo ./bin/actrl logs 
+... 
+serving at port 8080 
+... 
+```
+
+Python-3.8 Arrow Binary is used by application python-http-server; When shooting python-http-server, command: python server.py is run; the web server is serving in port 8080, and the service is exported from port 3008.The web server can be accessed through http://localhost:3008. on host machine.
 
 ``` shell 
-
-martin@nuc8:~/go/src/github.com/Walnux/arrowd$ wget http://localhost:3008 
+$ wget http://localhost:3008 
 
 --2020-10-06 20:14:43--  http://localhost:3008/ 
 
@@ -149,19 +134,12 @@ HTTP request sent, awaiting response... 200 OK
 Length: 247 [text/html] 
 
 Saving to: ‘index.html.22’ 
+index.html.22                                      100%
 
-  
-
-index.html.22                                      100%[================================================================================================================>]     247  --.-KB/s    in 0.002s   
-
-  
+[================================================================================================================>]     247  --.-KB/s    in 0.002s   
 
 2020-10-06 20:14:43 (155 KB/s) - ‘index.html.22’ saved [247/247] 
-
- 
-
-``` 
-
+```
 Using web browser to access the web server. 
 
 <p align="center"> 
@@ -170,51 +148,6 @@ Using web browser to access the web server.
 
 </p> 
 
-Have a look at the server.py application 
-
-``` python  
-
-import http.server 
-
-import socketserver 
-
-  
-
-PORT = 8080 
-
-Handler = http.server.SimpleHTTPRequestHandler 
-
-  
-
-with socketserver.TCPServer(("", PORT), Handler) as httpd: 
-
-    print("serving at port", PORT) 
-
-    httpd.serve_forever() 
-
-``` 
-
-http.server and socketserver module in Python Standard Library is imported to implement this simple webserver. 
-
-Notes: in the future, the Python Standard Library will be moved to Python Arrow Binary from Python Arrow Meta, so user application doesn’t have to package with Python Standard Library. 
-
-User can use Python Arrow Meta and Python-web Arrow Image as example to develop his/her own application. 
-
-- Run user python-hello Application on Arrow 
-
-``` shell 
-
-martin@nuc8:~/go/src/github.com/Walnux/arrowd$ sudo make asdk 
-
-#Enter ASDK 
-
-docker start -i adasdk 
-
-/ #cd admeta 
-
-/admeta # cp python python-hello -r 
-
-``` 
 
 ## Supporting Python on Arrow
 ### Staticly link Python Runtime
