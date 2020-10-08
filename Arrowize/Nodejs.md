@@ -1,47 +1,119 @@
-# Running nodejs runtime as Arrow Instance
+# Run Node.js Applications on Arrow
 
-## Arrow and Nginx
-[Nginx](https://www.nginx.com/) is a web server which can also be used as a reverse proxy, load balancer, mail proxy and HTTP cache.
+## Node.js overview
+Node.js is an open-source, cross-platform, JavaScript runtime environment. It executes JavaScript code outside of a browser. For more information on using Node.js, see the Node.js Website.
+## Arrow and Nodejs
+In current Arrow 0.1 release, the Node.js support for Arrow has been added. Node.js v12.4.0 runtime binary is compiled and statically linked by ASDK, and be put into Node.js Arrow Binary for Node.js applications to use. Node.js Arrow application is packed as Node.js Application/Microservice Arrow Image which includes user's JavaScript and the third party modules it depends on. These modules are managed by npm.
 
-In Arrow 0.1 Release. Nginx has been integrated into [ASDK](https://github.com/Walnux/Atools/tree/master/ASDK). You can use ASDK to build "Combined Mode" Nginx Arrow Image and run it as Arrow Instance through [Arrow Service](https://github.com/Walnux/arrowd/blob/master/README.md). 
+Run Node.js Applications according to steps below.
 
-## How to Run Nginx as Arrow Instance
-- After setting up [ASDK](https://github.com/Walnux/Atools/tree/master/ASDK) and [Arrow Service](https://github.com/Walnux/arrowd/blob/master/README.md). And Arrowd has been started. You can run Nginx as Arrow Instance in Arrowd source directory:
+## How to Run Node.js Applications on Arrow
+After [ASDK](https://github.com/Walnux/Atools/tree/master/ASDK) and [Arrow Service](https://github.com/Walnux/arrowd) is installed. Node.js Arrow Binary, [Node Arrow Meta](https://github.com/Walnux/ameta/tree/master/node) and Node.js sample application [node-hello](https://github.com/Walnux/ameta/tree/master/node_hello) has been preinstalled in the developing machine. 
 
-Notes: In Arrow 0.1 Prove of Concept release, please make sure you are in Arrow Service source directory to run below command. Normally Arrow Service source directory is $HOME/go/src/github.com/Walnux/arrowd. 
+- Run below command in Arrow Service source directory 
+
+Notes: In Arrow 0.1 Prove of Concept release, run below command under Arrow Service source directory. Arrow Service source directory is located $HOME/go/src/github.com/Walnux/arrowd. 
+
+``` shell 
+
+$ sudo ./bin/actrl shoot node 
+
+$ sudo ./bin/actrl logs
+
+... 
+v12.4.0
+...
+``` 
+
+Notes: Node Arrow Meta is located at: $HOME/go/src/github.com/Walnux/arrowd/.work/var/arrowd/pieces/meta/node  
+
+Have a look at file node/arrow_spec.json in the directory 
+
+``` json 
+{
+	"binary": {
+		"name": "node",
+		"version": "v12.4.0",
+		"project": "https://github.com/nodejs/node.git"
+	},
+
+	"process": {
+		"terminal": false,
+		"cmd": "node",
+		"args": [
+			"node",
+			"--version"
+		]
+	}
+
+}
+``` 
+
+Arrow Binary node-v12.4.0 is used and command: "node –version" is run when shooting node. 
+
+User can use Node Arrow Meta as template to run his/her own application very easily. 
+
+- run [feathers-chat](https://github.com/feathersjs/feathers-chat) on Arrow
+
+Feather-chat uses Feathers, a framework for real-time applications and REST APIs. It contains the chat application created in the Feathers guide and a frontend in plain JavaScript. It can run easily on Arrow. 
+
+``` shell 
+$ sudo make asdk
+#cd /admeta
+
+#git clone https://github.com/feathersjs/feathers-chat.git
+#cd feathers-chat
+#npm install
+```
+
+create below arrow-spec.json in /admeta/feathers-chat
+``` json
+{
+	"binary": {
+		"name": "node",
+		"version": "v12.4.0",
+		"project": "https://github.com/nodejs/node.git"
+	},
+
+	"process": {
+		"terminal": true,
+		"cmd": "node",
+		"args": [
+			"node",
+			"src/"
+		]
+	},
+	
+	"port": 3030,
+	"export": 3030,
+	"proto": "tcp"
+}
+``` 
+Notes: ASDK directory /admeta is bound with Host Machice Arrow Meta which is located at: $HOME/go/src/github.com/Walnux/arrowd/.work/var/arrowd/pieces/meta
+
+Now feathers-chat is ready to shoot.
 
 ```shell
-$ sudo ./bin/actrl shoot nginx nginx
+#exit
+
+$ sudo ./bin/actrl shoot feathers-chat 
+$ sudo ./bin/actrl logs 
+... 
+info: Feathers application started on http://localhost:3030 
 ```
 
-- Using wget to check the nginx server status
+Node.js Arrow Binary is used by service feathers-chat; When shooting feathers-chat, command: node /src is run; the chat service is serving on port 3030, and the service is exported from port 3030.The server can be accessed through http://localhost:3030. on host machine.
 
-``` shell
-$ wget 172.16.0.5
---2020-06-08 17:03:15--  http://172.16.0.5/
-Connecting to 172.16.0.5:80... connected.
-HTTP request sent, awaiting response... 200 OK
-Length: 1828 (1.8K) [text/html]
-Saving to: ‘index.html.8’
-2020-06-08 17:03:15 (109 MB/s) - ‘index.html.8’ saved [1828/1828]
-```
+Using web browser to access the chat service. 
 
-- Using below command to export http service
-``` shell
-$ sudo ./bin/actrl shoot -p 80:80/tcp nginx nginx
-```
+<p align="center"> 
 
-- Access the http service from the other node connected with the hostnode where Arrow system is running
-``` shell
-$ wget 10.0.0.90
---2020-06-08 10:11:42--  http://10.0.0.90/
-Connecting to 10.0.0.90:80... connected.
-HTTP request sent, awaiting response... 200 OK
-Length: 1828 (1.8K) [text/html]
-Saving to: ‘index.html.7’
+  <img src="https://github.com/Walnux/ArrowDocuments/blob/master/images/feathers-chat-login.jpg"> 
 
-2020-06-08 10:11:42 (115 MB/s) - ‘index.html.7’ saved [1828/1828]
+</p> 
+<p align="center"> 
 
-```
+  <img src="https://github.com/Walnux/ArrowDocuments/blob/master/images/feathers-chat.jpg"> 
 
-Note 10.0.0.90 is the IP address of host where Arrow system is running.
+</p> 
+
