@@ -10,7 +10,7 @@ Run Node.js Applications according to steps below.
 ## How to Run Node.js Applications on Arrow
 After [ASDK](https://github.com/Walnux/Atools/tree/master/ASDK) and [Arrow Service](https://github.com/Walnux/arrowd) is installed. Node.js Arrow Binary, [Node Arrow Meta](https://github.com/Walnux/ameta/tree/master/node) and Node.js sample application [node-hello](https://github.com/Walnux/ameta/tree/master/node_hello) has been preinstalled in the developing machine. 
 
-- Run below command in Arrow Service source directory 
+- Try Node.js Arrow Meta 
 
 Notes: In Arrow 0.1 Prove of Concept release, run below command under Arrow Service source directory. Arrow Service source directory is located $HOME/go/src/github.com/Walnux/arrowd. 
 
@@ -52,6 +52,52 @@ Have a look at file node/arrow_spec.json in the directory
 Arrow Binary node-v12.4.0 is used and command: "node –version" is run when shooting node. 
 
 User can use Node Arrow Meta as template to run his/her own application very easily. 
+
+- Run node-hello application on Arrow
+
+node-hello is the service to report the current date, time and timezone through http. 
+
+``` shell 
+
+$ sudo ./bin/actrl shoot node-hello 
+``` 
+
+Notes: Node Arrow Meta is located at: $HOME/go/src/github.com/Walnux/arrowd/.work/var/arrowd/pieces/meta/node  
+
+Have a look at file node-hello/arrow_spec.json in the directory 
+
+``` json 
+{
+	"binary": {
+		"name": "node",
+		"version": "v12.4.0",
+		"project": "https://github.com/nodejs/node.git"
+	},
+
+	"process": {
+		"terminal": false,
+		"cmd": "node",
+		"args": [
+			"node",
+			"hello.js"
+		]
+	},
+
+	"port": 3003,
+	"export": 3003,
+	"proto": "tcp"
+}
+``` 
+
+Arrow Binary node-v12.4.0 is used and command: "node hello.js" is run when shooting node. node-hello service is serving on port 3003, and the service is exported from port 3003.The service can be accessed through http://localhost:3008. on host machine.
+
+Using web browser to access the service. 
+
+<p align="center"> 
+
+  <img src="https://github.com/Walnux/ArrowDocuments/blob/master/images/NodeHello.jpg"> 
+
+</p> 
 
 - run [feathers-chat](https://github.com/feathersjs/feathers-chat) on Arrow
 
@@ -117,3 +163,5 @@ Using web browser to access the chat service.
 
 </p> 
 
+## understand [Arrow System Working Mode](https://github.com/Walnux/ArrowDocuments/blob/master/ArrowWorkingMode.md)
+From above examples, it is easy to understand Arrow System Working Mode. 
