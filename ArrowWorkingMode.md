@@ -37,7 +37,7 @@ Diagram below demonstrates a typical usage case of Arrow System Working Mode.
 
 The same user uses the same release of Nodejs to develop and run different Nodejs services. The first application is Hello world! The second is the chatting room application. 
 
-If Arrow System on your Machine has been set up, [running Nodejs applications as Arrow Instance]() can be used to try this usage case which can help to understand Arrow System Working Mode. 
+If Arrow System on your Machine has been set up, [run Nodejs applications on Arrow](https://github.com/Walnux/ArrowDocuments/blob/master/Arrowize/Nodejs.md) can be used to try this usage case which can help to understand Arrow System Working Mode. 
 
 Notes: Arrow Market is still in plan. This example uses local Arrow System environment to verify the concept.       
 
