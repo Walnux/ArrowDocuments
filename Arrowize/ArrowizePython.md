@@ -14,6 +14,15 @@ Python Applications can run on Arrow according to steps below.
 
 After [ASDK](https://github.com/Walnux/Atools/tree/master/ASDK) and [Arrow Service](https://github.com/Walnux/arrowd) is installed. Python Arrow Binary, [Python Arrow Meta](https://github.com/Walnux/ameta/tree/master/python) and Python sample application [python-web](https://github.com/Walnux/ameta/tree/master/python-web) has been preinstalled in the developing machine. 
 
+Notes: check whether Python Arrow Binary is preinstalled by checking whether file python is located at directory .work/usr/local/abin. if Python Arrow Binary is not preinstalled using command below to install it in ASDK 
+
+``` shell
+$ sudo make asdk
+/ # alink.sh cpython/python
+/ # install /abin/python /adbin
+/ # exit
+```
+
 - Run below command in Arrow Service source directory 
 
 ``` shell 
