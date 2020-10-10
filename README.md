@@ -3,7 +3,7 @@
 Arrow project targets to explore a simple, secure, low latency and low overhead way to run [micoservices](https://martinfowler.com/articles/microservices.html) based applications on cloud, edge, client even IoT computing platform and obey [Twelve-Factor App methodology](https://12factor.net/).
 
 ## The motivation to work on Arrow project
-It is well-known, how to run applications decided nearly every aspect of cloud and edge computing including infrastructure, applications development, operation, security and so on. 
+It is well-known, how to run applications decides nearly every aspect of cloud and edge computing including infrastructure, applications development, operation, security and so on. 
 
 Traditional Virtual Machine Image-based way to run application trigged the booming of one of the main cloud service ECS (Elastic Computing Service). It provides the similar user experience and compatible application running environment with the physical server. Multi-tent user applications running on the virtual server are well isolated and protected. However, although users don’t have to manage the physical servers anymore, maintaining and operating the full feature virtual machine-based virtual server is still a heavy burden. 
 
