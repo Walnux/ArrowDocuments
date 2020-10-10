@@ -118,7 +118,7 @@ Notes: If npm is not installed in the ASDK using below command to install npm
 #apk add npm
 ```
 
-create below arrow-spec.json in /admeta/feathers-chat
+create below arrow_spec.json in /admeta/feathers-chat
 ``` json
 {
 	"binary": {
