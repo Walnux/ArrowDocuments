@@ -105,17 +105,17 @@ Feather-chat uses Feathers, a framework for real-time applications and REST APIs
 
 ``` shell
 $ sudo make asdk
-#cd /admeta
+/ # cd /admeta
 
-#git clone https://github.com/feathersjs/feathers-chat.git
-#cd feathers-chat
-#npm install
+/ # git clone https://github.com/feathersjs/feathers-chat.git
+/ # cd feathers-chat
+/ # npm install
 ```
 
 Notes: If npm is not installed in the ASDK using below command to install npm 
 
 ``` shell
-#apk add npm
+/ # apk add npm
 ```
 
 create below arrow_spec.json in /admeta/feathers-chat
@@ -146,7 +146,7 @@ Notes: ASDK directory /admeta is bound with Arrow Meta on development machine, w
 Now feathers-chat is ready to shoot. Exit from ASDK and shoot features using below commands.
 
 ```shell
-#exit
+/ # exit
 
 $ sudo ./bin/actrl shoot feathers-chat 
 $ sudo ./bin/actrl logs 
