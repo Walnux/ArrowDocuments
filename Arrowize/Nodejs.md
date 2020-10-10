@@ -25,7 +25,7 @@ v12.4.0
 ...
 ``` 
 
-Notes: In Arrow 0.1 release Node Arrow Meta is located at: $HOME/go/src/github.com/Walnux/arrowd/.work/var/arrowd/pieces/meta/node  
+Notes: In Arrow 0.1 release Node Arrow Meta is located at: $HOME/go/src/github.com/Walnux/arrowd/.work/var/arrowd/pieces/ameta/node  
 
 Have a look at file node/arrow_spec.json in the directory 
 
@@ -62,7 +62,7 @@ node-hello is the service to inform current date, time and timezone from http se
 $ sudo ./bin/actrl shoot node-hello 
 ``` 
 
-Notes: node-hello Arrow Image is located at: $HOME/go/src/github.com/Walnux/arrowd/.work/var/arrowd/pieces/meta/node-hello  
+Notes: node-hello Arrow Image is located at: $HOME/go/src/github.com/Walnux/arrowd/.work/var/arrowd/pieces/ameta/node-hello  
 
 Have a look at file node-hello/arrow_spec.json in the directory 
 
@@ -141,7 +141,7 @@ create below arrow-spec.json in /admeta/feathers-chat
 	"proto": "tcp"
 }
 ``` 
-Notes: ASDK directory /admeta is bound with Arrow Meta on development machine, which is located at: $HOME/go/src/github.com/Walnux/arrowd/.work/var/arrowd/pieces/meta
+Notes: ASDK directory /admeta is bound with Arrow Meta on development machine, which is located at: $HOME/go/src/github.com/Walnux/arrowd/.work/var/arrowd/pieces/ameta
 
 Now feathers-chat is ready to shoot. Exit from ASDK and shoot features using below commands.
 
