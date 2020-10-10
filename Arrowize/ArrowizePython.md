@@ -59,12 +59,10 @@ User can use Python Arrow Meta as template to develop his/her own application ve
 
 ``` shell 
 $ sudo make asdk
-#Enter ASDK
-docker start -i adasdk 
-#cd /admeta 
+/ # cd /admeta 
 
-#cp python python-http-server -r
-#cd python-http-server
+/ # cp python python-http-server -r
+/ # cd python-http-server
 ```
 create file server.py in ASDK directory /admeta/python-http-server
 ``` python
@@ -109,7 +107,7 @@ Notes: ASDK directory /admeta is bound with Host machice Arrow Meta which is loc
 Now python-http-server is ready to run.
 ```shell
 
-#exit
+/ # exit
 
 $ sudo ./bin/actrl shoot python-http-server 
 $ sudo ./bin/actrl logs 
