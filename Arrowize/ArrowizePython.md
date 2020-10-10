@@ -88,7 +88,7 @@ with socketserver.TCPServer(("", PORT), Handler) as httpd:
 ``` 
 server.py uses Python Standard Library Module http.server and socketserver to creat a simple http web server and serve on 8080 port.
 
-modify /admeta/python-http-server/arrow-spec.json as
+create file arrow_spec.json in directory /admeta/python-http-server as
 ``` json
 { 
     "binary": { 
