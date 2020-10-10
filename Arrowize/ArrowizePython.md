@@ -28,7 +28,7 @@ $ sudo ./bin/actrl logs
 ...
 ``` 
 
-Notes: Python Arrow Meta is located at: /path/to/arrowd/.work/var/arrowd/pieces/meta/python  
+Notes: Python Arrow Meta is located at: /path/to/arrowd/.work/var/arrowd/pieces/ameta/python  
 
 Have a look at file python/arrow_spec.json in the directory 
 
@@ -104,7 +104,7 @@ modify /admeta/python-http-server/arrow-spec.json as
     "proto": "tcp" 
 } 
 ``` 
-Notes: ASDK directory /admeta is bound with Host machice Arrow Meta which is located at: /path/to/arrowd/.work/var/arrowd/pieces/meta
+Notes: ASDK directory /admeta is bound with Host machice Arrow Meta which is located at: /path/to/arrowd/.work/var/arrowd/pieces/ameta
 
 Now python-http-server is ready to run.
 ```shell
