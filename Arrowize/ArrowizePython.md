@@ -18,7 +18,7 @@ Notes: check whether Python Arrow Binary is preinstalled by checking whether fil
 
 ``` shell
 $ sudo make asdk
-/ # alink.sh cpython/python
+/ # alink.sh /cpython/python
 / # install /abin/python /adbin
 / # exit
 ```
@@ -86,7 +86,7 @@ with socketserver.TCPServer(("", PORT), Handler) as httpd:
     print("serving at port", PORT) 
     httpd.serve_forever() 
 ``` 
-server.py uses Python Standard Library Module http.server and socketserver to creat a simple http web server and serve on 8080 port.
+server.py uses Python Standard Library Module http.server and socketserver to create a simple http web server and serve on 8080 port.
 
 create file arrow_spec.json in directory /admeta/python-http-server as
 ``` json
@@ -125,7 +125,7 @@ serving at port 8080
 ... 
 ```
 
-Python-3.8 Arrow Binary is used by application python-http-server; When shooting python-http-server, command: python server.py is run; the web server is serving in port 8080, and the service is exported from port 3008.The web server can be accessed through http://localhost:3008. on host machine.
+Python-3.8 Arrow Binary is used by application python-http-server; When shooting python-http-server, command: python server.py is run; the web server is serving on port 8080, and the service is exported from port 3008.The web server can be accessed through http://localhost:3008. on host machine.
 
 ``` shell 
 $ wget http://localhost:3008 
