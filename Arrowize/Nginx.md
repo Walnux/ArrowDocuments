@@ -3,7 +3,7 @@
 ## Arrow and Nginx
 [Nginx](https://www.nginx.com/) is a web server which can also be used as a reverse proxy, load balancer, mail proxy and HTTP cache.
 
-In Arrow 0.1 Release. Nginx has been integrated into [ASDK](https://github.com/Walnux/Atools/tree/master/ASDK). It can be run on Arrow using [Arrow Service](https://github.com/Walnux/arrowd/blob/master/README.md) very easily. 
+In Arrow 0.1 Release. Nginx has been integrated into [ASDK](https://github.com/Walnux/Atools/tree/master/ASDK) and pre-installed in the development machine. It can be run on Arrow using [Arrow Service](https://github.com/Walnux/arrowd/blob/master/README.md) very easily. 
 
 ## How to Run Nginx on Arrow
 - After setting up [ASDK](https://github.com/Walnux/Atools/tree/master/ASDK) and [Arrow Service](https://github.com/Walnux/arrowd/blob/master/README.md). And Arrow Service has been started properly.
@@ -14,34 +14,18 @@ Notes: In Arrow 0.1 release, please make sure run Nginx in Arrow Service source 
 $ sudo ./bin/actrl shoot nginx
 ```
 
-- Using wget to check the nginx server status
+- Using wget to acess the nginx based http server
 
 ``` shell
-$ wget 172.16.0.5
---2020-06-08 17:03:15--  http://172.16.0.5/
-Connecting to 172.16.0.5:80... connected.
+$ wget localhost
+--2020-10-15 19:38:36--  http://localhost/
+Resolving localhost (localhost)... 127.0.0.1
+Connecting to localhost (localhost)|127.0.0.1|:80... connected.
 HTTP request sent, awaiting response... 200 OK
-Length: 1828 (1.8K) [text/html]
-Saving to: ‘index.html.8’
-2020-06-08 17:03:15 (109 MB/s) - ‘index.html.8’ saved [1828/1828]
-```
+Length: 171 [text/html]
+Saving to: ‘index.html’
 
-- Using below command to export http service
-``` shell
-$ sudo ./bin/actrl shoot -p 80:80/tcp nginx nginx
-```
+index.html
+100%[================================================================================================================>]     171  --.-KB/s    in 0.001s  
 
-- Access the http service from the other node connected with the hostnode where Arrow system is running
-``` shell
-$ wget 10.0.0.90
---2020-06-08 10:11:42--  http://10.0.0.90/
-Connecting to 10.0.0.90:80... connected.
-HTTP request sent, awaiting response... 200 OK
-Length: 1828 (1.8K) [text/html]
-Saving to: ‘index.html.7’
-
-2020-06-08 10:11:42 (115 MB/s) - ‘index.html.7’ saved [1828/1828]
-
-```
-
-Note 10.0.0.90 is the IP address of host where Arrow system is running.
+2020-10-15 19:38:36 (289 KB/s) - ‘index.html’ saved [171/171]
