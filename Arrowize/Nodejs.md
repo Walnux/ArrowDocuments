@@ -1,7 +1,6 @@
-# Run Node.js Applications on Arrow
+# Run Node.js Servics on Arrow
 
 [Overview](#overview)
-
 
 [Try Node.js Arrow Meta](#try-nodejs-arrow-meta)
 
@@ -10,6 +9,9 @@
 [Run Chat Service on Arrow](#run-chat-service-on-arrow)
 
 [Using Express-photo-gallery module to develop and run gallery service on Arrow](#using-express-photo-gallery-module-to-develop-and-run-gallery-service-on-arrow)
+
+[Understanding of Arrow System Working Mode](#understanding-of-arrow-system-working-mode)
+
 ## Overview
 Node.js is an open-source, cross-platform, JavaScript runtime environment. It executes JavaScript code outside of a browser. For more information on using Node.js, see the Node.js Website.
 
@@ -269,5 +271,5 @@ Using web browser to access the gallery service.
 </p> 
 
 
-## Understanding [Arrow System Working Mode](https://github.com/Walnux/ArrowDocuments/blob/master/ArrowWorkingMode.md)
-From above examples, it is easy to understand Arrow System Working Mode. The developers who use Node.js-12.4.0 to develop the microservices only need to care about his/her own applications and don't have to package the application with Node.js runtime or any base OS, tools and so on. User only needs to specify what Arrow Binary will being used in arrow_spec.json file.
+## Understanding of Arrow System Working Mode
+From above examples, it is easy to understand [Arrow System Working Mode](https://github.com/Walnux/ArrowDocuments/blob/master/ArrowWorkingMode.md). The developers who use Node.js-12.4.0 to develop the microservices only need to care about his/her own applications and don't have to package the application with Node.js runtime or any base OS, tools and so on. User only needs to specify what Arrow Binary will being used in arrow_spec.json file.
