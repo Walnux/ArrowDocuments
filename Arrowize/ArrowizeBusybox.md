@@ -1,38 +1,47 @@
 # Run Busybox On Arrow
 
-## Arrow and Busybox
+[Overview](#overview)
+
+[Start Arrow Shell Environment](#start-arrow-shell-environment)
+
+[Checking Network Configuration in Arrow Shell Environment](#checking-network-configuration-in-arrow-shell-environment)
+
+[Run Busybox Command Outside of Arrow Shell Environment](#run-busybox-command-outside-of-arrow-shell-environment)
+
+[Debug Arrow Single Task Kernel in Arrow Shell Environment](#debug-arrow-single-task-kernel-in-arrow-shell-environment)
+
+## Overview
 Busybox is the true Swiss Army Knife of Embedded Linux. It integrates nearly all the general linux features/tools into one binary, and identify the feature user want to use through link name. the link name will be saved at argv[0] as the command name. Arrow populate the argv[0] with command name. That is compatible with Busybox design.
 
-Busybox is the ideal tool to debug Arrow Single Task Kernel. Running Busybox as Arrow Instance, actually, you might be using the normal Linux.
+In Arrow 0.1 Release. Busybox has been integrated into [ASDK](https://github.com/Walnux/Atools/tree/master/ASDK). You can use ASDK to build "Combined Mode" Busybox Arrow Binary and run it through [Arrow Service](https://github.com/Walnux/arrowd/blob/master/README.md). 
 
-In Arrow 0.1 Release. Busybox has been integrated into [ASDK](https://github.com/Walnux/Atools/tree/master/ASDK). You can use ASDK to build "Combined Mode" Busybox Arrow Binary and run it as Arrow Instance through [Arrow Service](https://github.com/Walnux/arrowd/blob/master/README.md). 
+In Arrow, Busybox is only used to debug Arrow Single Task Kernel and will not be packaged with the application. Busybox based Arrow Shell environment provides the standard Linux Shell using experience.
 
-## How to Run Busybox as Arrow Instance
-- After setting up [ASDK](https://github.com/Walnux/Atools/tree/master/ASDK) and [Arrow Service](https://github.com/Walnux/arrowd/blob/master/README.md). And Arrowd has been started. You can run Busybox Binary as Arrow Instance in Arrowd source directory:
+Using below steps to try Arrow Shell Environment.
 
-Notes: In Arrow 0.1, please make sure you are in Arrow Service source directory to run below command. Normally Arrow Service source directory is $HOME/go/src/github.com/Walnux/arrowd. 
+
+## Start Arrow Shell Environment
+After setting up [ASDK](https://github.com/Walnux/Atools/tree/master/ASDK) and [Arrow Service](https://github.com/Walnux/arrowd/blob/master/README.md). And Arrowd has been started. You can run Busybox based shell environment on Arrow in Arrow Service source directory:
+
+Notes: Arrow Service source directory is $HOME/go/src/github.com/Walnux/arrowd. 
 
 ```shell
 $ sudo ./bin/actrl shoot -t busybox sh
 ```
 
-- Using below command to check the Arrow Instance running status
+Using below command to check shell running status
 ``` shell
 $ sudo ./bin/actrl list
 busybox bpfaeddd5h2u8e3q7svg    sh      sh      io.arrowd.arrow.status.running.v1
 ```
 
-- Using below command to enter the Single Task Kernel Shell Environment. It is actually a compact Linux Shell environment
+Using below command to enter Arrow Shell Environment.
 
-notes: it actuallly attach Busybox Arrow Instance STDIO with current terminal
 ``` shell
 sudo ./bin/actrl attach
-
-/ # ls
-data  dev   etc   proc  root  sys   tmp
 ```
 
-- Using ifconfig command to check the network configuration
+## Checking Network Configuration in Arrow Shell Environment  
 
 ``` sh
 / # ifconfig
@@ -57,25 +66,27 @@ PING 172.16.0.1 (172.16.0.1): 56 data bytes
 round-trip min/avg/max = 1.609/1.609/1.609 ms
 ```
 
-- Starting one more Busybox Instance in another terminal
+- Run one more Arrow Shell Enironment in another terminal on the development machine
 
 ``` shell
 $ sudo ./bin/actrl shoot -t busybox sh
 ```
-
-- Using below commands to attach the Busybox Instance's STDIO with your terminal's
-
+- Entering the Shell Enviornmnet
 ``` shell
 $ sudo ./bin/actrl attach
 ```
 
-- Using below command to check the network status in Busybox shell
-
+- Check the network status in this Arrow shell Environment
 ``` shell
 / # ifconfig
 eth0      Link encap:Ethernet  HWaddr 02:00:00:00:00:01  
           inet addr:172.16.0.3  Bcast:172.16.255.255  Mask:255.255.0.0
 ```
+- Ping the first Arrow shell Envionment
+```shell
+/ # ping 172.16.0.2
+```
+The two Arrow shell Enviornment is connected with each other.
 
 - Using below command to exit the Busybox
 
@@ -83,7 +94,8 @@ eth0      Link encap:Ethernet  HWaddr 02:00:00:00:00:01
 / # exit
 ```
 
-- Directly running the related command outside of Shell environment is also allowed. When running out side of Shell environment, Busybox Arrow Instance is started to run the related command and save the STDOUT into the logger file then exits. It is as easy as running a normal native application.
+## Run Busybox Command Outside of Arrow Shell Environment
+Running Busybox Command outside of Arrow Shell environment is also allowed. When running out side of Shell environment, The Busybox Arrow Binary is used to run the related command. It is as easy as running a normal native application.
 
 ``` shell
 $ sudo ./bin/actrl shoot busybox ping 172.16.0.1
@@ -109,13 +121,20 @@ round-trip min/avg/max = 0.293/0.468/0.557 ms
 ```
 
 - Ping the first Arrow Busybox Instance whose IP address is 172.16.0.2
-```
-/# ping 172.16.0.2
+
+``` shell
+$ sudo ./bin/actrl shoot busybox ping 172.16.0.2
 ```
 
-According to above result, Arrow Instances are properly configured and connected through Standard TCP/IP Network. 
+- Using logs command to check the result
 
-Arrow Single Task Kernel is based on the standard Linux Kernel, you can use Busybox Instance to explore this Single Task Kernel through /Proc and /Sys filesystem, check Kernel message using dmesg.
+``` shell
+$ sudo ./bin/actrl logs
+```
+According to above result, All the shot Arrows are properly configured and connected through Standard TCP/IP Network. 
+
+## Debug Arrow Single Task Kernel in Arrow Shell Environment
+Arrow Single Task Kernel is based on the standard Linux Kernel, you can use Busybox Shell to explore this Single Task Kernel through /Proc and /Sys filesystem, check Kernel message using dmesg, like on standard Linux Shell Environment.
 
 ## Next Step
 [Run Nginx Arrow Instance](https://github.com/Walnux/Arrow_Documents/blob/master/Arrowize/Nginx.md)
