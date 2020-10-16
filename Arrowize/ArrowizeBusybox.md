@@ -137,4 +137,4 @@ According to above result, All the shot Arrows are properly configured and conne
 Arrow Single Task Kernel is based on the standard Linux Kernel, you can use Busybox Shell to explore this Single Task Kernel through /Proc and /Sys filesystem, check Kernel message using dmesg, like on standard Linux Shell Environment.
 
 ## Next Step
-[Run Nginx Arrow Instance](https://github.com/Walnux/Arrow_Documents/blob/master/Arrowize/Nginx.md)
+[Run Nginx on Arrow](https://github.com/Walnux/Arrow_Documents/blob/master/Arrowize/Nginx.md)
