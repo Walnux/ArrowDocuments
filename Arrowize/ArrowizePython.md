@@ -1,8 +1,14 @@
-## Python overview 
+# Run Python Services on Arrow
+[Overview](#overview)
+
+[Try Python Arrow Meta](#try-python-arrow-meta)
+
+[Develop and Run Python Http Server Service on Arrow](#develop-and-run-python-http-server-service-on-arrow)
+
+[Supporting Python on Arrow](#supporting-python-on-arrow)
+## overview 
 
 Python is an interpreted, high-level and general-purpose programming language. Given its accessible and versatile nature, it is among the top popular languages in the world. Python is one of the main program Languages Arrow supports. 
-
-## Python and Arrow 
 
 In current Arrow 0.1 release, the basic support for Arrow has been added. Python-3.8 runtime binary is compiled and statically linked by ASDK, and be put into Python Arrow Binary for Python applications to use.
 
@@ -14,7 +20,9 @@ Python Applications can run on Arrow according to steps below.
 
 After [ASDK](https://github.com/Walnux/Atools/tree/master/ASDK) and [Arrow Service](https://github.com/Walnux/arrowd) is installed. Python Arrow Binary, [Python Arrow Meta](https://github.com/Walnux/ameta/tree/master/python) and Python sample application [python-web](https://github.com/Walnux/ameta/tree/master/python-web) has been preinstalled in the developing machine. 
 
-Notes: check whether Python Arrow Binary is preinstalled by checking whether file python is located at directory .work/usr/local/abin. if Python Arrow Binary is not preinstalled using command below to install it in ASDK 
+
+## Try Python Arrow Meta
+First, Checking whether file $HOME/go/src/github/Walnux/arrowd/.work/usr/local/abin/python exists. If it doesn't exist, Python Arrow Binary is not preinstalled.  Using command below to install it from ASDK 
 
 ``` shell
 $ sudo make asdk
@@ -22,24 +30,24 @@ $ sudo make asdk
 / # install /abin/python /adbin
 / # exit
 ```
-
-- Run below command in Arrow Service source directory 
+if python Arrow Binary is installed, using below command to try Python meta.
 
 ``` shell 
-
 $ sudo ./bin/actrl shoot python 
+```
+Using below command to check the service running states.
 
+```
 $ sudo ./bin/actrl logs 
-
 ... 
 
- Python 3.8.0a4 
+Python 3.8.0a4 
 ...
 ``` 
 
-Notes: Python Arrow Meta is located at: /path/to/arrowd/.work/var/arrowd/pieces/ameta/python  
+Have a look at file arrow_spec.json in Python Arrow Meta directory 
 
-Have a look at file python/arrow_spec.json in the directory 
+Notes: Python Arrow Meta is located at: $HOME/go/src/github/Walnux/arrowd/.work/var/arrowd/pieces/ameta/python  
 
 ``` json 
 { 
@@ -60,11 +68,11 @@ Have a look at file python/arrow_spec.json in the directory
 } 
 ``` 
 
-Arrow Binary Python-v3.8 is used and command: "python –version" is run when shooting python. 
+Arrow Binary Python-v3.8 is used and command: "python --version" is run when shooting python Arrow Meta. 
 
 User can use Python Arrow Meta as template to develop his/her own application very easily. 
 
-- create and run python-http-server application on Arrow 
+### Develop and Run Python Http Server Service on Arrow 
 
 ``` shell 
 $ sudo make asdk
@@ -73,7 +81,8 @@ $ sudo make asdk
 / # cp python python-http-server -r
 / # cd python-http-server
 ```
-create file server.py in ASDK directory /admeta/python-http-server
+Create file /admeta/python-http-server/server.py in ASDK.
+
 ``` python
 import http.server 
 import socketserver 
@@ -86,9 +95,9 @@ with socketserver.TCPServer(("", PORT), Handler) as httpd:
     print("serving at port", PORT) 
     httpd.serve_forever() 
 ``` 
-server.py uses Python Standard Library Module http.server and socketserver to create a simple http web server and serve on 8080 port.
+server.py uses Module http.server and socketserver from Python Standard Library to create a simple http web server and serve on 8080 port.
 
-create file arrow_spec.json in directory /admeta/python-http-server as
+create file /admeta/python-http-server/arrow_spec.json in ASDK as
 ``` json
 { 
     "binary": { 
@@ -111,42 +120,20 @@ create file arrow_spec.json in directory /admeta/python-http-server as
     "proto": "tcp" 
 } 
 ``` 
-Notes: ASDK directory /admeta is bound with Host machice Arrow Meta which is located at: /path/to/arrowd/.work/var/arrowd/pieces/ameta
+Notes: ASDK directory /admeta is bound with Host machice Arrow Meta which is located at: $HOME/go/src/github/Walnux/arrowd/.work/var/arrowd/pieces/ameta
 
 Now python-http-server is ready to run.
+using below command to exit ASDK
 ```shell
-
 / # exit
-
+```
+Shoot python-http-server service 
+```shell
 $ sudo ./bin/actrl shoot python-http-server 
-$ sudo ./bin/actrl logs 
-... 
-serving at port 8080 
-... 
 ```
 
 Python-3.8 Arrow Binary is used by application python-http-server; When shooting python-http-server, command: python server.py is run; the web server is serving on port 8080, and the service is exported from port 3008.The web server can be accessed through http://localhost:3008. on host machine.
 
-``` shell 
-$ wget http://localhost:3008 
-
---2020-10-06 20:14:43--  http://localhost:3008/ 
-
-Resolving localhost (localhost)... 127.0.0.1 
-
-Connecting to localhost (localhost)|127.0.0.1|:3008... connected. 
-
-HTTP request sent, awaiting response... 200 OK 
-
-Length: 247 [text/html] 
-
-Saving to: ‘index.html.22’ 
-index.html.22                                      100%
-
-[================================================================================================================>]     247  --.-KB/s    in 0.002s   
-
-2020-10-06 20:14:43 (155 KB/s) - ‘index.html.22’ saved [247/247] 
-```
 Using web browser to access the web server. 
 
 <p align="center"> 
@@ -154,7 +141,6 @@ Using web browser to access the web server.
   <img src="https://github.com/Walnux/ArrowDocuments/blob/master/images/python-web.jpg"> 
 
 </p> 
-
 
 ## Supporting Python on Arrow
 ### Staticly link Python Runtime
