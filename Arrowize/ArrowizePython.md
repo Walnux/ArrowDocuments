@@ -6,7 +6,7 @@
 [Develop and Run Python Http Server Service on Arrow](#develop-and-run-python-http-server-service-on-arrow)
 
 [Supporting Python on Arrow](#supporting-python-on-arrow)
-## overview 
+## Overview 
 
 Python is an interpreted, high-level and general-purpose programming language. Given its accessible and versatile nature, it is among the top popular languages in the world. Python is one of the main program Languages Arrow supports. 
 
@@ -14,7 +14,7 @@ In current Arrow 0.1 release, the basic support for Arrow has been added. Python
 
 Notes: in the future, the Python Standard Library will be moved to Python Arrow Binary from Python Arrow Meta, so user application doesn’t have to be packaged with Python Standard Library. 
 
-Python Applications can run on Arrow according to steps below. 
+Python Applications can be run on Arrow according to Below steps. 
 
 ## Run Python Applications on Arrow 
 
