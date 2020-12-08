@@ -49,13 +49,15 @@ Only running the single application, the DDL is not necessary any more, the appl
 
 Only Running the single task, the standard Linux Kernel can be simplified and redefined. But the standard Linux application running environment like Kernel user space ABI and FHS compatibility are still protected to make sure the application don’t have to be modified to run on Arrow.
 
-Obviously, it is the best isolated and security way to run each microservice.
+So each microservice is run in an isolated and secure environment.
 
-It is much more simple to orchestrate, operate, maintain the single task workload.
+At same time, Arrow excludes all the unnecessary components and guest-facing functionality to reduce the memory footprint and attack surface area of each microservice. This improves security, decreases the latency. The maintaining efforts also can be decreased.
 
-In order to make sure the microservices can run seamlessly on Cloud Native environment, and easily be deployed and run on the distributed cloud or edge infrastructure. Arrow project must keep compatible with Kubernetes. 
+It can be expcted that orchestrating, operating and maintaining the single task workload is easier to handle the complicated workload.
 
-The challenge task for Arrow project is to decrease the latency and overhead. With the single task concept in mind, a lot of innovations can be done in the single task kernel and Arrow Hypervisor which creates and manages the Single Task virtual machine and talk with Kublet/Kubernetes. The microservice running latency and overhead can be greatly decreased. See detail in Single Task Kernel project and Arrow Hypervisor project.  
+In order to make sure the microservices can run seamlessly in Cloud Native environment, Arrow is designed to compatible with Kubernetes from the beginning. 
+
+It is very exciting that the single task concept sheds light on decreasing the latency and overhead of cloud workload greatly. Bear the single task concept in mind, a lot of innovations can be applied in Arrow Service, single task kernel, Arrow Hypervisor. See details in the related projects.
 
 Arrow is the exploration and innovation project. Welcome to join this amazing adventure!  
 
