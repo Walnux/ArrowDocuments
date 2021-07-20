@@ -1,5 +1,6 @@
 
 ## The goal of Arrow Project
+According to the investigation on the [Evolving of Cloud Native](https://github.com/Walnux/ArrowDocuments/blob/master/EvolvingOfCloudNative.md), Industry needs a new way to run Cloud Applications.
 Arrow project targets to explore a simple, secure, low latency and low overhead way to run [micoservices](https://martinfowler.com/articles/microservices.html) based applications on cloud, edge, client even IoT computing platform and obey [Twelve-Factor App methodology](https://12factor.net/).
 
 ## The motivation to work on Arrow project
